@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
 
-import Buttom from '.';
+import {{pascalCase name}} from '.';
 
-describe('<Buttom />', () => {
+describe('<{{pascalCase name}} />', () => {
     it('should render the heading', () => {
-        const { container } = render(<Buttom />);
+        const { container } = render(<{{pascalCase name}} />);
 
-        expect(screen.getByRole('heading', { name: /Buttom/i })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /{{pascalCase name}}/i })).toBeInTheDocument();
 
         expect(container.firstChild).toMatchSnapshot();
     });
