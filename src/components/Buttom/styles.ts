@@ -36,7 +36,7 @@ const wapperModifiers = {
 };
 
 export const Wrapper = styled.button<WrapperProps>`
-    ${({ theme, size, fullWidth }) => css`
+    ${({ theme, size, fullWidth, hasIcon }) => css`
         background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
         color: ${theme.colors.white};
         border: none;
@@ -45,5 +45,6 @@ export const Wrapper = styled.button<WrapperProps>`
 
         ${!!size && wapperModifiers[size](theme)};
         ${!!fullWidth && wapperModifiers.fullWidth()};
+        ${!!hasIcon && wapperModifiers.withIcon()};
     `}
 `;
