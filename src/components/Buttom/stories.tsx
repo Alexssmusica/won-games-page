@@ -19,6 +19,7 @@ export const Default: Story = (args) => <Buttom {...args} />;
 export const withIcon: Story = (args) => <Buttom {...args} />;
 
 Default.args = {
+    size: 'medium',
     children: 'Buy now'
 };
 
