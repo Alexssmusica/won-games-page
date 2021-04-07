@@ -2400,12 +2400,12 @@
     "@babel/runtime" "^7.12.5"
     "@styled-icons/styled-icon" "^10.6.0"
 
-"@styled-icons/fa-solid@10.26.0":
-  version "10.26.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/fa-solid/-/fa-solid-10.26.0.tgz#be8fe8f54888ea611401d30428fc7f0d0806e3fc"
-  integrity sha512-59/2KbnaP2euOR6UvZd1hncLvPTWJ1iT4Ohu7SV6tEvivDY/e2+uRMZiQlUgAGhzkmzQwYDeftaoiQaZeIfa4w==
+"@styled-icons/fa-solid@10.32.0":
+  version "10.32.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/fa-solid/-/fa-solid-10.32.0.tgz#650163c22ac2d8b8c6ba2d6c49561f60991bb10e"
+  integrity sha512-NihG0/M096lyGAsNR5TqL0VU9A+7m5+uqNR0w5T0bPG2yhzOO6l9PKi2XXx3T9ruXsZkWv6v8fYv+fx18TaHVA==
   dependencies:
-    "@babel/runtime" "^7.12.5"
+    "@babel/runtime" "^7.13.10"
     "@styled-icons/styled-icon" "^10.6.0"
 
 "@styled-icons/feather@10.18.0":
@@ -2416,10 +2416,10 @@
     "@babel/runtime" "^7.10.5"
     "@styled-icons/styled-icon" "^10.6.0"
 
-"@styled-icons/fluentui-system-filled@10.30.0":
-  version "10.30.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/fluentui-system-filled/-/fluentui-system-filled-10.30.0.tgz#6b320558360ea193da3d87f225be31a017b3d284"
-  integrity sha512-GxLG44rY/Th/bzQFVeJQCG7+DTewdMVL/RbtX3RYhrmfHJCTVozKpprG1F3J+UIbH8b3BsZO5nHa9loY9GNzBA==
+"@styled-icons/fluentui-system-filled@10.32.0":
+  version "10.32.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/fluentui-system-filled/-/fluentui-system-filled-10.32.0.tgz#b05b9340cf6e329bc1200682314a6c15e1a2785f"
+  integrity sha512-b1LC9fZcUrhgGdMQRICIggtL6ZD6lbXE4Nr7lsFmjCWxBeBbyVaGv+vIsGiRIZ900RNP+1Tr4ljVGHklV/brLA==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@styled-icons/styled-icon" "^10.6.0"
@@ -2560,12 +2560,12 @@
     "@babel/runtime" "^7.10.5"
     "@styled-icons/styled-icon" "^10.6.0"
 
-"@styled-icons/simple-icons@10.29.0":
-  version "10.29.0"
-  resolved "https://registry.yarnpkg.com/@styled-icons/simple-icons/-/simple-icons-10.29.0.tgz#eb0dbb52c070f9a65668b525889a7cd43b7ca17c"
-  integrity sha512-TkNb6HII1xjmjlapY2msn8G+neLs6XYA3IclSR19Te5BLM8Su+Ct2unArSXoQym9W+SeiMnfjPI0dkAj9zY/Rw==
+"@styled-icons/simple-icons@10.32.0":
+  version "10.32.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/simple-icons/-/simple-icons-10.32.0.tgz#3983d5d91b42e4cbdbc926dab5e4b95709e848d4"
+  integrity sha512-f661wtZkrul2S1KEVZSkxC+c61kKDYIfTfPv0Cp5r9pWSNnqxYIOyF0Axlw1Yt5I7r7oIlc+mIx0+FwPnrqXkA==
   dependencies:
-    "@babel/runtime" "^7.12.13"
+    "@babel/runtime" "^7.13.10"
     "@styled-icons/styled-icon" "^10.6.0"
 
 "@styled-icons/styled-icon@10.6.3", "@styled-icons/styled-icon@^10.6.0":
@@ -3050,14 +3050,6 @@
     "@typescript-eslint/typescript-estree" "4.21.0"
     debug "^4.1.1"
 
-"@typescript-eslint/scope-manager@4.20.0":
-  version "4.20.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-4.20.0.tgz#953ecbf3b00845ece7be66246608be9d126d05ca"
-  integrity sha512-/zm6WR6iclD5HhGpcwl/GOYDTzrTHmvf8LLLkwKqqPKG6+KZt/CfSgPCiybshmck66M2L5fWSF/MKNuCwtKQSQ==
-  dependencies:
-    "@typescript-eslint/types" "4.20.0"
-    "@typescript-eslint/visitor-keys" "4.20.0"
-
 "@typescript-eslint/scope-manager@4.21.0":
   version "4.21.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-4.21.0.tgz#c81b661c4b8af1ec0c010d847a8f9ab76ab95b4d"
@@ -3066,28 +3058,10 @@
     "@typescript-eslint/types" "4.21.0"
     "@typescript-eslint/visitor-keys" "4.21.0"
 
-"@typescript-eslint/types@4.20.0":
-  version "4.20.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-4.20.0.tgz#c6cf5ef3c9b1c8f699a9bbdafb7a1da1ca781225"
-  integrity sha512-cYY+1PIjei1nk49JAPnH1VEnu7OYdWRdJhYI5wiKOUMhLTG1qsx5cQxCUTuwWCmQoyriadz3Ni8HZmGSofeC+w==
-
 "@typescript-eslint/types@4.21.0":
   version "4.21.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-4.21.0.tgz#abdc3463bda5d31156984fa5bc316789c960edef"
   integrity sha512-+OQaupjGVVc8iXbt6M1oZMwyKQNehAfLYJJ3SdvnofK2qcjfor9pEM62rVjBknhowTkh+2HF+/KdRAc/wGBN2w==
-
-"@typescript-eslint/typescript-estree@4.20.0":
-  version "4.20.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-4.20.0.tgz#8b3b08f85f18a8da5d88f65cb400f013e88ab7be"
-  integrity sha512-Knpp0reOd4ZsyoEJdW8i/sK3mtZ47Ls7ZHvD8WVABNx5Xnn7KhenMTRGegoyMTx6TiXlOVgMz9r0pDgXTEEIHA==
-  dependencies:
-    "@typescript-eslint/types" "4.20.0"
-    "@typescript-eslint/visitor-keys" "4.20.0"
-    debug "^4.1.1"
-    globby "^11.0.1"
-    is-glob "^4.0.1"
-    semver "^7.3.2"
-    tsutils "^3.17.1"
 
 "@typescript-eslint/typescript-estree@4.21.0":
   version "4.21.0"
@@ -3101,14 +3075,6 @@
     is-glob "^4.0.1"
     semver "^7.3.2"
     tsutils "^3.17.1"
-
-"@typescript-eslint/visitor-keys@4.20.0":
-  version "4.20.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-4.20.0.tgz#1e84db034da13f208325e6bfc995c3b75f7dbd62"
-  integrity sha512-NXKRM3oOVQL8yNFDNCZuieRIwZ5UtjNLYtmMx2PacEAGmbaEYtGgVHUHVyZvU/0rYZcizdrWjDo+WBtRPSgq+A==
-  dependencies:
-    "@typescript-eslint/types" "4.20.0"
-    eslint-visitor-keys "^2.0.0"
 
 "@typescript-eslint/visitor-keys@4.21.0":
   version "4.21.0"
@@ -11896,10 +11862,10 @@ styled-components@^5.2.3:
     shallowequal "^1.1.0"
     supports-color "^5.5.0"
 
-styled-icons@^10.31.0:
-  version "10.31.0"
-  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-10.31.0.tgz#cf58b79ce271f1c43563db7240a0de8a7434fcc6"
-  integrity sha512-cBrmKImC80kl5Pf42NOhY+LkKbdYDqFocs+pAdwDrnUtu2j70ZJJoCZ6jDR1F0cCMCZ1dAAPO0OzN3+5KeeheA==
+styled-icons@^10.32.0:
+  version "10.32.0"
+  resolved "https://registry.yarnpkg.com/styled-icons/-/styled-icons-10.32.0.tgz#2752ec6188c35f8ff4415339117f79aa0dbcc854"
+  integrity sha512-5b08zdYHF3g90Y+kw370O9EWLP6tnM7F7lP6KXJxzoTwFyrJaBj6L78gySW2cSQYIvpBgH5bcJDB0s3YNzVb5w==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@styled-icons/bootstrap" "10.29.0"
@@ -11914,9 +11880,9 @@ styled-icons@^10.31.0:
     "@styled-icons/evil" "10.18.0"
     "@styled-icons/fa-brands" "10.26.0"
     "@styled-icons/fa-regular" "10.26.0"
-    "@styled-icons/fa-solid" "10.26.0"
+    "@styled-icons/fa-solid" "10.32.0"
     "@styled-icons/feather" "10.18.0"
-    "@styled-icons/fluentui-system-filled" "10.30.0"
+    "@styled-icons/fluentui-system-filled" "10.32.0"
     "@styled-icons/fluentui-system-regular" "10.31.0"
     "@styled-icons/foundation" "10.28.0"
     "@styled-icons/heroicons-outline" "10.19.0"
@@ -11934,7 +11900,7 @@ styled-icons@^10.31.0:
     "@styled-icons/open-iconic" "10.18.0"
     "@styled-icons/remix-fill" "10.18.0"
     "@styled-icons/remix-line" "10.18.0"
-    "@styled-icons/simple-icons" "10.29.0"
+    "@styled-icons/simple-icons" "10.32.0"
     "@styled-icons/styled-icon" "10.6.3"
     "@styled-icons/typicons" "10.18.0"
     "@styled-icons/zondicons" "10.18.0"
