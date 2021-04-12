@@ -5,12 +5,23 @@ export type HighlightProps = {
     title: string;
     subtitle: string;
     backgroundImage: string;
+    floatImage?: string;
     buttonLabel: string;
     buttonLink: string;
+    alignment?: 'right' | 'left';
 };
 
-const Highlight = ({ title, subtitle, backgroundImage, buttonLabel, buttonLink }: HighlightProps) => (
-    <Style.Wrapper backgroundImage={backgroundImage}>
+const Highlight = ({
+    title,
+    subtitle,
+    backgroundImage,
+    floatImage,
+    buttonLabel,
+    buttonLink,
+    alignment = 'right'
+}: HighlightProps) => (
+    <Style.Wrapper alignment={alignment} backgroundImage={backgroundImage}>
+        {!!floatImage && <Style.FloatImage src={floatImage} alt={title} />}
         <Style.Content>
             <Style.Title>{title}</Style.Title>
             <Style.Subtitle>{subtitle}</Style.Subtitle>
