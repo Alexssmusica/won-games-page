@@ -33,8 +33,8 @@ export const Image = styled.div<ImageProps>`
         background-position: center center;
         background-size: cover;
         ${media.greaterThan('medium')`
-      height: 58rem;
-    `}
+            height: 58rem;
+        `}
     `}
 `;
 
