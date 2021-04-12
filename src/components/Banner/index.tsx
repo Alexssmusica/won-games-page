@@ -1,4 +1,5 @@
-import Buttom from '../Buttom';
+import Buttom from 'components/Buttom';
+import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon';
 import * as Style from './styles';
 
 export type BannerProps = {
@@ -7,10 +8,28 @@ export type BannerProps = {
     subtitle: string;
     buttonLabel: string;
     buttonLink: string;
+    ribbon?: string;
+    ribbonSize?: RibbonSizes;
+    ribbonColor?: RibbonColors;
 };
 
-const Banner = ({ img, title, subtitle, buttonLabel, buttonLink }: BannerProps) => (
+const Banner = ({
+    img,
+    title,
+    subtitle,
+    buttonLabel,
+    buttonLink,
+    ribbon,
+    ribbonSize = 'normal',
+    ribbonColor = 'primary'
+}: BannerProps) => (
     <Style.Wrapper>
+        {!!ribbon && (
+            <Ribbon color={ribbonColor} size={ribbonSize}>
+                {ribbon}
+            </Ribbon>
+        )}
+
         <Style.Image src={img} role="img" aria-label={title} />
 
         <Style.Caption>
