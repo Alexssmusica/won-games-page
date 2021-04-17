@@ -16,7 +16,7 @@ export default {
         ribbon: { type: 'string' }
     },
     parameters: {
-        backgrounds: { default: 'dark' }
+        backgrounds: { default: 'won-dark' }
     }
 } as Meta;
 
