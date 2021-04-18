@@ -9,16 +9,16 @@ import Highlight, { HighlightProps } from 'components/Highlight';
 import Menu from 'components/Menu';
 import * as Style from './styles';
 
-export type HomeTemaplateProps = {
+export type HomeTemplateProps = {
     banners: BannerProps[];
     newGames: GameCardProps[];
     mostPopularHighlight: HighlightProps;
     mostPopularGames: GameCardProps[];
-    upcommingGames: GameCardProps[];
-    upcommingHighligth: HighlightProps;
-    upcommingMoreGames: GameCardProps[];
+    upcomingGames: GameCardProps[];
+    upcomingHighlight: HighlightProps;
+    upcomingMoreGames: GameCardProps[];
     freeGames: GameCardProps[];
-    freeHighligth: HighlightProps;
+    freeHighlight: HighlightProps;
 };
 
 const Home = ({
@@ -26,12 +26,12 @@ const Home = ({
     newGames,
     mostPopularHighlight,
     mostPopularGames,
-    upcommingGames,
-    upcommingHighligth,
-    upcommingMoreGames,
+    upcomingGames,
+    upcomingHighlight,
+    upcomingMoreGames,
     freeGames,
-    freeHighligth
-}: HomeTemaplateProps) => (
+    freeHighlight
+}: HomeTemplateProps) => (
     <section>
         <Container>
             <Menu />
@@ -61,18 +61,18 @@ const Home = ({
 
             <Style.SectionUpcoming>
                 <Heading lineLeft lineColor="secondary">
-                    Upcomming
+                    Upcoming
                 </Heading>
-                <GameCardSlider items={upcommingGames} />
-                <Highlight {...upcommingHighligth} />
-                <GameCardSlider items={upcommingMoreGames} />
+                <GameCardSlider items={upcomingGames} />
+                <Highlight {...upcomingHighlight} />
+                <GameCardSlider items={upcomingMoreGames} />
             </Style.SectionUpcoming>
 
             <Style.SectionFreeGames>
                 <Heading lineLeft lineColor="secondary">
                     Free Games
                 </Heading>
-                <Highlight {...freeHighligth} />
+                <Highlight {...freeHighlight} />
                 <GameCardSlider items={freeGames} />
             </Style.SectionFreeGames>
         </Container>

@@ -11,11 +11,11 @@ const props = {
     newGames: gamesMock,
     mostPopularHighlight: highlightMock,
     mostPopularGames: gamesMock,
-    upcommingGames: gamesMock,
-    upcommingHighligth: highlightMock,
-    upcommingMoreGames: gamesMock,
+    upcomingGames: gamesMock,
+    upcomingHighlight: highlightMock,
+    upcomingMoreGames: gamesMock,
     freeGames: gamesMock,
-    freeHighligth: highlightMock
+    freeHighlight: highlightMock
 };
 
 describe('<Home />', () => {
@@ -31,7 +31,7 @@ describe('<Home />', () => {
         renderWithTheme(<Home {...props} />);
         expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: /most popular/i })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: /upcomming/i })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /upcoming/i })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: /free games/i })).toBeInTheDocument();
     });
 
