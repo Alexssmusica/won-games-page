@@ -12,7 +12,7 @@ export type CheckboxProps = {
 
 const Checkbox = ({
     onCheck,
-    isChecked = false,
+    isChecked,
     label,
     labelFor = '',
     labelColor = 'white',
@@ -22,11 +22,12 @@ const Checkbox = ({
     const [checked, setChecked] = useState(isChecked);
 
     const onChange = () => {
-        const status = !checked;
+        const status = !checked; // true => false => true
         setChecked(status);
 
         !!onCheck && onCheck(status);
     };
+
     return (
         <Style.Wrapper>
             <Style.Input id={labelFor} type="checkbox" onChange={onChange} checked={checked} value={value} {...props} />
