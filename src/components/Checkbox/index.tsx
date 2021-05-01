@@ -8,7 +8,7 @@ export type CheckboxProps = {
 
 const Checkbox = ({ label, labelFor = '', labelColor = 'white' }: CheckboxProps) => (
     <Style.Wrapper>
-        <input id={labelFor} type="checkbox" />
+        <Style.Input id={labelFor} type="checkbox" />
         {!!label && (
             <Style.Label htmlFor={labelFor} labelColor={labelColor}>
                 {label}
