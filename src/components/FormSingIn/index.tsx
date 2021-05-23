@@ -1,11 +1,12 @@
 import TextField from '../TextField';
 import Button from '../Buttom';
 import * as Style from './styles';
+import { FormWrapper, FormLink } from 'components/Form';
 import Link from 'next/link';
 import { Email, Lock } from '@styled-icons/material-outlined';
 
 const FormSingIn = () => (
-    <Style.Wrapper>
+    <FormWrapper>
         <form>
             <TextField name="email" placeholder="Email" type="email" icon={<Email />} />
             <TextField name="password" placeholder="Password" type="password" icon={<Lock />} />
@@ -15,14 +16,14 @@ const FormSingIn = () => (
                 Sign in now
             </Button>
 
-            <Style.FormLink>
+            <FormLink>
                 Don’t have an account?{' '}
                 <Link href="/sign-up">
                     <a>Sign up</a>
                 </Link>
-            </Style.FormLink>
+            </FormLink>
         </form>
-    </Style.Wrapper>
+    </FormWrapper>
 );
 
 export default FormSingIn;

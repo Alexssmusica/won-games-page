@@ -2,10 +2,10 @@ import TextField from '../TextField';
 import Button from '../Buttom';
 import Link from 'next/link';
 import { Email, Lock, AccountCircle } from '@styled-icons/material-outlined';
-import * as Style from './styles';
+import { FormWrapper, FormLink } from 'components/Form';
 
 const FormSingUp = () => (
-    <Style.Wrapper>
+    <FormWrapper>
         <form>
             <TextField name="name" placeholder="Name" type="text" icon={<AccountCircle />} />
             <TextField name="email" placeholder="Email" type="email" icon={<Email />} />
@@ -16,14 +16,14 @@ const FormSingUp = () => (
                 Sign up now
             </Button>
 
-            <Style.FormLink>
+            <FormLink>
                 Already have an account?{' '}
                 <Link href="/sign-in">
                     <a>Sign in</a>
                 </Link>
-            </Style.FormLink>
+            </FormLink>
         </form>
-    </Style.Wrapper>
+    </FormWrapper>
 );
 
 export default FormSingUp;
