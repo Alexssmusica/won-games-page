@@ -8,6 +8,7 @@ import Logo from 'components/Logo';
 import * as Style from './styles';
 import Buttom from '../Buttom';
 import MediaMatch from '../MediaMatch';
+import Link from 'next/link';
 
 export type MenuProps = {
     username?: string;
@@ -44,7 +45,9 @@ const Menu = ({ username }: MenuProps) => {
                 </Style.IconWrapper>
                 {!username && (
                     <MediaMatch greaterThan="medium">
-                        <Buttom>Sign in</Buttom>
+                        <Link href="/sign-in" passHref>
+                            <Buttom as="a">Sign in</Buttom>
+                        </Link>
                     </MediaMatch>
                 )}
             </Style.MenuGroup>
@@ -65,13 +68,15 @@ const Menu = ({ username }: MenuProps) => {
 
                 {!username && (
                     <Style.RegisterBox>
-                        <Buttom fullWidth size="large">
-                            Log in now
-                        </Buttom>
+                        <Link href="/sign-in" passHref>
+                            <Buttom fullWidth size="large" as="a">
+                                Sign in
+                            </Buttom>
+                        </Link>
                         <span>or</span>
-                        <Style.CreateAccount href="#" title="Sign Up">
-                            Sign Up
-                        </Style.CreateAccount>
+                        <Link href="/sign-up" passHref>
+                            <Style.CreateAccount title="Sign Up">Sign Up</Style.CreateAccount>
+                        </Link>
                     </Style.RegisterBox>
                 )}
             </Style.MenuFull>
