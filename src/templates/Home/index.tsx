@@ -3,10 +3,9 @@ import BannerSlider from 'components/BannerSlider';
 import { Container } from 'components/Container';
 import Footer from 'components/Footer';
 import { GameCardProps } from 'components/GameCard';
-import GameCardSlider from 'components/GameCardSlider';
-import Heading from 'components/Heading';
-import Highlight, { HighlightProps } from 'components/Highlight';
+import { HighlightProps } from 'components/Highlight';
 import Menu from 'components/Menu';
+import Showcase from '../../components/Showcase';
 import * as Style from './styles';
 
 export type HomeTemplateProps = {
@@ -41,41 +40,17 @@ const Home = ({
         </Container>
 
         <Style.SectionNews>
-            <Container>
-                <Heading lineLeft lineColor="secondary">
-                    News
-                </Heading>
-
-                <GameCardSlider items={newGames} color="black" />
-            </Container>
+            <Showcase title="News" games={newGames} />
         </Style.SectionNews>
 
-        <Container>
-            <Style.SectionMostPopular>
-                <Heading lineLeft lineColor="secondary">
-                    Most Popular
-                </Heading>
-                <Highlight {...mostPopularHighlight} />
-                <GameCardSlider items={mostPopularGames} />
-            </Style.SectionMostPopular>
+        <Showcase title="Most Popular" highlight={mostPopularHighlight} games={mostPopularGames} />
 
-            <Style.SectionUpcoming>
-                <Heading lineLeft lineColor="secondary">
-                    Upcoming
-                </Heading>
-                <GameCardSlider items={upcomingGames} />
-                <Highlight {...upcomingHighlight} />
-                <GameCardSlider items={upcomingMoreGames} />
-            </Style.SectionUpcoming>
+        <Style.SectionUpcoming>
+            <Showcase title="Upcoming" games={upcomingGames} />
+            <Showcase highlight={upcomingHighlight} games={upcomingMoreGames} />
+        </Style.SectionUpcoming>
 
-            <Style.SectionFreeGames>
-                <Heading lineLeft lineColor="secondary">
-                    Free Games
-                </Heading>
-                <Highlight {...freeHighlight} />
-                <GameCardSlider items={freeGames} />
-            </Style.SectionFreeGames>
-        </Container>
+        <Showcase title="Free Games" highlight={freeHighlight} games={freeGames} />
 
         <Style.SectionFooter>
             <Container>
