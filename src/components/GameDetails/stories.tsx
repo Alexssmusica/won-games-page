@@ -26,6 +26,12 @@ export default {
                 type: 'inline-check',
                 options: ['Role-playing', 'Narrative']
             }
+        },
+        rating: {
+            control: {
+                type: 'select',
+                options: ['BR0', 'BR10', 'BR12', 'BR14', 'BR16', 'BR18']
+            }
         }
     }
 } as Meta;
