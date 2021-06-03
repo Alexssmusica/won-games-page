@@ -18,8 +18,6 @@ const commonSettings: SliderSettings = {
 const settings: SliderSettings = {
     ...commonSettings,
     slidesToShow: 4,
-    infinite: false,
-    lazyLoad: 'ondemand',
     responsive: [
         {
             breakpoint: 1375,
