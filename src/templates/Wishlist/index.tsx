@@ -5,10 +5,11 @@ import Showcase from 'components/Showcase';
 import { Container } from 'components/Container';
 import GameCard, { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
-import Empty from 'components/Empty';
+// import Empty from 'components/Empty';
 import React from 'react';
 import { Grid } from '../../components/Grid';
 import { Divider } from '../../components/Divider';
+import EmptyGames from '../../components/EmptyGames';
 
 export type WishlistTemplateProps = {
     games?: GameCardProps[];
@@ -30,7 +31,7 @@ const Wishlist = ({ games = [], recommendedGames, recommendedHighlight }: Wishli
                     ))}
                 </Grid>
             ) : (
-                <Empty
+                <EmptyGames
                     title="Your wishlist is empty"
                     description="Games added to your wishlist will appear here"
                     hasLink
