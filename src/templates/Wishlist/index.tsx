@@ -6,6 +6,7 @@ import { Container } from 'components/Container';
 import GameCard, { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
 import React from 'react';
+import { Grid } from '../../components/Grid';
 
 // import * as Style from './styles';
 
@@ -21,10 +22,11 @@ const Wishlist = ({ games, recommendedGames, recommendedHighlight }: WishlistTem
             <Heading lineLeft lineColor="secondary">
                 Wishlist
             </Heading>
-
-            {games?.map((game, index) => (
-                <GameCard key={`wishlist-${index}`} {...game} />
-            ))}
+            <Grid>
+                {games?.map((game, index) => (
+                    <GameCard key={`wishlist-${index}`} {...game} />
+                ))}
+            </Grid>
         </Container>
 
         <Showcase title="You may like these games" games={recommendedGames} highlight={recommendedHighlight} />
