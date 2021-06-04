@@ -9,8 +9,6 @@ import React from 'react';
 import { Grid } from '../../components/Grid';
 import { Divider } from '../../components/Divider';
 
-// import * as Style from './styles';
-
 export type WishlistTemplateProps = {
     games?: GameCardProps[];
     recommendedGames: GameCardProps[];

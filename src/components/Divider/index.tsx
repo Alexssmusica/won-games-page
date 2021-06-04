@@ -8,7 +8,7 @@ export const Divider = styled.hr`
         background: rgba(181, 181, 181, 0.3);
         border: 0;
         ${media.greaterThan('medium')`
-      margin: calc(${theme.spacings.xxlarge} * 2.5) auto ${theme.spacings.xxlarge};
-    `}
+            margin: calc(${theme.spacings.xxlarge} * 2.5) auto ${theme.spacings.xxlarge};
+        `}
     `}
 `;
