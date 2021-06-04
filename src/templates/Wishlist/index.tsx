@@ -7,6 +7,7 @@ import GameCard, { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
 import React from 'react';
 import { Grid } from '../../components/Grid';
+import { Divider } from '../../components/Divider';
 
 // import * as Style from './styles';
 
@@ -27,6 +28,8 @@ const Wishlist = ({ games, recommendedGames, recommendedHighlight }: WishlistTem
                     <GameCard key={`wishlist-${index}`} {...game} />
                 ))}
             </Grid>
+
+            <Divider />
         </Container>
 
         <Showcase title="You may like these games" games={recommendedGames} highlight={recommendedHighlight} />

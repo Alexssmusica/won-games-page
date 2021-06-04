@@ -1,4 +1,5 @@
 import React from 'react';
+import { Divider } from '../../components/Divider';
 import Gallery, { GalleryImageProps } from '../../components/Gallery';
 import { GameCardProps } from '../../components/GameCard';
 import GameDetails, { GameDetailsProps } from '../../components/GameDetails';
@@ -46,6 +47,8 @@ const Game = ({
 
             <Style.SectionGameDetails>
                 <GameDetails {...details} />
+
+                <Divider />
             </Style.SectionGameDetails>
 
             <Showcase title="Upcoming" games={upcomingGames} highlight={upcomingHighlight} />
