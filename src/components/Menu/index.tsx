@@ -26,13 +26,19 @@ const Menu = ({ username }: MenuProps) => {
             </MediaMatch>
 
             <Style.LogoWrapper>
-                <Logo hideOnMobile />
+                <Link href="/" passHref>
+                    <a>
+                        <Logo hideOnMobile />
+                    </a>
+                </Link>
             </Style.LogoWrapper>
 
             <MediaMatch greaterThan="medium">
                 <Style.MenuNav>
-                    <Style.MenuLink hrefLang="#">Home</Style.MenuLink>
-                    <Style.MenuLink hrefLang="#">Explore</Style.MenuLink>
+                    <Link href="/" passHref>
+                        <Style.MenuLink>Home</Style.MenuLink>
+                    </Link>
+                    <Style.MenuLink href="#">Explore</Style.MenuLink>
                 </Style.MenuNav>
             </MediaMatch>
 
@@ -55,13 +61,15 @@ const Menu = ({ username }: MenuProps) => {
             <Style.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
                 <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
                 <Style.MenuNav>
-                    <Style.MenuLink hrefLang="#">Home</Style.MenuLink>
-                    <Style.MenuLink hrefLang="#">Explore</Style.MenuLink>
+                    <Link href="/" passHref>
+                        <Style.MenuLink>Home</Style.MenuLink>
+                    </Link>
+                    <Style.MenuLink href="#">Explore</Style.MenuLink>
 
                     {!!username && (
                         <>
-                            <Style.MenuLink hrefLang="#">My account</Style.MenuLink>
-                            <Style.MenuLink hrefLang="#">Wishlist</Style.MenuLink>
+                            <Style.MenuLink href="#">My account</Style.MenuLink>
+                            <Style.MenuLink href="#">Wishlist</Style.MenuLink>
                         </>
                     )}
                 </Style.MenuNav>
