@@ -8,9 +8,49 @@
         "sizes": "192x192"
       },
       {
-        "src": "/img/game.png",
+        "src": "/img/icon-512.png",
         "type": "image/png",
         "sizes": "512x512"
+      },
+      {
+        "src": "/img/480x800.png",
+        "type": "image/png",
+        "sizes": "480x800"
+      },
+      {
+        "src": "/img/720x1280.png",
+        "type": "image/png",
+        "sizes": "720x1280"
+      },
+      {
+        "src": "/img/800x480.png",
+        "type": "image/png",
+        "sizes": "800x480"
+      },
+      {
+        "src": "/img/960x1600.png",
+        "type": "image/png",
+        "sizes": "960x1600"
+      },
+      {
+        "src": "/img/1280x720.png",
+        "type": "image/png",
+        "sizes": "1280x720"
+      },
+      {
+        "src": "/img/1280x1920.png",
+        "type": "image/png",
+        "sizes": "1280x1920"
+      },
+      {
+        "src": "/img/1600x960.png",
+        "type": "image/png",
+        "sizes": "1600x960"
+      },
+      {
+        "src": "/img/1920x1280.png",
+        "type": "image/png",
+        "sizes": "1920x1280"
       }
     ],
     "background_color": "#06092B",
