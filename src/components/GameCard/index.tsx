@@ -1,7 +1,7 @@
 import { AddShoppingCart, FavoriteBorder, Favorite } from '@styled-icons/material-outlined';
 
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon';
-import Buttom from 'components/Buttom';
+import Button from 'components/Button';
 import * as Style from './styles';
 
 export type GameCardProps = {
@@ -53,7 +53,7 @@ const GameCard = ({
             <Style.BuyBox>
                 {!!promotionalPrice && <Style.Price isPromotional>{price}</Style.Price>}
                 <Style.Price>{promotionalPrice || price}</Style.Price>
-                <Buttom icon={<AddShoppingCart />} size="small" />
+                <Button icon={<AddShoppingCart />} size="small" />
             </Style.BuyBox>
         </Style.Content>
     </Style.Wrapper>

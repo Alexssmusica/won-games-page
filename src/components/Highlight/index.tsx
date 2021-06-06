@@ -1,4 +1,4 @@
-import Buttom from 'components/Buttom';
+import Button from 'components/Button';
 import * as Style from './styles';
 
 export type HighlightProps = {
@@ -25,9 +25,9 @@ const Highlight = ({
         <Style.Content>
             <Style.Title>{title}</Style.Title>
             <Style.Subtitle>{subtitle}</Style.Subtitle>
-            <Buttom as="a" href={buttonLink}>
+            <Button as="a" href={buttonLink}>
                 {buttonLabel}
-            </Buttom>
+            </Button>
         </Style.Content>
     </Style.Wrapper>
 );

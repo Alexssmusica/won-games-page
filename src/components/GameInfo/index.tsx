@@ -1,6 +1,6 @@
 import { AddShoppingCart, FavoriteBorder } from '@styled-icons/material-outlined';
 
-import Button from '../Buttom';
+import Button from '../Button';
 import Heading from '../Heading';
 import Ribbon from '../Ribbon';
 

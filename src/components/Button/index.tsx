@@ -11,7 +11,7 @@ export type ButtonProps = {
     as?: React.ElementType;
 } & ButtonTypes;
 
-const Buttom: React.ForwardRefRenderFunction<Style.WrapperProps, ButtonProps> = (
+const Button: React.ForwardRefRenderFunction<Style.WrapperProps, ButtonProps> = (
     { children, icon, size = 'medium', fullWidth = false, minimal = false, ...props },
     ref
 ) => (
@@ -21,4 +21,4 @@ const Buttom: React.ForwardRefRenderFunction<Style.WrapperProps, ButtonProps> = 
     </Style.Wrapper>
 );
 
-export default forwardRef(Buttom);
+export default forwardRef(Button);

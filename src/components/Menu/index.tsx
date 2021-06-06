@@ -6,7 +6,7 @@ import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
 
 import Logo from 'components/Logo';
 import * as Style from './styles';
-import Buttom from '../Buttom';
+import Button from '../Button';
 import MediaMatch from '../MediaMatch';
 import Link from 'next/link';
 
@@ -52,7 +52,7 @@ const Menu = ({ username }: MenuProps) => {
                 {!username && (
                     <MediaMatch greaterThan="medium">
                         <Link href="/sign-in" passHref>
-                            <Buttom as="a">Sign in</Buttom>
+                            <Button as="a">Sign in</Button>
                         </Link>
                     </MediaMatch>
                 )}
@@ -77,9 +77,9 @@ const Menu = ({ username }: MenuProps) => {
                 {!username && (
                     <Style.RegisterBox>
                         <Link href="/sign-in" passHref>
-                            <Buttom fullWidth size="large" as="a">
+                            <Button fullWidth size="large" as="a">
                                 Sign in
-                            </Buttom>
+                            </Button>
                         </Link>
                         <span>or</span>
                         <Link href="/sign-up" passHref>

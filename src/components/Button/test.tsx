@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 import Button from '.';
 
-describe('<Buttom />', () => {
+describe('<Button />', () => {
     it('should render the medium size by default', () => {
         const { container } = renderWithTheme(<Button>Buy now</Button>);
         expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({

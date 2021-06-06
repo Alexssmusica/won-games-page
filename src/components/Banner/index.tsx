@@ -1,4 +1,4 @@
-import Buttom from 'components/Buttom';
+import Button from 'components/Button';
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon';
 import * as Style from './styles';
 
@@ -35,9 +35,9 @@ const Banner = ({
         <Style.Caption>
             <Style.Title>{title}</Style.Title>
             <Style.Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
-            <Buttom as="a" href={buttonLink} size="large">
+            <Button as="a" href={buttonLink} size="large">
                 {buttonLabel}
-            </Buttom>
+            </Button>
         </Style.Caption>
     </Style.Wrapper>
 );

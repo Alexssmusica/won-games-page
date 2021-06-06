@@ -1,5 +1,5 @@
 import TextField from '../TextField';
-import Button from '../Buttom';
+import Button from '../Button';
 import * as Style from './styles';
 import { FormWrapper, FormLink } from 'components/Form';
 import Link from 'next/link';
