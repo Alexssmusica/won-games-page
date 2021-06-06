@@ -5,6 +5,7 @@ import Empty from '.';
 
 const props = {
     title: 'A simple title',
+    img: '/img/empty.svg',
     description: 'A simple description'
 };
 

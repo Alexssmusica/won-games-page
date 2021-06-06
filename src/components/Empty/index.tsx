@@ -6,12 +6,13 @@ import Link from 'next/link';
 export type EmptyProps = {
     title: string;
     description: string;
+    img: string;
     hasLink?: boolean;
 };
 
-const Empty = ({ title, description, hasLink }: EmptyProps) => (
+const Empty = ({ title, description, hasLink, img }: EmptyProps) => (
     <Style.Wrapper>
-        <Style.Image src="/img/empty.svg" alt="A gamer in a couch playing videogame" role="image" />
+        <Style.Image src={img} alt="A gamer in a couch playing videogame" role="image" />
 
         <Style.Title>{title}</Style.Title>
         <Style.Description>{description}</Style.Description>

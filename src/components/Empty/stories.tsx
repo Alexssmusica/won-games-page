@@ -8,13 +8,28 @@ export default {
         backgrounds: {
             default: 'won-dark'
         }
+    },
+    argTypes: {
+        img: {
+            type: ''
+        }
     }
 } as Meta;
 
-export const Default: Story<EmptyProps> = (args) => <Empty {...args} />;
+export const Empty1: Story<EmptyProps> = (args) => <Empty {...args} />;
 
-Default.args = {
+Empty1.args = {
     title: 'Your wishlist is empty',
+    img: '/img/empty.svg',
+    description: 'Games added to your wishlist will appear here',
+    hasLink: true
+};
+
+export const Empty2: Story<EmptyProps> = (args) => <Empty {...args} />;
+
+Empty2.args = {
+    title: 'Your wishlist is empty',
+    img: '/img/empty-game.svg',
     description: 'Games added to your wishlist will appear here',
     hasLink: true
 };

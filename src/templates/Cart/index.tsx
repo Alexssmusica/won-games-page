@@ -35,6 +35,7 @@ const Cart = ({ recommendedGames, recommendedHighlight, items, total, cards }: C
                     </Style.Content>
                 ) : (
                     <Empty
+                        img="/img/empty.svg"
                         title="Your cart is empty"
                         description="Go back to the store and explore great games and offers"
                         hasLink

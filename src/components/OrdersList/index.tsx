@@ -1,4 +1,4 @@
-import EmptyGames from '../EmptyGames';
+import Empty from '../Empty';
 import GameItem, { GameItemProps } from '../GameItem';
 import Heading from '../Heading';
 import * as Style from './styles';
@@ -16,7 +16,8 @@ const OrdersList = ({ items = [] }: OrdersListProps) => (
         {items.length ? (
             items.map((item) => <GameItem key={item.downloadLink} {...item} />)
         ) : (
-            <EmptyGames
+            <Empty
+                img="/img/empty.svg"
                 title="You have no orders yet"
                 description="Go back to the store and explore great games and offers"
                 hasLink
