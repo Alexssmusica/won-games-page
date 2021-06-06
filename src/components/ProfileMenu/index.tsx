@@ -2,24 +2,28 @@ import { AccountCircle, CreditCard, ExitToApp, FormatListBulleted } from '@style
 import Link from 'next/link';
 import * as Style from './styles';
 
-const ProfileMenu = () => (
+export type ProfileMenuProps = {
+    activeLink?: '/profile/me' | '/profile/cards' | '/profile/orders';
+};
+
+const ProfileMenu = ({ activeLink }: ProfileMenuProps) => (
     <Style.Nav>
         <Link href="/profile/me" passHref>
-            <Style.Link>
+            <Style.Link isActive={activeLink === '/profile/me'} title="My profile">
                 <AccountCircle size={24} />
                 <span>My profile</span>
             </Style.Link>
         </Link>
 
         <Link href="/profile/cards" passHref>
-            <Style.Link>
+            <Style.Link isActive={activeLink === '/profile/cards'} title="My cards">
                 <CreditCard size={24} />
                 <span>My cards</span>
             </Style.Link>
         </Link>
 
         <Link href="/profile/orders" passHref>
-            <Style.Link>
+            <Style.Link isActive={activeLink === '/profile/orders'} title="My orders">
                 <FormatListBulleted size={24} />
                 <span>My orders</span>
             </Style.Link>
