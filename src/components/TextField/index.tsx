@@ -5,7 +5,6 @@ import * as Style from './styles';
 export type TextFieldProps = {
     onInput?: (value: string) => void;
     label?: string;
-    labelFor?: string;
     initialValue?: string;
     icon?: React.ReactNode;
     iconPosition?: 'left' | 'right';
@@ -17,7 +16,7 @@ const TextField = ({
     icon,
     iconPosition = 'left',
     label,
-    labelFor = '',
+    name,
     initialValue = '',
     error,
     disabled = false,
@@ -35,7 +34,7 @@ const TextField = ({
 
     return (
         <Style.Wrapper disabled={disabled} error={!!error}>
-            {!!label && <Style.Label htmlFor={labelFor}>{label}</Style.Label>}
+            {!!label && <Style.Label htmlFor={name}>{label}</Style.Label>}
             <Style.InputWrapper>
                 {!!icon && <Style.Icon iconPosition={iconPosition}>{icon}</Style.Icon>}
                 <Style.Input
@@ -44,6 +43,8 @@ const TextField = ({
                     value={value}
                     iconPosition={iconPosition}
                     disabled={disabled}
+                    name={name}
+                    {...(label ? { id: name } : {})}
                     {...props}
                 />
             </Style.InputWrapper>
