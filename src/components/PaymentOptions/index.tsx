@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Add, ShoppingCart } from '@styled-icons/material-outlined';
 import Button from 'components/Button';
 import Heading from 'components/Heading';
@@ -15,37 +16,46 @@ export type PaymentCard = {
     img: string;
 };
 
-const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => (
-    <Style.Wrapper>
-        <Style.Body>
-            <Heading color="black" size="small" lineBottom>
-                Payment
-            </Heading>
+const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
+    const [checked, setChecked] = useState(false);
 
-            <Style.CardsList>
-                {cards?.map((card) => (
-                    <Style.CardItem key={card.number}>
-                        <Style.CardInfo>
-                            <img src={card.img} alt={card.flag} />
-                            {card.number}
-                        </Style.CardInfo>
-                        <Radio name="credit-card" id={card.number} value={card.number} onCheck={() => ({})} />
-                    </Style.CardItem>
-                ))}
+    return (
+        <Style.Wrapper>
+            <Style.Body>
+                <Heading color="black" size="small" lineBottom>
+                    Payment
+                </Heading>
 
-                <Style.AddCard role="button">
-                    <Add size={14} /> Add a new credit card
-                </Style.AddCard>
-            </Style.CardsList>
-        </Style.Body>
-        <Style.Footer>
-            <Button as="a" fullWidth minimal>
-                Continue shopping
-            </Button>
-            <Button fullWidth icon={<ShoppingCart />} onClick={handlePayment}>
-                Buy now
-            </Button>
-        </Style.Footer>
-    </Style.Wrapper>
-);
+                <Style.CardsList>
+                    {cards?.map((card) => (
+                        <Style.CardItem key={card.number}>
+                            <Style.CardInfo>
+                                <img src={card.img} alt={card.flag} />
+                                {card.number}
+                            </Style.CardInfo>
+                            <Radio
+                                name="credit-card"
+                                id={card.number}
+                                value={card.number}
+                                onCheck={() => setChecked(true)}
+                            />
+                        </Style.CardItem>
+                    ))}
+
+                    <Style.AddCard role="button">
+                        <Add size={14} /> Add a new credit card
+                    </Style.AddCard>
+                </Style.CardsList>
+            </Style.Body>
+            <Style.Footer>
+                <Button as="a" fullWidth minimal>
+                    Continue shopping
+                </Button>
+                <Button fullWidth icon={<ShoppingCart />} onClick={handlePayment} disabled={!checked}>
+                    Buy now
+                </Button>
+            </Style.Footer>
+        </Style.Wrapper>
+    );
+};
 export default PaymentOptions;

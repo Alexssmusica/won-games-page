@@ -1,11 +1,13 @@
-import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
 import { screen } from '@testing-library/react';
-import { renderWithTheme } from 'utils/tests/helpers';
+import { renderWithTheme } from '../../utils/tests/helpers';
+import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
+
 import Button from '.';
 
 describe('<Button />', () => {
     it('should render the medium size by default', () => {
         const { container } = renderWithTheme(<Button>Buy now</Button>);
+
         expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
             height: '4rem',
             padding: '0.8rem 3.2rem',
@@ -49,7 +51,7 @@ describe('<Button />', () => {
         expect(screen.getByTestId('icon')).toBeInTheDocument();
     });
 
-    it('should render an minimal version', () => {
+    it('should render a minimal version', () => {
         renderWithTheme(
             <Button icon={<AddShoppingCart data-testid="icon" />} minimal>
                 Buy now
@@ -63,6 +65,14 @@ describe('<Button />', () => {
 
         expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyleRule('background', 'none', {
             modifier: ':hover'
+        });
+    });
+
+    it('should render a disabled Button', () => {
+        renderWithTheme(<Button disabled>Buy now</Button>);
+
+        expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyleRule('cursor', 'not-allowed', {
+            modifier: ':disabled'
         });
     });
 
