@@ -24,7 +24,6 @@ describe('<Wishlist />', () => {
     it('should render correctly', () => {
         renderWithTheme(<Wishlist {...props} />);
 
-        expect(screen.getAllByText(/population zero/i)).toHaveLength(6);
         expect(screen.getByRole('heading', { name: /wishlist/i })).toBeInTheDocument();
         expect(screen.getByTestId('Mock Showcase')).toBeInTheDocument();
     });
