@@ -12,7 +12,7 @@ export const IconWrapper = styled.div`
     height: 2.4rem;
     ${media.greaterThan('medium')`
         display: none;
-  `}
+    `}
 `;
 
 export const Content = styled.div`
