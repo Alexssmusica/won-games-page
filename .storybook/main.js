@@ -1,6 +1,6 @@
 module.exports = {
   typescript: {
-    reactDocgen: 'none',
+    reactDocgen: 'react-docgen',
   },
   stories: ['../src/components/**/stories.tsx'],
   addons: ['@storybook/addon-essentials',
