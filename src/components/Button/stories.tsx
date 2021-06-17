@@ -11,6 +11,12 @@ export default {
         },
         icon: {
             type: ''
+        },
+        size: {
+            control: {
+                type: 'select',
+                options: ['small', 'medium', 'large']
+            }
         }
     }
 } as Meta;
