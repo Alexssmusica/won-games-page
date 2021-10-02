@@ -4,28 +4,40 @@ import GameItem, { GameItemProps } from '../GameItem';
 import Button from '../Button';
 
 import * as Style from './styles';
+import Empty from '../Empty';
 
 export type CartListProps = {
-    items: GameItemProps[];
-    total: string;
+    items?: GameItemProps[];
+    total?: string;
     hasButton?: boolean;
 };
 
-const CartList = ({ items, total, hasButton = false }: CartListProps) => (
-    <Style.Wrapper>
-        {items.map((item) => (
-            <GameItem key={item.title} {...item} />
-        ))}
+const CartList = ({ items = [], total, hasButton = false }: CartListProps) => (
+    <Style.Wrapper isEmpty={!items.length}>
+        {items.length ? (
+            <>
+                {items.map((item) => (
+                    <GameItem key={item.title} {...item} />
+                ))}
 
-        <Style.Footer>
-            {!hasButton && <span>Total:</span>}
-            <Style.Total>{total}</Style.Total>
-            {hasButton && (
-                <Link href="/cart">
-                    <Button as="a">Buy it now</Button>
-                </Link>
-            )}
-        </Style.Footer>
+                <Style.Footer>
+                    {!hasButton && <span>Total:</span>}
+                    <Style.Total>{total}</Style.Total>
+                    {hasButton && (
+                        <Link href="/cart">
+                            <Button as="a">Buy it now</Button>
+                        </Link>
+                    )}
+                </Style.Footer>
+            </>
+        ) : (
+            <Empty
+                img="/img/empty.svg"
+                title="Your cart is empty"
+                description="Go back to the store and explore great games and offers."
+                hasLink
+            />
+        )}
     </Style.Wrapper>
 );
 
