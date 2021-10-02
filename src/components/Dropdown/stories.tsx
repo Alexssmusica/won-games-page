@@ -16,5 +16,5 @@ export const Default: Story<DropdownProps> = (args) => <Dropdown {...args} />;
 
 Default.args = {
     title: 'Dropdown',
-    children: 'Buy now'
+    children: 'Content'
 };
