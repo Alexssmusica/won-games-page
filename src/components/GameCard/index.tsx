@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { AddShoppingCart, FavoriteBorder, Favorite } from '@styled-icons/material-outlined';
 
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon';
@@ -5,6 +7,7 @@ import Button from 'components/Button';
 import * as Style from './styles';
 
 export type GameCardProps = {
+    slug: string;
     title: string;
     developer: string;
     img: string;
@@ -18,6 +21,7 @@ export type GameCardProps = {
 };
 
 const GameCard = ({
+    slug,
     title,
     developer,
     img,
@@ -35,14 +39,18 @@ const GameCard = ({
                 {ribbon}
             </Ribbon>
         )}
-        <Style.ImageBox>
-            <img src={img} alt={title} />
-        </Style.ImageBox>
+        <Link href={`game/${slug}`} passHref>
+            <Style.ImageBox>
+                <img src={img} alt={title} />
+            </Style.ImageBox>
+        </Link>
         <Style.Content>
-            <Style.Info>
-                <Style.Title>{title}</Style.Title>
-                <Style.Developer>{developer}</Style.Developer>
-            </Style.Info>
+            <Link href={`game/${slug}`} passHref>
+                <Style.Info>
+                    <Style.Title>{title}</Style.Title>
+                    <Style.Developer>{developer}</Style.Developer>
+                </Style.Info>
+            </Link>
             <Style.FavButton onClick={onFav} role="button">
                 {favorite ? (
                     <Favorite aria-label="Remove from Wishlist" />
