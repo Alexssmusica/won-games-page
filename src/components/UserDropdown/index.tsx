@@ -6,15 +6,15 @@ import Dropdown from '../Dropdown';
 import * as Style from './styles';
 
 export type UserDropdownProps = {
-    userName: string;
+    username: string;
 };
 
-const UserDropdown = ({ userName }: UserDropdownProps) => (
+const UserDropdown = ({ username }: UserDropdownProps) => (
     <Dropdown
         title={
             <>
                 <AccountCircle size={24} />
-                <Style.Username>{userName}</Style.Username>
+                <Style.Username>{username}</Style.Username>
                 <ChevronDown size={24} />
             </>
         }

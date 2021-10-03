@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2';
-import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart';
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
 
@@ -9,6 +8,9 @@ import * as Style from './styles';
 import Button from '../Button';
 import MediaMatch from '../MediaMatch';
 import Link from 'next/link';
+import CartDropdown from '../CartDropdown';
+import CartIcon from '../CartIcon';
+import UserDropdown from '../UserDropdown';
 
 export type MenuProps = {
     username?: string;
@@ -38,7 +40,9 @@ const Menu = ({ username }: MenuProps) => {
                     <Link href="/" passHref>
                         <Style.MenuLink>Home</Style.MenuLink>
                     </Link>
-                    <Style.MenuLink href="#">Explore</Style.MenuLink>
+                    <Link href="/games" passHref>
+                        <Style.MenuLink>Explore</Style.MenuLink>
+                    </Link>
                 </Style.MenuNav>
             </MediaMatch>
 
@@ -47,15 +51,26 @@ const Menu = ({ username }: MenuProps) => {
                     <SearchIcon aria-label="Search" />
                 </Style.IconWrapper>
                 <Style.IconWrapper>
-                    <ShoppingCartIcon aria-label="Open Shopping Cart" />
-                </Style.IconWrapper>
-                {!username && (
                     <MediaMatch greaterThan="medium">
+                        <CartDropdown />
+                    </MediaMatch>
+                    <MediaMatch lessThan="medium">
+                        <Link href="/cart" passHref>
+                            <a>
+                                <CartIcon />
+                            </a>
+                        </Link>
+                    </MediaMatch>
+                </Style.IconWrapper>
+                <MediaMatch greaterThan="medium">
+                    {!username ? (
                         <Link href="/sign-in" passHref>
                             <Button as="a">Sign in</Button>
                         </Link>
-                    </MediaMatch>
-                )}
+                    ) : (
+                        <UserDropdown username={username} />
+                    )}
+                </MediaMatch>
             </Style.MenuGroup>
 
             <Style.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
@@ -64,12 +79,17 @@ const Menu = ({ username }: MenuProps) => {
                     <Link href="/" passHref>
                         <Style.MenuLink>Home</Style.MenuLink>
                     </Link>
-                    <Style.MenuLink href="#">Explore</Style.MenuLink>
-
+                    <Link href="/games" passHref>
+                        <Style.MenuLink>Explore</Style.MenuLink>
+                    </Link>
                     {!!username && (
                         <>
-                            <Style.MenuLink href="#">My account</Style.MenuLink>
-                            <Style.MenuLink href="#">Wishlist</Style.MenuLink>
+                            <Link href="/profile/me" passHref>
+                                <Style.MenuLink>My profile</Style.MenuLink>
+                            </Link>
+                            <Link href="/profile/wishlist" passHref>
+                                <Style.MenuLink>Wishlist</Style.MenuLink>
+                            </Link>
                         </>
                     )}
                 </Style.MenuNav>

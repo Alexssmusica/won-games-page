@@ -6,13 +6,13 @@ import UserDropdown from '.';
 
 describe('<UserDropdown />', () => {
     it('should render the username', () => {
-        renderWithTheme(<UserDropdown userName="Alex Santos" />);
+        renderWithTheme(<UserDropdown username="Alex Santos" />);
 
         expect(screen.getByText(/alex santos/i)).toBeInTheDocument();
     });
 
     it('should render the menu', () => {
-        renderWithTheme(<UserDropdown userName="alex santos" />);
+        renderWithTheme(<UserDropdown username="alex santos" />);
 
         // open menu
         userEvent.click(screen.getByText(/alex santos/i));
