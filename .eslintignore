@@ -2,4 +2,3 @@
 node_modules
 dist
 public/*.js
-src/components/__snapshots__/test.tsx.snap

@@ -6,39 +6,44 @@ import GameCardSlider from '.';
 
 const items = [
     {
+        slug: 'Pac-Man',
         title: 'Pac-Man',
         developer: 'Rockstar Games',
         img: 'https://source.unsplash.com/user/willianjusten/300x140',
-        price: 'R$ 235,00',
-        promotionalPrice: 'R$ 215,00'
+        price: 235,
+        promotionalPrice: 215
     },
     {
+        slug: 'Mike Tysons Punch-Out!!',
         title: 'Mike Tysons Punch-Out!!',
         developer: 'Rockstar Games',
         img: 'https://source.unsplash.com/user/willianjusten/300x141',
-        price: 'R$ 235,00',
-        promotionalPrice: 'R$ 215,00'
+        price: 235,
+        promotionalPrice: 215
     },
     {
+        slug: 'R-Type',
         title: 'R-Type',
         developer: 'Rockstar Games',
         img: 'https://source.unsplash.com/user/willianjusten/300x142',
-        price: 'R$ 235,00',
-        promotionalPrice: 'R$ 215,00'
+        price: 235,
+        promotionalPrice: 215
     },
     {
+        slug: 'Wolfenstein 3D',
         title: 'Wolfenstein 3D',
         developer: 'Rockstar Games',
         img: 'https://source.unsplash.com/user/willianjusten/300x143',
-        price: 'R$ 235,00',
-        promotionalPrice: 'R$ 215,00'
+        price: 235,
+        promotionalPrice: 215
     },
     {
+        slug: 'Population Zero',
         title: 'Population Zero',
         developer: 'Rockstar Games',
         img: 'https://source.unsplash.com/user/willianjusten/300x144',
-        price: 'R$ 235,00',
-        promotionalPrice: 'R$ 215,00'
+        price: 235,
+        promotionalPrice: 215
     }
 ];
 
