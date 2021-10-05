@@ -43,6 +43,7 @@ export async function getStaticProps() {
                 img: `http://localhost:1337${game.cover?.url}`,
                 price: game.price
             })),
+            newGamesTitle: sections?.newGames?.title,
             mostPopularHighlight: highlightMock,
             mostPopularGames: sections!.popularGames!.games.map((game) => ({
                 slug: game.slug,
@@ -51,6 +52,7 @@ export async function getStaticProps() {
                 img: `http://localhost:1337${game.cover?.url}`,
                 price: game.price
             })),
+            mostPopularGamesTitle: sections?.popularGames?.title,
             upcomingGames: upcomingGames.map((game) => ({
                 slug: game.slug,
                 title: game.name,
@@ -58,6 +60,7 @@ export async function getStaticProps() {
                 img: `http://localhost:1337${game.cover?.url}`,
                 price: game.price
             })),
+            upcomingGamesTitle: sections?.upcomingGames?.title,
             upcomingHighlight: highlightMock,
             freeGames: freeGames.map((game) => ({
                 slug: game.slug,
@@ -66,21 +69,8 @@ export async function getStaticProps() {
                 img: `http://localhost:1337${game.cover?.url}`,
                 price: game.price
             })),
+            freeGamesTitle: sections?.freeGames?.title,
             freeHighlight: highlightMock
         }
     };
 }
-
-// {
-//     slug: 'Zork',
-//     title: 'Zork',
-//     developer: 'Rockstar Games',
-//     img: 'https://source.unsplash.com/user/willianjusten/300x140',
-//     price: 235,
-//     promotionalPrice: 215
-// }
-// title: 'Read Dead is back!',
-// subtitle: 'Come see John’s new adventures',
-// backgroundImage: '/img/red-dead-img.jpg',
-// buttonLabel: 'Buy now',
-// buttonLink: '/rdr2'

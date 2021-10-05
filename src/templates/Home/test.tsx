@@ -11,10 +11,14 @@ import Home from '.';
 const props = {
     banners: bannerMock,
     newGames: gamesMock,
+    newGamesTitle: 'New Games',
     mostPopularHighlight: highlightMock,
+    mostPopularGamesTitle: 'Most Popular Games',
     mostPopularGames: gamesMock,
     upcomingGames: gamesMock,
+    upcomingGamesTitle: 'Upcoming Games',
     upcomingHighlight: highlightMock,
+    freeGamesTitle: 'Free Games',
     freeGames: gamesMock,
     freeHighlight: highlightMock
 };
