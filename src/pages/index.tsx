@@ -35,14 +35,41 @@ export async function getStaticProps() {
                     ribbonSize: banner.ribbon.size
                 })
             })),
-            newGames: gamesMock,
+            newGames: data.newGames.map((game) => ({
+                slug: game.slug,
+                title: game.name,
+                developer: game.developers[0].name,
+                img: `http://localhost:1337${game.cover?.url}`,
+                price: game.price
+            })),
             mostPopularHighlight: highlightMock,
             mostPopularGames: gamesMock,
-            upcomingGames: gamesMock,
+            upcomingGames: data.upcomingGames.map((game) => ({
+                slug: game.slug,
+                title: game.name,
+                developer: game.developers[0].name,
+                img: `http://localhost:1337${game.cover?.url}`,
+                price: game.price
+            })),
             upcomingHighlight: highlightMock,
             upcomingMoreGames: gamesMock,
-            freeGames: gamesMock,
+            freeGames: data.freeGames.map((game) => ({
+                slug: game.slug,
+                title: game.name,
+                developer: game.developers[0].name,
+                img: `http://localhost:1337${game.cover?.url}`,
+                price: game.price
+            })),
             freeHighlight: highlightMock
         }
     };
 }
+
+// {
+//     slug: 'Zork',
+//     title: 'Zork',
+//     developer: 'Rockstar Games',
+//     img: 'https://source.unsplash.com/user/willianjusten/300x140',
+//     price: 235,
+//     promotionalPrice: 215
+// }
