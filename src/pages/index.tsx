@@ -1,4 +1,3 @@
-import gamesMock from 'components/GameCardSlider/mock';
 import highlightMock from 'components/Highlight/mock';
 import { QueryHome } from '../graphql/generated/QueryHome';
 import { QUERY_HOME } from '../graphql/home';
@@ -18,12 +17,14 @@ export default function Index(props: HomeTemplateProps) {
 export async function getStaticProps() {
     const apolloClient = initializeApollo();
 
-    const { data } = await apolloClient.query<QueryHome>({ query: QUERY_HOME });
+    const {
+        data: { banners, newGames, upcomingGames, freeGames, sections }
+    } = await apolloClient.query<QueryHome>({ query: QUERY_HOME });
 
     return {
         props: {
             revalidate: 60,
-            banners: data.banners.map((banner) => ({
+            banners: banners.map((banner) => ({
                 img: `http://localhost:1337${banner.image?.url}`,
                 title: banner.title,
                 subtitle: banner.subtitle,
@@ -35,7 +36,7 @@ export async function getStaticProps() {
                     ribbonSize: banner.ribbon.size
                 })
             })),
-            newGames: data.newGames.map((game) => ({
+            newGames: newGames.map((game) => ({
                 slug: game.slug,
                 title: game.name,
                 developer: game.developers[0].name,
@@ -43,8 +44,14 @@ export async function getStaticProps() {
                 price: game.price
             })),
             mostPopularHighlight: highlightMock,
-            mostPopularGames: gamesMock,
-            upcomingGames: data.upcomingGames.map((game) => ({
+            mostPopularGames: sections!.popularGames!.games.map((game) => ({
+                slug: game.slug,
+                title: game.name,
+                developer: game.developers[0].name,
+                img: `http://localhost:1337${game.cover?.url}`,
+                price: game.price
+            })),
+            upcomingGames: upcomingGames.map((game) => ({
                 slug: game.slug,
                 title: game.name,
                 developer: game.developers[0].name,
@@ -52,8 +59,7 @@ export async function getStaticProps() {
                 price: game.price
             })),
             upcomingHighlight: highlightMock,
-            upcomingMoreGames: gamesMock,
-            freeGames: data.freeGames.map((game) => ({
+            freeGames: freeGames.map((game) => ({
                 slug: game.slug,
                 title: game.name,
                 developer: game.developers[0].name,
@@ -73,3 +79,8 @@ export async function getStaticProps() {
 //     price: 235,
 //     promotionalPrice: 215
 // }
+// title: 'Read Dead is back!',
+// subtitle: 'Come see John’s new adventures',
+// backgroundImage: '/img/red-dead-img.jpg',
+// buttonLabel: 'Buy now',
+// buttonLink: '/rdr2'
