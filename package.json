@@ -39,7 +39,7 @@
         "@styled-icons/material-outlined": "^10.34.0",
         "@styled-icons/remix-fill": "^10.18.0",
         "date-fns": "^2.25.0",
-        "graphql": "^15.6.0",
+        "graphql": "^15.6.1",
         "next": "11.1.2",
         "next-pwa": "^5.3.1",
         "polished": "^4.1.3",
