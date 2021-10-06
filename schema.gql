@@ -1362,7 +1362,7 @@ input editComponentPageButtonInput {
 }
 
 enum ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT {
-  rigth
+  right
   left
 }
 
