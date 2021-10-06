@@ -9,7 +9,7 @@
 
 export enum ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT {
   left = "left",
-  rigth = "rigth",
+  right = "right",
 }
 
 export enum ENUM_COMPONENTPAGERIBBON_COLOR {
