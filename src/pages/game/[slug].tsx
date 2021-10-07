@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router';
 
-import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from '../../graphql/games';
-import { QueryGameBySlug, QueryGameBySlugVariables } from '../../graphql/generated/QueryGameBySlug';
-import { QueryGames, QueryGamesVariables } from '../../graphql/generated/QueryGames';
+import { GET_GAMES, GET_GAME_BY_SLUG } from '../../graphql/games';
+import { GetGameBySlug, GetGameBySlugVariables } from '../../graphql/generated/GetGameBySlug';
+import { GetGames, GetGamesVariables } from '../../graphql/generated/GetGames';
 import { initializeApollo } from '../../utils/apollo';
 
 import Game, { GameTemplateProps } from 'templates/Game';
 import { GetStaticProps } from 'next';
-import { QueryRecommended } from '../../graphql/generated/QueryRecommended';
-import { QUERY_RECOMMENDED } from '../../graphql/recommended';
+import { GetRecommended } from '../../graphql/generated/GetRecommended';
+import { GET_RECOMMENDED } from '../../graphql/recommended';
 import { gamesMapper, highlightMapper } from '../../utils/mappers';
-import { QueryUpcoming, QueryUpcomingVariables } from '../../graphql/generated/QueryUpcoming';
-import { QUERY_UPCOMING } from '../../graphql/upcoming';
+import { GetUpcoming, GetUpcomingVariables } from '../../graphql/generated/GetUpcoming';
+import { GET_UPCOMING } from '../../graphql/upcoming';
 import { toDay } from '../../utils/formatDate';
 
 const apolloClient = initializeApollo();
@@ -25,8 +25,8 @@ export default function Index(props: GameTemplateProps) {
 }
 
 export async function getStaticPaths() {
-    const { data } = await apolloClient.query<QueryGames, QueryGamesVariables>({
-        query: QUERY_GAMES,
+    const { data } = await apolloClient.query<GetGames, GetGamesVariables>({
+        query: GET_GAMES,
         variables: { limit: 9 }
     });
 
@@ -39,8 +39,8 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Get game data
-    const { data } = await apolloClient.query<QueryGameBySlug, QueryGameBySlugVariables>({
-        query: QUERY_GAME_BY_SLUG,
+    const { data } = await apolloClient.query<GetGameBySlug, GetGameBySlugVariables>({
+        query: GET_GAME_BY_SLUG,
         variables: { slug: `${params?.slug}` }
     });
 
@@ -51,11 +51,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const game = data.games[0];
 
     // get recommended games
-    const { data: recommendedGamesSection } = await apolloClient.query<QueryRecommended>({ query: QUERY_RECOMMENDED });
+    const { data: recommendedGamesSection } = await apolloClient.query<GetRecommended>({ query: GET_RECOMMENDED });
 
     // get upcoming games
-    const { data: upcomingGamesSection } = await apolloClient.query<QueryUpcoming, QueryUpcomingVariables>({
-        query: QUERY_UPCOMING,
+    const { data: upcomingGamesSection } = await apolloClient.query<GetUpcoming, GetUpcomingVariables>({
+        query: GET_UPCOMING,
         variables: { date: toDay() }
     });
 

@@ -3,8 +3,8 @@ import { BannerFragment } from './fragments/banner';
 import { GameFragment } from './fragments/game';
 import { HighlightFragment } from './fragments/highlight';
 
-export const QUERY_HOME = gql`
-    query QueryHome($date: Date!) {
+export const GET_HOME = gql`
+    query GetHome($date: Date!) {
         banners {
             ...BannerFragment
         }
