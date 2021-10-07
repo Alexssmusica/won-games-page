@@ -1,22 +1,29 @@
 import Cart, { CartProps } from '../templates/Cart';
 
 import itemsMock from 'components/CartList/mock';
-import gamesMock from 'components/GameCardSlider/mock';
-import highlightMock from 'components/Highlight/mock';
 import cardsMock from 'components/PaymentOptions/mock';
+import { GetRecommended } from '../graphql/generated/GetRecommended';
+import { GET_RECOMMENDED } from '../graphql/recommended';
+import { initializeApollo } from '../utils/apollo';
+import { gamesMapper, highlightMapper } from '../utils/mappers';
 
 export default function CartPage(props: CartProps) {
     return <Cart {...props} />;
 }
 
 export async function getServerSideProps() {
+    const apolloClient = initializeApollo();
+
+    const { data } = await apolloClient.query<GetRecommended>({ query: GET_RECOMMENDED });
+
     return {
         props: {
             items: itemsMock,
             total: 'R$ 430,00',
             cards: cardsMock,
-            recommendedGames: gamesMock,
-            recommendedHighlight: highlightMock
+            recommendedTitle: data.recommended?.section?.title,
+            recommendedGames: gamesMapper(data.recommended?.section?.games),
+            recommendedHighlight: highlightMapper(data.recommended?.section?.highlight)
         }
     };
 }

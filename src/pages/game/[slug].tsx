@@ -1,14 +1,18 @@
 import { useRouter } from 'next/router';
 
-import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from '../../graphql/games';
-import { QueryGameBySlug, QueryGameBySlugVariables } from '../../graphql/generated/QueryGameBySlug';
-import { QueryGames, QueryGamesVariables } from '../../graphql/generated/QueryGames';
+import { GET_GAMES, GET_GAME_BY_SLUG } from '../../graphql/games';
+import { GetGameBySlug, GetGameBySlugVariables } from '../../graphql/generated/GetGameBySlug';
+import { GetGames, GetGamesVariables } from '../../graphql/generated/GetGames';
 import { initializeApollo } from '../../utils/apollo';
 
 import Game, { GameTemplateProps } from 'templates/Game';
-import gamesMock from 'components/GameCardSlider/mock';
-import highlightMock from 'components/Highlight/mock';
 import { GetStaticProps } from 'next';
+import { GetRecommended } from '../../graphql/generated/GetRecommended';
+import { GET_RECOMMENDED } from '../../graphql/recommended';
+import { gamesMapper, highlightMapper } from '../../utils/mappers';
+import { GetUpcoming, GetUpcomingVariables } from '../../graphql/generated/GetUpcoming';
+import { GET_UPCOMING } from '../../graphql/upcoming';
+import { toDay } from '../../utils/formatDate';
 
 const apolloClient = initializeApollo();
 
@@ -21,8 +25,8 @@ export default function Index(props: GameTemplateProps) {
 }
 
 export async function getStaticPaths() {
-    const { data } = await apolloClient.query<QueryGames, QueryGamesVariables>({
-        query: QUERY_GAMES,
+    const { data } = await apolloClient.query<GetGames, GetGamesVariables>({
+        query: GET_GAMES,
         variables: { limit: 9 }
     });
 
@@ -34,8 +38,9 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { data } = await apolloClient.query<QueryGameBySlug, QueryGameBySlugVariables>({
-        query: QUERY_GAME_BY_SLUG,
+    // Get game data
+    const { data } = await apolloClient.query<GetGameBySlug, GetGameBySlugVariables>({
+        query: GET_GAME_BY_SLUG,
         variables: { slug: `${params?.slug}` }
     });
 
@@ -44,6 +49,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
 
     const game = data.games[0];
+
+    // get recommended games
+    const { data: recommendedGamesSection } = await apolloClient.query<GetRecommended>({ query: GET_RECOMMENDED });
+
+    // get upcoming games
+    const { data: upcomingGamesSection } = await apolloClient.query<GetUpcoming, GetUpcomingVariables>({
+        query: GET_UPCOMING,
+        variables: { date: toDay() }
+    });
 
     return {
         props: {
@@ -68,9 +82,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
                 rating: game.rating,
                 genres: game.categories.map((category) => category.name)
             },
-            upcomingGames: gamesMock,
-            upcomingHighlight: highlightMock,
-            recommendedGames: gamesMock
+            upcomingTitle: upcomingGamesSection.showcase?.upcomingGames?.title,
+            upcomingGames: gamesMapper(upcomingGamesSection.upcomingGames),
+            upcomingHighlight: highlightMapper(upcomingGamesSection.showcase?.upcomingGames?.highlight),
+            recommendedTitle: recommendedGamesSection.recommended?.section?.title,
+            recommendedGames: gamesMapper(recommendedGamesSection.recommended?.section?.games)
         }
     };
 };

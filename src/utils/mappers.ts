@@ -1,7 +1,7 @@
-import { QueryGames_games } from 'graphql/generated/QueryGames';
-import { QueryHome_banners, QueryHome_sections_freeGames_highlight } from 'graphql/generated/QueryHome';
+import { GetGames_games } from 'graphql/generated/GetGames';
+import { GetHome_banners, GetHome_sections_freeGames_highlight } from 'graphql/generated/GetHome';
 
-export const bannerMapper = (banners: QueryHome_banners[]) => {
+export const bannerMapper = (banners: GetHome_banners[]) => {
     return banners.map((banner) => ({
         img: `http://localhost:1337${banner.image?.url}`,
         title: banner.title,
@@ -16,7 +16,7 @@ export const bannerMapper = (banners: QueryHome_banners[]) => {
     }));
 };
 
-export const gamesMapper = (games: QueryGames_games[] | null | undefined) => {
+export const gamesMapper = (games: GetGames_games[] | null | undefined) => {
     return (
         games &&
         games.map((game) => ({
@@ -29,7 +29,7 @@ export const gamesMapper = (games: QueryGames_games[] | null | undefined) => {
     );
 };
 
-export const highlightMapper = (highlight: QueryHome_sections_freeGames_highlight | null | undefined) => {
+export const highlightMapper = (highlight: GetHome_sections_freeGames_highlight | null | undefined) => {
     return (
         highlight && {
             title: highlight.title,
