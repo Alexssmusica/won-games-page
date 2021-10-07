@@ -82,6 +82,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
                 rating: game.rating,
                 genres: game.categories.map((category) => category.name)
             },
+            upcomingTitle: upcomingGamesSection.showcase?.upcomingGames?.title,
             upcomingGames: gamesMapper(upcomingGamesSection.upcomingGames),
             upcomingHighlight: highlightMapper(upcomingGamesSection.showcase?.upcomingGames?.highlight),
             recommendedTitle: recommendedGamesSection.recommended?.section?.title,
