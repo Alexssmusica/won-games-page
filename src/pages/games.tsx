@@ -1,8 +1,8 @@
 import GamesTemplate, { GamesTemplateProps } from 'templates/Games';
 import filterItemsMock from 'components/ExploreSidebar/mock';
 import { initializeApollo } from '../utils/apollo';
-import { GET_GAMES } from '../graphql/games';
 import { GetGames, GetGamesVariables } from 'graphql/generated/GetGames';
+import { GET_GAMES } from '../graphql/queries/games';
 
 export default function GamesPage(props: GamesTemplateProps) {
     return <GamesTemplate {...props} />;

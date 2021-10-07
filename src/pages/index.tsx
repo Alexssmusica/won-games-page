@@ -1,5 +1,5 @@
 import { GetHome, GetHomeVariables } from '../graphql/generated/GetHome';
-import { GET_HOME } from '../graphql/home';
+import { GET_HOME } from '../graphql/queries/home';
 import Home, { HomeTemplateProps } from '../templates/Home';
 import { initializeApollo } from '../utils/apollo';
 import { toDay } from '../utils/formatDate';
