@@ -3,10 +3,10 @@ import { KeyboardArrowDown as ArrowDown } from '@styled-icons/material-outlined/
 
 import ExploreSidebar, { ItemProps } from 'components/ExploreSidebar';
 import GameCard, { GameCardProps } from 'components/GameCard';
-import { useQueryGames } from '../../graphql/queries/games';
 import { Grid } from 'components/Grid';
 
 import * as Style from './styles';
+import { useQueryGames } from '../../hooks/useQueryGames';
 
 export type GamesTemplateProps = {
     games?: GameCardProps[];

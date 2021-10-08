@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { ApolloClient, HttpLink, NormalizedCacheObject } from '@apollo/client';
 import apolloCache from './apolloCache';
 
@@ -28,9 +27,4 @@ export function initializeApollo(initialState = null) {
     apolloClient = apolloClient ?? apolloClientGlobal;
 
     return apolloClient;
-}
-
-export function useApollo(initialState = null) {
-    const store = useMemo(() => initializeApollo(initialState), [initialState]);
-    return store;
 }

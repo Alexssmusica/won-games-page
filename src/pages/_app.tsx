@@ -3,9 +3,9 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import Head from 'next/head';
 
-import { useApollo } from '../utils/apollo';
 import GlobalStyles from 'styles/global';
 import theme from '../styles/theme';
+import { useApollo } from '../hooks/useApollo';
 
 function App({ Component, pageProps }: AppProps) {
     const client = useApollo(pageProps.initialApolloState);

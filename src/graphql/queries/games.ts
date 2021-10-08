@@ -1,5 +1,4 @@
-import { gql, QueryHookOptions, useQuery } from '@apollo/client';
-import { GetGames, GetGamesVariables } from '../generated/GetGames';
+import { gql } from '@apollo/client';
 
 export const GET_GAMES = gql`
     query GetGames($limit: Int!, $start: Int) {
@@ -48,7 +47,3 @@ export const GET_GAME_BY_SLUG = gql`
         }
     }
 `;
-
-export function useQueryGames(options?: QueryHookOptions<GetGames, GetGamesVariables>) {
-    return useQuery<GetGames, GetGamesVariables>(GET_GAMES, options);
-}
