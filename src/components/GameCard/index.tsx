@@ -40,6 +40,11 @@ const GameCard = ({
                 {ribbon}
             </Ribbon>
         )}
+        {price === 0 && (
+            <Ribbon color="secondary" size={ribbonSize}>
+                Free of Charge
+            </Ribbon>
+        )}
         <Link href={`game/${slug}`} passHref>
             <Style.ImageBox>
                 <img src={img} alt={title} />
