@@ -20,6 +20,8 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
     const { push, query } = useRouter();
 
     const { data, loading, fetchMore } = useQueryGames({
+        notifyOnNetworkStatusChange: true,
+
         variables: {
             limit: 12,
             where: parseQueryStringToWhere({ queryString: query, filterItems }),
@@ -48,40 +50,42 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
                     items={filterItems}
                     onFilter={handleFilter}
                 />
-                {loading ? (
-                    <p>Loading...</p>
-                ) : (
-                    <section>
-                        {data?.games.length ? (
-                            <>
-                                <Grid>
-                                    {data?.games.map((game) => (
-                                        <GameCard
-                                            key={game.slug}
-                                            title={game.name}
-                                            slug={game.slug}
-                                            developer={game.developers[0].name}
-                                            img={`http://localhost:1337${game.cover!.url}`}
-                                            price={game.price}
-                                        />
-                                    ))}
-                                </Grid>
 
-                                <Style.ShowMore role="button" onClick={handleShowMore}>
-                                    <p>Show More</p>
-                                    <ArrowDown size={35} />
-                                </Style.ShowMore>
-                            </>
-                        ) : (
-                            <Empty
-                                img="/img/empty.svg"
-                                title=":("
-                                description="We didn't find any games with this filter"
-                                hasLink
-                            />
-                        )}
-                    </section>
-                )}
+                <section>
+                    {data?.games.length ? (
+                        <>
+                            <Grid>
+                                {data?.games.map((game) => (
+                                    <GameCard
+                                        key={game.slug}
+                                        title={game.name}
+                                        slug={game.slug}
+                                        developer={game.developers[0].name}
+                                        img={`http://localhost:1337${game.cover!.url}`}
+                                        price={game.price}
+                                    />
+                                ))}
+                            </Grid>
+                            <Style.ShowMore>
+                                {loading ? (
+                                    <Style.ShowMoreLoading src="/img/dots.svg" alt="Loading more games..." />
+                                ) : (
+                                    <Style.ShowMoreButton role="button" onClick={handleShowMore}>
+                                        <p>Show More</p>
+                                        <ArrowDown size={35} />
+                                    </Style.ShowMoreButton>
+                                )}
+                            </Style.ShowMore>
+                        </>
+                    ) : (
+                        <Empty
+                            img="/img/empty.svg"
+                            title=":("
+                            description="We didn't find any games with this filter"
+                            hasLink
+                        />
+                    )}
+                </section>
             </Style.Main>
         </Base>
     );
