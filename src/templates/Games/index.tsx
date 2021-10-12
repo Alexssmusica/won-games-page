@@ -29,6 +29,10 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
         }
     });
 
+    if (!data) return <p>Loading...</p>;
+
+    const hasMoreGames = data?.games.length < (data?.gamesConnection?.values?.length || 0);
+
     const handleFilter = (items: ParsedUrlQueryInput) => {
         push({
             pathname: '/games',
@@ -66,16 +70,18 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
                                     />
                                 ))}
                             </Grid>
-                            <Style.ShowMore>
-                                {loading ? (
-                                    <Style.ShowMoreLoading src="/img/dots.svg" alt="Loading more games..." />
-                                ) : (
-                                    <Style.ShowMoreButton role="button" onClick={handleShowMore}>
-                                        <p>Show More</p>
-                                        <ArrowDown size={35} />
-                                    </Style.ShowMoreButton>
-                                )}
-                            </Style.ShowMore>
+                            {hasMoreGames && (
+                                <Style.ShowMore>
+                                    {loading ? (
+                                        <Style.ShowMoreLoading src="/img/dots.svg" alt="Loading more games..." />
+                                    ) : (
+                                        <Style.ShowMoreButton role="button" onClick={handleShowMore}>
+                                            <p>Show More</p>
+                                            <ArrowDown size={35} />
+                                        </Style.ShowMoreButton>
+                                    )}
+                                </Style.ShowMore>
+                            )}
                         </>
                     ) : (
                         <Empty

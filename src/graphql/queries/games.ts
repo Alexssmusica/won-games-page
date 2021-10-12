@@ -1,19 +1,20 @@
 import { gql } from '@apollo/client';
+import { GameFragment } from '../fragments/game';
 
 export const GET_GAMES = gql`
     query GetGames($limit: Int!, $start: Int, $where: JSON, $sort: String) {
         games(limit: $limit, start: $start, where: $where, sort: $sort) {
-            name
-            slug
-            cover {
-                url
+            ...GameFragment
+        }
+
+        gamesConnection(where: $where) {
+            values {
+                id
             }
-            developers {
-                name
-            }
-            price
         }
     }
+
+    ${GameFragment}
 `;
 
 export const GET_GAME_BY_SLUG = gql`
