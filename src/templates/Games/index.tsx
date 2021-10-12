@@ -1,22 +1,37 @@
-import Base from 'templates/Base';
+import { useRouter } from 'next/router';
+import { ParsedUrlQueryInput } from 'querystring';
 import { KeyboardArrowDown as ArrowDown } from '@styled-icons/material-outlined/KeyboardArrowDown';
 
+import { parseQueryStringToFilter, parseQueryStringToWhere } from '../../utils/filter';
 import ExploreSidebar, { ItemProps } from 'components/ExploreSidebar';
-import GameCard, { GameCardProps } from 'components/GameCard';
+import { useQueryGames } from '../../hooks/useQueryGames';
 import { Grid } from 'components/Grid';
+import GameCard from 'components/GameCard';
+import Base from 'templates/Base';
 
 import * as Style from './styles';
-import { useQueryGames } from '../../hooks/useQueryGames';
 
 export type GamesTemplateProps = {
-    games?: GameCardProps[];
     filterItems: ItemProps[];
 };
 
 const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
-    const { data, loading, fetchMore } = useQueryGames({ variables: { limit: 12 } });
+    const { push, query } = useRouter();
 
-    const handleFilter = () => {
+    const { data, loading, fetchMore } = useQueryGames({
+        variables: {
+            limit: 12,
+            where: parseQueryStringToWhere({ queryString: query, filterItems }),
+            sort: query.sort as string | null
+        }
+    });
+
+    const handleFilter = (items: ParsedUrlQueryInput) => {
+        push({
+            pathname: '/games',
+            query: items
+        });
+
         return;
     };
 
@@ -27,7 +42,11 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
     return (
         <Base>
             <Style.Main>
-                <ExploreSidebar items={filterItems} onFilter={handleFilter} />
+                <ExploreSidebar
+                    initialValues={parseQueryStringToFilter({ queryString: query, filterItems })}
+                    items={filterItems}
+                    onFilter={handleFilter}
+                />
                 {loading ? (
                     <p>Loading...</p>
                 ) : (
