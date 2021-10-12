@@ -10,6 +10,7 @@ import GameCard from 'components/GameCard';
 import Base from 'templates/Base';
 
 import * as Style from './styles';
+import Empty from '../../components/Empty';
 
 export type GamesTemplateProps = {
     filterItems: ItemProps[];
@@ -51,23 +52,34 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
                     <p>Loading...</p>
                 ) : (
                     <section>
-                        <Grid>
-                            {data?.games.map((game) => (
-                                <GameCard
-                                    key={game.slug}
-                                    slug={game.slug}
-                                    title={game.name}
-                                    developer={game.developers[0].name}
-                                    img={`http://localhost:1337${game.cover!.url}`}
-                                    price={game.price}
-                                />
-                            ))}
-                        </Grid>
+                        {data?.games.length ? (
+                            <>
+                                <Grid>
+                                    {data?.games.map((game) => (
+                                        <GameCard
+                                            key={game.slug}
+                                            title={game.name}
+                                            slug={game.slug}
+                                            developer={game.developers[0].name}
+                                            img={`http://localhost:1337${game.cover!.url}`}
+                                            price={game.price}
+                                        />
+                                    ))}
+                                </Grid>
 
-                        <Style.ShowMore role="button" onClick={handleShowMore}>
-                            <p>Show More</p>
-                            <ArrowDown size={35} />
-                        </Style.ShowMore>
+                                <Style.ShowMore role="button" onClick={handleShowMore}>
+                                    <p>Show More</p>
+                                    <ArrowDown size={35} />
+                                </Style.ShowMore>
+                            </>
+                        ) : (
+                            <Empty
+                                img="/img/empty.svg"
+                                title=":("
+                                description="We didn't find any games with this filter"
+                                hasLink
+                            />
+                        )}
                     </section>
                 )}
             </Style.Main>
