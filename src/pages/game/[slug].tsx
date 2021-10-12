@@ -41,7 +41,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Get game data
     const { data } = await apolloClient.query<GetGameBySlug, GetGameBySlugVariables>({
         query: GET_GAME_BY_SLUG,
-        variables: { slug: `${params?.slug}` }
+        variables: { slug: `${params?.slug}` },
+        fetchPolicy: 'no-cache'
     });
 
     if (!data.games.length) {
