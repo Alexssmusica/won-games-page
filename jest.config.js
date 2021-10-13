@@ -10,7 +10,8 @@ module.exports = {
         '!src/utils/apollo.ts',
         '!src/utils/apolloCache.ts',
         '!src/utils/formatDate.ts',
-        '!src/hooks/**/*.ts',
+        '!src/hooks/use-query-games/*.ts',
+        '!src/hooks/use-apollo/*.ts',
         '!src/types/**/*.d.ts',
         '!src/graphql/**/*.ts',
         '!src/**/mock.ts'

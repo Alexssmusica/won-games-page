@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import GlobalStyles from 'styles/global';
 import theme from '../styles/theme';
-import { useApollo } from '../hooks/useApollo';
+import { useApollo } from '../hooks/use-apollo';
 
 function App({ Component, pageProps }: AppProps) {
     const client = useApollo(pageProps.initialApolloState);

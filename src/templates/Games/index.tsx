@@ -4,7 +4,7 @@ import { KeyboardArrowDown as ArrowDown } from '@styled-icons/material-outlined/
 
 import { parseQueryStringToFilter, parseQueryStringToWhere } from '../../utils/filter';
 import ExploreSidebar, { ItemProps } from 'components/ExploreSidebar';
-import { useQueryGames } from '../../hooks/useQueryGames';
+import { useQueryGames } from '../../hooks/use-query-games';
 import { Grid } from 'components/Grid';
 import GameCard from 'components/GameCard';
 import Base from 'templates/Base';
