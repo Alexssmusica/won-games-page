@@ -1,14 +1,15 @@
 import React from 'react';
-import CartList, { CartListProps } from '../../components/CartList';
-import { Container } from '../../components/Container';
-import { Divider } from '../../components/Divider';
-import Empty from '../../components/Empty';
-import { GameCardProps } from '../../components/GameCard';
-import Heading from '../../components/Heading';
-import { HighlightProps } from '../../components/Highlight';
-import PaymentOptions, { PaymentOptionsProps } from '../../components/PaymentOptions';
-import Showcase from '../../components/Showcase';
-import Base from '../Base';
+
+import CartList, { CartListProps } from 'components/CartList';
+import PaymentOptions, { PaymentOptionsProps } from 'components/PaymentOptions';
+import { Container } from 'components/Container';
+import { Divider } from 'components/Divider';
+import { GameCardProps } from 'components/GameCard';
+import { HighlightProps } from 'components/Highlight';
+import Empty from 'components/Empty';
+import Heading from 'components/Heading';
+import Showcase from 'components/Showcase';
+import Base from 'templates/Base';
 import * as Style from './styles';
 
 export type CartProps = {

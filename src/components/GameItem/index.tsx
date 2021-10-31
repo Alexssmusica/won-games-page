@@ -1,5 +1,5 @@
 import { Download } from '@styled-icons/boxicons-solid/Download';
-import formatPrice from '../../utils/formatPrice';
+import formatPrice from 'utils/formatPrice';
 
 import * as Style from './styles';
 

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AccountCircle, FavoriteBorder, ExitToApp } from '@styled-icons/material-outlined';
 import { ChevronDown } from '@styled-icons/boxicons-regular/ChevronDown';
 
-import Dropdown from '../Dropdown';
+import Dropdown from 'components/Dropdown';
 import * as Style from './styles';
 
 export type UserDropdownProps = {

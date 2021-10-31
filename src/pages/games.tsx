@@ -1,8 +1,8 @@
 import GamesTemplate, { GamesTemplateProps } from 'templates/Games';
-import { initializeApollo } from '../utils/apollo';
+import { initializeApollo } from 'utils/apollo';
 import { GetGames, GetGamesVariables } from 'graphql/generated/GetGames';
-import { GET_GAMES } from '../graphql/queries/games';
-import { parseQueryStringToWhere } from '../utils/filter';
+import { GET_GAMES } from 'graphql/queries/games';
+import { parseQueryStringToWhere } from 'utils/filter';
 import { GetServerSidePropsContext } from 'next';
 
 export default function GamesPage(props: GamesTemplateProps) {

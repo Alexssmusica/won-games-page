@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import GameItem, { GameItemProps } from '../GameItem';
-import Button from '../Button';
+import GameItem, { GameItemProps } from 'components/GameItem';
+import Button from 'components/Button';
 
 import * as Style from './styles';
-import Empty from '../Empty';
+import Empty from 'components/Empty';
 
 export type CartListProps = {
     items?: GameItemProps[];

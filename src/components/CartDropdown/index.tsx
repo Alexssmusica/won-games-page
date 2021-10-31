@@ -1,7 +1,7 @@
-import CartIcon from '../CartIcon';
-import CartList from '../CartList';
-import Dropdown from '../Dropdown';
-import { GameItemProps } from '../GameItem';
+import CartIcon from 'components/CartIcon';
+import CartList from 'components/CartList';
+import Dropdown from 'components/Dropdown';
+import { GameItemProps } from 'components/GameItem';
 import * as Style from './styles';
 
 export type CartDropdownProps = {

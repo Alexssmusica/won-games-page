@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { ParsedUrlQueryInput } from 'querystring';
 import { Close, FilterList } from '@styled-icons/material-outlined';
+
 import xor from 'lodash.xor';
-import Button from '../Button';
-import Checkbox from '../Checkbox';
-import Heading from '../Heading';
-import Radio from '../Radio';
+import Button from 'components/Button';
+import Checkbox from 'components/Checkbox';
+import Heading from 'components/Heading';
+import Radio from 'components/Radio';
 import * as Style from './styles';
 
 export type ItemProps = {

@@ -1,18 +1,18 @@
 import { useRouter } from 'next/router';
 
 import Game, { GameTemplateProps } from 'templates/Game';
-import { GetGameBySlug, GetGameBySlugVariables } from '../../graphql/generated/GetGameBySlug';
-import { GetGames, GetGamesVariables } from '../../graphql/generated/GetGames';
-import { initializeApollo } from '../../utils/apollo';
+import { GetGameBySlug, GetGameBySlugVariables } from 'graphql/generated/GetGameBySlug';
+import { GetGames, GetGamesVariables } from 'graphql/generated/GetGames';
+import { initializeApollo } from 'utils/apollo';
 
 import { GetStaticProps } from 'next';
-import { GET_RECOMMENDED } from '../../graphql/queries/recommended';
-import { GetRecommended } from '../../graphql/generated/GetRecommended';
-import { GET_GAMES, GET_GAME_BY_SLUG } from '../../graphql/queries/games';
-import { gamesMapper, highlightMapper } from '../../utils/mappers';
-import { GetUpcoming, GetUpcomingVariables } from '../../graphql/generated/GetUpcoming';
-import { GET_UPCOMING } from '../../graphql/queries/upcoming';
-import { toDay } from '../../utils/formatDate';
+import { GET_RECOMMENDED } from 'graphql/queries/recommended';
+import { GetRecommended } from 'graphql/generated/GetRecommended';
+import { GET_GAMES, GET_GAME_BY_SLUG } from 'graphql/queries/games';
+import { gamesMapper, highlightMapper } from 'utils/mappers';
+import { GetUpcoming, GetUpcomingVariables } from 'graphql/generated/GetUpcoming';
+import { GET_UPCOMING } from 'graphql/queries/upcoming';
+import { toDay } from 'utils/formatDate';
 
 const apolloClient = initializeApollo();
 

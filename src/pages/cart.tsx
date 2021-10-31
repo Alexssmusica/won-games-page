@@ -1,11 +1,11 @@
-import Cart, { CartProps } from '../templates/Cart';
+import Cart, { CartProps } from 'templates/Cart';
 
 import itemsMock from 'components/CartList/mock';
 import cardsMock from 'components/PaymentOptions/mock';
-import { GetRecommended } from '../graphql/generated/GetRecommended';
-import { initializeApollo } from '../utils/apollo';
-import { gamesMapper, highlightMapper } from '../utils/mappers';
-import { GET_RECOMMENDED } from '../graphql/queries/recommended';
+import { GetRecommended } from 'graphql/generated/GetRecommended';
+import { initializeApollo } from 'utils/apollo';
+import { gamesMapper, highlightMapper } from 'utils/mappers';
+import { GET_RECOMMENDED } from 'graphql/queries/recommended';
 
 export default function CartPage(props: CartProps) {
     return <Cart {...props} />;

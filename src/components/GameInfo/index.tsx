@@ -1,9 +1,9 @@
 import { AddShoppingCart, FavoriteBorder } from '@styled-icons/material-outlined';
-import formatPrice from '../../utils/formatPrice';
+import formatPrice from 'utils/formatPrice';
 
-import Button from '../Button';
-import Heading from '../Heading';
-import Ribbon from '../Ribbon';
+import Button from 'components/Button';
+import Heading from 'components/Heading';
+import Ribbon from 'components/Ribbon';
 
 import * as Style from './styles';
 

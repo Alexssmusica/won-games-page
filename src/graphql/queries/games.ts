@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { GameFragment } from '../fragments/game';
+import { GameFragment } from 'graphql/fragments/game';
 
 export const GET_GAMES = gql`
     query GetGames($limit: Int!, $start: Int, $where: JSON, $sort: String) {

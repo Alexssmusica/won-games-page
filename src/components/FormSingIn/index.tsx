@@ -1,9 +1,10 @@
-import TextField from '../TextField';
-import Button from '../Button';
-import * as Style from './styles';
-import { FormWrapper, FormLink } from 'components/Form';
-import Link from 'next/link';
 import { Email, Lock } from '@styled-icons/material-outlined';
+import Link from 'next/link';
+
+import { FormWrapper, FormLink } from 'components/Form';
+import TextField from 'components/TextField';
+import Button from 'components/Button';
+import * as Style from './styles';
 
 const FormSingIn = () => (
     <FormWrapper>

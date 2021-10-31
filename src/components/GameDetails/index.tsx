@@ -1,7 +1,7 @@
 import { Apple, Windows, Linux } from '@styled-icons/fa-brands';
 
-import Heading from '../Heading';
-import MediaMatch from '../MediaMatch';
+import Heading from 'components/Heading';
+import MediaMatch from 'components/MediaMatch';
 import * as Style from './styles';
 
 type Platform = 'windows' | 'linux' | 'mac';

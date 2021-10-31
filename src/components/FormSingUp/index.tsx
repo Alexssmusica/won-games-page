@@ -1,8 +1,9 @@
-import TextField from '../TextField';
-import Button from '../Button';
 import Link from 'next/link';
 import { Email, Lock, AccountCircle } from '@styled-icons/material-outlined';
+
 import { FormWrapper, FormLink } from 'components/Form';
+import TextField from 'components/TextField';
+import Button from 'components/Button';
 
 const FormSingUp = () => (
     <FormWrapper>

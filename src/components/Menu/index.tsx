@@ -1,16 +1,16 @@
+import Link from 'next/link';
 import { useState } from 'react';
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2';
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search';
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
 
 import Logo from 'components/Logo';
+import Button from 'components/Button';
+import MediaMatch from 'components/MediaMatch';
+import CartDropdown from 'components/CartDropdown';
+import CartIcon from 'components/CartIcon';
+import UserDropdown from 'components/UserDropdown';
 import * as Style from './styles';
-import Button from '../Button';
-import MediaMatch from '../MediaMatch';
-import Link from 'next/link';
-import CartDropdown from '../CartDropdown';
-import CartIcon from '../CartIcon';
-import UserDropdown from '../UserDropdown';
 
 export type MenuProps = {
     username?: string;

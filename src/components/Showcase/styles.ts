@@ -1,9 +1,10 @@
+import media from 'styled-media-query';
 import styled, { css } from 'styled-components';
+
+import { Container } from 'components/Container';
 import * as GameCardSliderStyles from 'components/GameCardSlider/styles';
 import * as HeadingStyles from 'components/Heading/styles';
 import * as HighlightStyles from 'components/Highlight/styles';
-import media from 'styled-media-query';
-import { Container } from 'components/Container';
 
 export const Wrapper = styled(Container).attrs({ as: 'section' })`
     ${({ theme }) => css`

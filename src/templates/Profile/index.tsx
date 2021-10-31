@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 
-import { Container } from '../../components/Container';
-import Heading from '../../components/Heading';
-import ProfileMenu from '../../components/ProfileMenu';
-import Base from '../Base';
+import { Container } from 'components/Container';
+import Heading from 'components/Heading';
+import ProfileMenu from 'components/ProfileMenu';
+import Base from 'templates/Base';
 import * as Style from './styles';
 
 export type ProfileTemplateProps = {

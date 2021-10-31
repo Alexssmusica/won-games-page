@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 import { AddShoppingCart, FavoriteBorder, Favorite } from '@styled-icons/material-outlined';
 
+import formatPrice from 'utils/formatPrice';
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon';
 import Button from 'components/Button';
 import * as Style from './styles';
-import formatPrice from '../../utils/formatPrice';
 
 export type GameCardProps = {
     slug: string;

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Heading from '../../components/Heading';
-import Logo from '../../components/Logo';
+import Heading from 'components/Heading';
+import Logo from 'components/Logo';
 import * as Style from './styles';
 
 type AuthProps = {

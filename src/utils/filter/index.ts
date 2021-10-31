@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ParsedUrlQueryInput } from 'querystring';
-import { ItemProps } from '../../components/ExploreSidebar';
+import { ItemProps } from 'components/ExploreSidebar';
 
 type ParseArgs = {
     queryString: ParsedUrlQueryInput;

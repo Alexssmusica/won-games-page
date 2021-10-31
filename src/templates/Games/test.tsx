@@ -1,13 +1,13 @@
 import { screen } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 
+import { fetchMoreMock, gamesMock, noGamesMock } from './mocks';
 import { renderWithTheme } from 'utils/tests/helpers';
 import filterItemsMock from 'components/ExploreSidebar/mock';
-import { fetchMoreMock, gamesMock, noGamesMock } from './mocks';
 
-import Games from '.';
 import userEvent from '@testing-library/user-event';
 import apolloCache from 'utils/apolloCache';
+import Games from '.';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const useRouter = jest.spyOn(require('next/router'), 'useRouter');

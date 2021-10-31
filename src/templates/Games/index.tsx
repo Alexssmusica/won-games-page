@@ -2,15 +2,15 @@ import { useRouter } from 'next/router';
 import { ParsedUrlQueryInput } from 'querystring';
 import { KeyboardArrowDown as ArrowDown } from '@styled-icons/material-outlined/KeyboardArrowDown';
 
-import { parseQueryStringToFilter, parseQueryStringToWhere } from '../../utils/filter';
+import { parseQueryStringToFilter, parseQueryStringToWhere } from 'utils/filter';
 import ExploreSidebar, { ItemProps } from 'components/ExploreSidebar';
-import { useQueryGames } from '../../hooks/use-query-games';
+import { useQueryGames } from 'hooks/use-query-games';
 import { Grid } from 'components/Grid';
 import GameCard from 'components/GameCard';
 import Base from 'templates/Base';
+import Empty from 'components/Empty';
 
 import * as Style from './styles';
-import Empty from '../../components/Empty';
 
 export type GamesTemplateProps = {
     filterItems: ItemProps[];
