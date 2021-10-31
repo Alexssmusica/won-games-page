@@ -10,24 +10,6 @@
           "ssr": true,
           "displayName": true
         }
-      ],
-      [
-        "@babel/plugin-proposal-private-property-in-object",
-        {
-          "loose": true
-        }
-      ],
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ],
-      [
-        "@babel/plugin-proposal-private-methods",
-        {
-          "loose": true
-        }
       ]
     ],
     "env": {
@@ -37,25 +19,8 @@
             "babel-plugin-styled-components",
             {
               "ssr": false,
+              "loose": true,
               "displayName": false
-            }
-          ],
-          [
-            "@babel/plugin-proposal-private-property-in-object",
-            {
-              "loose": true
-            }
-          ],
-          [
-            "@babel/plugin-proposal-class-properties",
-            {
-              "loose": true
-            }
-          ],
-          [
-            "@babel/plugin-proposal-private-methods",
-            {
-              "loose": true
             }
           ]
         ]

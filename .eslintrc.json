@@ -36,7 +36,6 @@
         "react-hooks/exhaustive-deps": "warn",
         "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
-        "react/display-name": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "@next/next/no-document-import-in-page": "off",
         "@next/next/no-img-element": "off",
