@@ -7,20 +7,20 @@ import { gamesMapper, highlightMapper } from 'utils/mappers';
 import { GET_RECOMMENDED } from 'graphql/queries/recommended';
 
 export default function WishlistPage(props: WishlistTemplateProps) {
-    return <Wishlist {...props} />;
+	return <Wishlist {...props} />;
 }
 
 export async function getStaticProps() {
-    const apolloClient = initializeApollo();
+	const apolloClient = initializeApollo();
 
-    const { data } = await apolloClient.query<GetRecommended>({ query: GET_RECOMMENDED });
+	const { data } = await apolloClient.query<GetRecommended>({ query: GET_RECOMMENDED });
 
-    return {
-        props: {
-            games: gamesMock,
-            recommendedGames: gamesMapper(data.recommended?.section?.games),
-            recommendedHighlight: highlightMapper(data.recommended?.section?.highlight),
-            recommendedTitle: data.recommended?.section?.title
-        }
-    };
+	return {
+		props: {
+			games: gamesMock,
+			recommendedGames: gamesMapper(data.recommended?.section?.games),
+			recommendedHighlight: highlightMapper(data.recommended?.section?.highlight),
+			recommendedTitle: data.recommended?.section?.title
+		}
+	};
 }

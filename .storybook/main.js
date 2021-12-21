@@ -1,14 +1,14 @@
 module.exports = {
-  stories: ['../src/components/**/stories.tsx'],
-  addons: ['@storybook/addon-essentials'],
-  webpackFinal: (config) => {
-    config.resolve.modules.push(`${process.cwd()}/src`)
-    return config
-  },
-  features: {
-    postcss: false
-  },
-  core: {
-    builder: 'webpack5'
-  },
+	stories: ['../src/components/**/stories.tsx'],
+	addons: ['@storybook/addon-essentials'],
+	webpackFinal: (config) => {
+		config.resolve.modules.push(`${process.cwd()}/src`)
+		return config
+	},
+	features: {
+		postcss: false
+	},
+	core: {
+		builder: 'webpack5'
+	},
 }

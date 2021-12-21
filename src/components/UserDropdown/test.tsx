@@ -5,21 +5,21 @@ import { renderWithTheme } from 'utils/tests/helpers';
 import UserDropdown from '.';
 
 describe('<UserDropdown />', () => {
-    it('should render the username', () => {
-        renderWithTheme(<UserDropdown username="Alex Santos" />);
+	it('should render the username', () => {
+		renderWithTheme(<UserDropdown username="Alex Santos" />);
 
-        expect(screen.getByText(/alex santos/i)).toBeInTheDocument();
-    });
+		expect(screen.getByText(/alex santos/i)).toBeInTheDocument();
+	});
 
-    it('should render the menu', () => {
-        renderWithTheme(<UserDropdown username="alex santos" />);
+	it('should render the menu', () => {
+		renderWithTheme(<UserDropdown username="alex santos" />);
 
-        // open menu
-        userEvent.click(screen.getByText(/alex santos/i));
+		// open menu
+		userEvent.click(screen.getByText(/alex santos/i));
 
-        expect(screen.getByRole('link', { name: /my profile/i })).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: /my profile/i })).toBeInTheDocument();
 
-        expect(screen.getByRole('link', { name: /wishlist/i })).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /sign out/i })).toBeInTheDocument();
-    });
+		expect(screen.getByRole('link', { name: /wishlist/i })).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: /sign out/i })).toBeInTheDocument();
+	});
 });

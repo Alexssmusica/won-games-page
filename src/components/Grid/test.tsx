@@ -3,10 +3,10 @@ import { renderWithTheme } from 'utils/tests/helpers';
 import { Grid } from '.';
 
 describe('<Grid />', () => {
-    it('should render correctly', () => {
-        const { container } = renderWithTheme(<Grid>Children</Grid>);
+	it('should render correctly', () => {
+		const { container } = renderWithTheme(<Grid>Children</Grid>);
 
-        expect(container.firstChild).toMatchInlineSnapshot(`
+		expect(container.firstChild).toMatchInlineSnapshot(`
 .c0 {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
@@ -20,5 +20,5 @@ describe('<Grid />', () => {
   Children
 </div>
 `);
-    });
+	});
 });

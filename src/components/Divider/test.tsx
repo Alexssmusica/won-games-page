@@ -3,10 +3,10 @@ import { renderWithTheme } from 'utils/tests/helpers';
 import { Divider } from '.';
 
 describe('<Divider />', () => {
-    it('should render correctly', () => {
-        const { container } = renderWithTheme(<Divider />);
+	it('should render correctly', () => {
+		const { container } = renderWithTheme(<Divider />);
 
-        expect(container.firstChild).toMatchInlineSnapshot(`
+		expect(container.firstChild).toMatchInlineSnapshot(`
 .c0 {
   margin: 5.6rem auto 3.2rem;
   height: 0.1rem;
@@ -24,5 +24,5 @@ describe('<Divider />', () => {
   class="c0"
 />
 `);
-    });
+	});
 });

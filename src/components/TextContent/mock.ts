@@ -1,8 +1,8 @@
 import { TextContentProps } from '.';
 
 const TextContentMock: TextContentProps = {
-    title: 'Description',
-    content: `<h1>Heading</h1>
+	title: 'Description',
+	content: `<h1>Heading</h1>
   <h2>Heading</h2>
   <h3>Heading</h3>
   <h4>Heading</h4>

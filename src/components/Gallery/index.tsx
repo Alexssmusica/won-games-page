@@ -8,102 +8,102 @@ import Slider, { SliderSettings } from 'components/Slider';
 import * as Style from './styles';
 
 const commonSettings: SliderSettings = {
-    infinite: false,
-    lazyLoad: 'ondemand',
-    arrows: true,
-    nextArrow: <ArrowRight aria-label="next image" />,
-    prevArrow: <ArrowLeft aria-label="previous image" />
+	infinite: false,
+	lazyLoad: 'ondemand',
+	arrows: true,
+	nextArrow: <ArrowRight aria-label="next image" />,
+	prevArrow: <ArrowLeft aria-label="previous image" />
 };
 
 const settings: SliderSettings = {
-    ...commonSettings,
-    slidesToShow: 4,
-    responsive: [
-        {
-            breakpoint: 1375,
-            settings: {
-                arrows: false,
-                slidesToShow: 3.2,
-                draggable: true
-            }
-        },
-        {
-            breakpoint: 1024,
-            settings: {
-                arrows: false,
-                slidesToShow: 2.2,
-                draggable: true
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                arrows: false,
-                slidesToShow: 2.2,
-                draggable: true
-            }
-        }
-    ]
+	...commonSettings,
+	slidesToShow: 4,
+	responsive: [
+		{
+			breakpoint: 1375,
+			settings: {
+				arrows: false,
+				slidesToShow: 3.2,
+				draggable: true
+			}
+		},
+		{
+			breakpoint: 1024,
+			settings: {
+				arrows: false,
+				slidesToShow: 2.2,
+				draggable: true
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				arrows: false,
+				slidesToShow: 2.2,
+				draggable: true
+			}
+		}
+	]
 };
 
 const modalSettings: SliderSettings = {
-    ...commonSettings,
-    slidesToShow: 1
+	...commonSettings,
+	slidesToShow: 1
 };
 
 export type GalleryImageProps = {
-    src: string;
-    label: string;
+	src: string;
+	label: string;
 };
 
 export type GalleryProps = {
-    items: GalleryImageProps[];
+	items: GalleryImageProps[];
 };
 
 const Gallery = ({ items }: GalleryProps) => {
-    const slider = useRef<SlickSlider>(null);
-    const [isOpen, setIsOpen] = useState(false);
+	const slider = useRef<SlickSlider>(null);
+	const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        const handleKeyUp = ({ key }: KeyboardEvent) => {
-            key === 'Escape' && setIsOpen(false);
-        };
+	useEffect(() => {
+		const handleKeyUp = ({ key }: KeyboardEvent) => {
+			key === 'Escape' && setIsOpen(false);
+		};
 
-        window.addEventListener('keyup', handleKeyUp);
-        return () => window.removeEventListener('keyup', handleKeyUp);
-    }, []);
+		window.addEventListener('keyup', handleKeyUp);
+		return () => window.removeEventListener('keyup', handleKeyUp);
+	}, []);
 
-    return (
-        <Style.Wrapper>
-            <Slider ref={slider} settings={settings}>
-                {items.map((item, index) => (
-                    <img
-                        role="button"
-                        key={`thumb-${index}`}
-                        src={item.src}
-                        alt={`Thumb - ${item.label}`}
-                        onClick={() => {
-                            setIsOpen(true);
-                            slider.current!.slickGoTo(index, true);
-                        }}
-                    />
-                ))}
-            </Slider>
+	return (
+		<Style.Wrapper>
+			<Slider ref={slider} settings={settings}>
+				{items.map((item, index) => (
+					<img
+						role="button"
+						key={`thumb-${index}`}
+						src={item.src}
+						alt={`Thumb - ${item.label}`}
+						onClick={() => {
+							setIsOpen(true);
+							slider.current!.slickGoTo(index, true);
+						}}
+					/>
+				))}
+			</Slider>
 
-            <Style.Modal isOpen={isOpen} aria-label="modal" aria-hidden={!isOpen}>
-                <Style.Close role="button" aria-label="close modal" onClick={() => setIsOpen(false)}>
-                    <Close size={40} />
-                </Style.Close>
+			<Style.Modal isOpen={isOpen} aria-label="modal" aria-hidden={!isOpen}>
+				<Style.Close role="button" aria-label="close modal" onClick={() => setIsOpen(false)}>
+					<Close size={40} />
+				</Style.Close>
 
-                <Style.Content>
-                    <Slider ref={slider} settings={modalSettings}>
-                        {items.map((item, index) => (
-                            <img key={`gallery-${index}`} src={item.src} alt={item.label} />
-                        ))}
-                    </Slider>
-                </Style.Content>
-            </Style.Modal>
-        </Style.Wrapper>
-    );
+				<Style.Content>
+					<Slider ref={slider} settings={modalSettings}>
+						{items.map((item, index) => (
+							<img key={`gallery-${index}`} src={item.src} alt={item.label} />
+						))}
+					</Slider>
+				</Style.Content>
+			</Style.Modal>
+		</Style.Wrapper>
+	);
 };
 export default Gallery;

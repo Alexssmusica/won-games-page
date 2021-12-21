@@ -6,82 +6,82 @@ import { parseQueryStringToWhere } from 'utils/filter';
 import { GetServerSidePropsContext } from 'next';
 
 export default function GamesPage(props: GamesTemplateProps) {
-    return <GamesTemplate {...props} />;
+	return <GamesTemplate {...props} />;
 }
 
 export async function getServerSideProps({ query }: GetServerSidePropsContext) {
-    const apolloClient = initializeApollo();
+	const apolloClient = initializeApollo();
 
-    const filterPrice = {
-        title: 'Price',
-        name: 'price_lte',
-        type: 'radio',
-        fields: [
-            { label: 'Free', name: 0 },
-            { label: 'Under R$ 50,00', name: 50 },
-            { label: 'Under R$ 100,00', name: 100 },
-            { label: 'Under R$ 150,00', name: 150 },
-            { label: 'Under R$ 250,00', name: 250 },
-            { label: 'Under R$ 500,00', name: 500 }
-        ]
-    };
+	const filterPrice = {
+		title: 'Price',
+		name: 'price_lte',
+		type: 'radio',
+		fields: [
+			{ label: 'Free', name: 0 },
+			{ label: 'Under R$ 50,00', name: 50 },
+			{ label: 'Under R$ 100,00', name: 100 },
+			{ label: 'Under R$ 150,00', name: 150 },
+			{ label: 'Under R$ 250,00', name: 250 },
+			{ label: 'Under R$ 500,00', name: 500 }
+		]
+	};
 
-    const filterPlatforms = {
-        title: 'Platforms',
-        name: 'platforms',
-        type: 'checkbox',
-        fields: [
-            { label: 'Windows', name: 'windows' },
-            { label: 'Linux', name: 'linux' },
-            { label: 'Mac OS', name: 'mac' }
-        ]
-    };
+	const filterPlatforms = {
+		title: 'Platforms',
+		name: 'platforms',
+		type: 'checkbox',
+		fields: [
+			{ label: 'Windows', name: 'windows' },
+			{ label: 'Linux', name: 'linux' },
+			{ label: 'Mac OS', name: 'mac' }
+		]
+	};
 
-    const filterSort = {
-        title: 'Sort by price',
-        name: 'sort',
-        type: 'radio',
-        fields: [
-            { label: 'Lowest to highest', name: 'price:asc' },
-            { label: 'Highest to lowest', name: 'price:desc' }
-        ]
-    };
+	const filterSort = {
+		title: 'Sort by price',
+		name: 'sort',
+		type: 'radio',
+		fields: [
+			{ label: 'Lowest to highest', name: 'price:asc' },
+			{ label: 'Highest to lowest', name: 'price:desc' }
+		]
+	};
 
-    const filterCategories = {
-        title: 'Genres',
-        name: 'categories',
-        type: 'checkbox',
-        fields: [
-            { label: 'Action', name: 'action' },
-            { label: 'Adventure', name: 'adventure' },
-            { label: 'Sports', name: 'sports' },
-            { label: 'Puzzle', name: 'puzzle' },
-            { label: 'Horror', name: 'horror' },
-            { label: 'Platform', name: 'platform' },
-            { label: 'Fantasy', name: 'fantasy' },
-            { label: 'RPG', name: 'role-playing' },
-            { label: 'JRPG', name: 'jrpg' },
-            { label: 'Simulation', name: 'simulation' },
-            { label: 'Strategy', name: 'strategy' },
-            { label: 'Shooter', name: 'shooter' }
-        ]
-    };
+	const filterCategories = {
+		title: 'Genres',
+		name: 'categories',
+		type: 'checkbox',
+		fields: [
+			{ label: 'Action', name: 'action' },
+			{ label: 'Adventure', name: 'adventure' },
+			{ label: 'Sports', name: 'sports' },
+			{ label: 'Puzzle', name: 'puzzle' },
+			{ label: 'Horror', name: 'horror' },
+			{ label: 'Platform', name: 'platform' },
+			{ label: 'Fantasy', name: 'fantasy' },
+			{ label: 'RPG', name: 'role-playing' },
+			{ label: 'JRPG', name: 'jrpg' },
+			{ label: 'Simulation', name: 'simulation' },
+			{ label: 'Strategy', name: 'strategy' },
+			{ label: 'Shooter', name: 'shooter' }
+		]
+	};
 
-    const filterItems = [filterSort, filterPrice, filterPlatforms, filterCategories];
+	const filterItems = [filterSort, filterPrice, filterPlatforms, filterCategories];
 
-    await apolloClient.query<GetGames, GetGamesVariables>({
-        query: GET_GAMES,
-        variables: {
-            limit: 12,
-            where: parseQueryStringToWhere({ queryString: query, filterItems }),
-            sort: query.sort as string | null
-        }
-    });
+	await apolloClient.query<GetGames, GetGamesVariables>({
+		query: GET_GAMES,
+		variables: {
+			limit: 12,
+			where: parseQueryStringToWhere({ queryString: query, filterItems }),
+			sort: query.sort as string | null
+		}
+	});
 
-    return {
-        props: {
-            initialApolloState: apolloClient.cache.extract(),
-            filterItems
-        }
-    };
+	return {
+		props: {
+			initialApolloState: apolloClient.cache.extract(),
+			filterItems
+		}
+	};
 }

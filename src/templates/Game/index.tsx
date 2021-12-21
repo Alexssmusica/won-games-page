@@ -12,55 +12,55 @@ import Base from 'templates/Base';
 import * as Style from './styles';
 
 export type GameTemplateProps = {
-    cover: string;
-    gameInfo: GameInfoProps;
-    gallery?: GalleryImageProps[];
-    description: string;
-    details: GameDetailsProps;
-    upcomingGames: GameCardProps[];
-    upcomingHighlight: HighlightProps;
-    recommendedTitle: string;
-    upcomingTitle: string;
-    recommendedGames: GameCardProps[];
+	cover: string;
+	gameInfo: GameInfoProps;
+	gallery?: GalleryImageProps[];
+	description: string;
+	details: GameDetailsProps;
+	upcomingGames: GameCardProps[];
+	upcomingHighlight: HighlightProps;
+	recommendedTitle: string;
+	upcomingTitle: string;
+	recommendedGames: GameCardProps[];
 };
 
 const Game = ({
-    cover,
-    gameInfo,
-    gallery,
-    description,
-    details,
-    upcomingTitle,
-    upcomingGames,
-    upcomingHighlight,
-    recommendedTitle,
-    recommendedGames
+	cover,
+	gameInfo,
+	gallery,
+	description,
+	details,
+	upcomingTitle,
+	upcomingGames,
+	upcomingHighlight,
+	recommendedTitle,
+	recommendedGames
 }: GameTemplateProps) => (
-    <Base>
-        <Style.Cover src={cover} role="image" aria-label="cover" />
+	<Base>
+		<Style.Cover src={cover} role="image" aria-label="cover" />
 
-        <Style.Main>
-            <Style.SectionGameInfo>
-                <GameInfo {...gameInfo} />
-            </Style.SectionGameInfo>
+		<Style.Main>
+			<Style.SectionGameInfo>
+				<GameInfo {...gameInfo} />
+			</Style.SectionGameInfo>
 
-            <Style.SectionGallery>{!!gallery && <Gallery items={gallery} />}</Style.SectionGallery>
+			<Style.SectionGallery>{!!gallery && <Gallery items={gallery} />}</Style.SectionGallery>
 
-            <Style.SectionDescription>
-                <TextContent title="Description" content={description} />
-            </Style.SectionDescription>
+			<Style.SectionDescription>
+				<TextContent title="Description" content={description} />
+			</Style.SectionDescription>
 
-            <Style.SectionGameDetails>
-                <GameDetails {...details} />
+			<Style.SectionGameDetails>
+				<GameDetails {...details} />
 
-                <Divider />
-            </Style.SectionGameDetails>
+				<Divider />
+			</Style.SectionGameDetails>
 
-            <Showcase title={upcomingTitle} games={upcomingGames} highlight={upcomingHighlight} />
+			<Showcase title={upcomingTitle} games={upcomingGames} highlight={upcomingHighlight} />
 
-            <Showcase title={recommendedTitle} games={recommendedGames} />
-        </Style.Main>
-    </Base>
+			<Showcase title={recommendedTitle} games={recommendedGames} />
+		</Style.Main>
+	</Base>
 );
 
 export default Game;

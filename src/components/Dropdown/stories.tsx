@@ -3,18 +3,18 @@ import Dropdown from '.';
 import { DropdownProps } from '.';
 
 export default {
-    title: 'Dropdown',
-    component: Dropdown,
-    parameters: {
-        backgrounds: {
-            default: 'won-dark'
-        }
-    }
+	title: 'Dropdown',
+	component: Dropdown,
+	parameters: {
+		backgrounds: {
+			default: 'won-dark'
+		}
+	}
 } as Meta;
 
 export const Default: Story<DropdownProps> = (args) => <Dropdown {...args} />;
 
 Default.args = {
-    title: 'Dropdown',
-    children: 'Content'
+	title: 'Dropdown',
+	children: 'Content'
 };

@@ -4,41 +4,41 @@ import highlightMock from 'components/Highlight/mock';
 import gamesMock from 'components/GameCardSlider/mock';
 
 export default {
-    title: 'Showcase',
-    component: Showcase,
-    parameters: {
-        layout: 'fullscreen',
-        backgrounds: {
-            default: 'won-dark'
-        }
-    },
-    decorators: [
-        (Story) => (
-            <div style={{ margin: '0 auto' }}>
-                <Story />
-            </div>
-        )
-    ]
+	title: 'Showcase',
+	component: Showcase,
+	parameters: {
+		layout: 'fullscreen',
+		backgrounds: {
+			default: 'won-dark'
+		}
+	},
+	decorators: [
+		(Story) => (
+			<div style={{ margin: '0 auto' }}>
+				<Story />
+			</div>
+		)
+	]
 } as Meta;
 
 export const Default: Story<ShowcaseProps> = (args) => <Showcase {...args} />;
 
 Default.args = {
-    title: 'Most Popular',
-    highlight: highlightMock,
-    games: gamesMock
+	title: 'Most Popular',
+	highlight: highlightMock,
+	games: gamesMock
 };
 
 export const WithoutHighlight: Story<ShowcaseProps> = (args) => <Showcase {...args} />;
 
 WithoutHighlight.args = {
-    title: 'Most Popular',
-    games: gamesMock
+	title: 'Most Popular',
+	games: gamesMock
 };
 
 export const WithoutGames: Story<ShowcaseProps> = (args) => <Showcase {...args} />;
 
 WithoutGames.args = {
-    title: 'Most Popular',
-    highlight: highlightMock
+	title: 'Most Popular',
+	highlight: highlightMock
 };

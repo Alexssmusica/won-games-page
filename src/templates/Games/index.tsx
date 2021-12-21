@@ -13,88 +13,88 @@ import Empty from 'components/Empty';
 import * as Style from './styles';
 
 export type GamesTemplateProps = {
-    filterItems: ItemProps[];
+	filterItems: ItemProps[];
 };
 
 const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
-    const { push, query } = useRouter();
+	const { push, query } = useRouter();
 
-    const { data, loading, fetchMore } = useQueryGames({
-        notifyOnNetworkStatusChange: true,
+	const { data, loading, fetchMore } = useQueryGames({
+		notifyOnNetworkStatusChange: true,
 
-        variables: {
-            limit: 12,
-            where: parseQueryStringToWhere({ queryString: query, filterItems }),
-            sort: query.sort as string | null
-        }
-    });
+		variables: {
+			limit: 12,
+			where: parseQueryStringToWhere({ queryString: query, filterItems }),
+			sort: query.sort as string | null
+		}
+	});
 
-    if (!data) return <p>Loading...</p>;
+	if (!data) return <p>Loading...</p>;
 
-    const hasMoreGames = data?.games.length < (data?.gamesConnection?.values?.length || 0);
+	const hasMoreGames = data?.games.length < (data?.gamesConnection?.values?.length || 0);
 
-    const handleFilter = (items: ParsedUrlQueryInput) => {
-        push({
-            pathname: '/games',
-            query: items
-        });
+	const handleFilter = (items: ParsedUrlQueryInput) => {
+		push({
+			pathname: '/games',
+			query: items
+		});
 
-        return;
-    };
+		return;
+	};
 
-    const handleShowMore = () => {
-        fetchMore({ variables: { limit: 12, start: data?.games.length } });
-    };
+	const handleShowMore = () => {
+		fetchMore({ variables: { limit: 12, start: data?.games.length } });
+	};
 
-    return (
-        <Base>
-            <Style.Main>
-                <ExploreSidebar
-                    initialValues={parseQueryStringToFilter({ queryString: query, filterItems })}
-                    items={filterItems}
-                    onFilter={handleFilter}
-                />
+	return (
+		<Base>
+			<Style.Main>
+				<ExploreSidebar
+					initialValues={parseQueryStringToFilter({ queryString: query, filterItems })}
+					items={filterItems}
+					onFilter={handleFilter}
+				/>
 
-                <section>
-                    {data?.games.length ? (
-                        <>
-                            <Grid>
-                                {data?.games.map((game) => (
-                                    <GameCard
-                                        key={game.slug}
-                                        title={game.name}
-                                        slug={game.slug}
-                                        developer={game.developers[0].name}
-                                        img={`http://localhost:1337${game.cover!.url}`}
-                                        price={game.price}
-                                    />
-                                ))}
-                            </Grid>
-                            {hasMoreGames && (
-                                <Style.ShowMore>
-                                    {loading ? (
-                                        <Style.ShowMoreLoading src="/img/dots.svg" alt="Loading more games..." />
-                                    ) : (
-                                        <Style.ShowMoreButton role="button" onClick={handleShowMore}>
-                                            <p>Show More</p>
-                                            <ArrowDown size={35} />
-                                        </Style.ShowMoreButton>
-                                    )}
-                                </Style.ShowMore>
-                            )}
-                        </>
-                    ) : (
-                        <Empty
-                            img="/img/empty.svg"
-                            title=":("
-                            description="We didn't find any games with this filter"
-                            hasLink
-                        />
-                    )}
-                </section>
-            </Style.Main>
-        </Base>
-    );
+				<section>
+					{data?.games.length ? (
+						<>
+							<Grid>
+								{data?.games.map((game) => (
+									<GameCard
+										key={game.slug}
+										title={game.name}
+										slug={game.slug}
+										developer={game.developers[0].name}
+										img={`http://localhost:1337${game.cover!.url}`}
+										price={game.price}
+									/>
+								))}
+							</Grid>
+							{hasMoreGames && (
+								<Style.ShowMore>
+									{loading ? (
+										<Style.ShowMoreLoading src="/img/dots.svg" alt="Loading more games..." />
+									) : (
+										<Style.ShowMoreButton role="button" onClick={handleShowMore}>
+											<p>Show More</p>
+											<ArrowDown size={35} />
+										</Style.ShowMoreButton>
+									)}
+								</Style.ShowMore>
+							)}
+						</>
+					) : (
+						<Empty
+							img="/img/empty.svg"
+							title=":("
+							description="We didn't find any games with this filter"
+							hasLink
+						/>
+					)}
+				</section>
+			</Style.Main>
+		</Base>
+	);
 };
 
 export default GamesTemplate;
