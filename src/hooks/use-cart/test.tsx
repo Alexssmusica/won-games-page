@@ -15,12 +15,14 @@ describe('useCart', () => {
 
 		setStorageItem('cartItems', ['1', '2']);
 
-		const { waitForNextUpdate } = renderHook(() => useCart(), {
+		const { result, waitForNextUpdate } = renderHook(() => useCart(), {
 			wrapper
 		});
 
 		await waitForNextUpdate();
 
 		// expect(result.current.items).toStrictEqual(cartItems);
+		expect(result.current.quantity).toBe(2);
+		// expect(result.current.total).toBe('R$ 21,00');
 	});
 });
