@@ -1,10 +1,20 @@
+import { useQueryGames } from 'hooks/use-query-games';
 import { useContext, createContext, useState, useEffect } from 'react';
+
 import { getStorageItem } from 'utils/localStorage';
+import { cartMapper } from 'utils/mappers';
 
 const CART_KEY = 'cartItems';
 
+type CartItem = {
+	id: string;
+	img: string;
+	price: string;
+	title: string;
+};
+
 export type CartContextData = {
-	items: string[];
+	items: CartItem[];
 };
 
 export const CartContextDefaultValues = {
@@ -28,7 +38,24 @@ const CartProvider = ({ children }: CartProviderProps) => {
 		}
 	}, []);
 
-	return <CartContext.Provider value={{ items: cartItems }}>{children}</CartContext.Provider>;
+	const { data } = useQueryGames({
+		skip: !cartItems?.length,
+		variables: {
+			where: {
+				id: cartItems
+			}
+		}
+	});
+
+	return (
+		<CartContext.Provider
+			value={{
+				items: cartMapper(data?.games)
+			}}
+		>
+			{children}
+		</CartContext.Provider>
+	);
 };
 
 const useCart = () => useContext(CartContext);

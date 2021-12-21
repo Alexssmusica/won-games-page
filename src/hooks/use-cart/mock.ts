@@ -13,7 +13,7 @@ export const gamesMock = {
 					name: 'Sample Game',
 					slug: 'sample-game',
 					short_description: 'sample description',
-					price: 10.5,
+					price: 1,
 					developers: [{ name: 'sample developer' }],
 					cover: {
 						url: '/sample-game.jpg'
@@ -25,7 +25,7 @@ export const gamesMock = {
 					name: 'Sample Game',
 					slug: 'sample-game',
 					short_description: 'sample description',
-					price: 10.5,
+					price: 1,
 					developers: [{ name: 'sample developer' }],
 					cover: {
 						url: '/sample-game.jpg'
@@ -45,13 +45,13 @@ export const cartItems = [
 	{
 		id: '1',
 		img: 'http://localhost:1337/sample-game.jpg',
-		price: '$10.50',
+		price: 'R$ 1,00',
 		title: 'Sample Game'
 	},
 	{
 		id: '2',
 		img: 'http://localhost:1337/sample-game.jpg',
-		price: '$10.50',
+		price: 'R$ 1,00',
 		title: 'Sample Game'
 	}
 ];
