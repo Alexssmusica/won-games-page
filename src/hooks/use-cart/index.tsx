@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useQueryGames } from 'hooks/use-query-games';
 import { useContext, createContext, useState, useEffect } from 'react';
 import formatPrice from 'utils/formatPrice';
@@ -10,7 +11,7 @@ const CART_KEY = 'cartItems';
 type CartItem = {
 	id: string;
 	img: string;
-	price: string;
+	price: string | any;
 	title: string;
 };
 
