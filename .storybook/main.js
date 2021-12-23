@@ -6,7 +6,8 @@ module.exports = {
 		return config
 	},
 	features: {
-		postcss: false
+		postcss: false,
+		babelModeV7: true
 	},
 	core: {
 		builder: 'webpack5'
