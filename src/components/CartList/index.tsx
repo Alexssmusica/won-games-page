@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import GameItem from 'components/GameItem';
+import Loader from 'components/Loader';
 import Button from 'components/Button';
 
 import * as Style from './styles';
@@ -12,7 +13,15 @@ export type CartListProps = {
 };
 
 const CartList = ({ hasButton = false }: CartListProps) => {
-	const { items, total } = useCart();
+	const { items, total, loading } = useCart();
+
+	if (loading) {
+		return (
+			<Style.Loading>
+				<Loader />
+			</Style.Loading>
+		);
+	}
 
 	return (
 		<Style.Wrapper isEmpty={!items.length}>
