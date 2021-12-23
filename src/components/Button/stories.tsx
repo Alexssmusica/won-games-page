@@ -19,7 +19,7 @@ export default {
 			}
 		}
 	}
-} as Meta;
+} as unknown as Meta;
 
 export const Default: Story = (args) => <Button {...args} />;
 export const withIcon: Story = (args) => <Button {...args} />;

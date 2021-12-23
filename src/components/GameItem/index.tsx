@@ -1,5 +1,4 @@
 import { Download } from '@styled-icons/boxicons-solid/Download';
-import formatPrice from 'utils/formatPrice';
 
 import * as Style from './styles';
 
@@ -34,7 +33,7 @@ const GameItem = ({ img, title, price, downloadLink, paymentInfo }: GameItemProp
 						</Style.DownloadLink>
 					)}
 				</Style.Title>
-				<Style.Price>{formatPrice(price)}</Style.Price>
+				<Style.Price>{price}</Style.Price>
 			</Style.Content>
 		</Style.GameContent>
 

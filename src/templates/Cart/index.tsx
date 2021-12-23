@@ -6,7 +6,6 @@ import { Container } from 'components/Container';
 import { Divider } from 'components/Divider';
 import { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
-import Empty from 'components/Empty';
 import Heading from 'components/Heading';
 import Showcase from 'components/Showcase';
 import Base from 'templates/Base';
@@ -19,7 +18,7 @@ export type CartProps = {
 } & CartListProps &
 	Pick<PaymentOptionsProps, 'cards'>;
 
-const Cart = ({ recommendedTitle, recommendedGames, recommendedHighlight, items, total, cards }: CartProps) => {
+const Cart = ({ recommendedTitle, recommendedGames, recommendedHighlight, cards }: CartProps) => {
 	const handlePayment = () => ({});
 
 	return (
@@ -29,20 +28,11 @@ const Cart = ({ recommendedTitle, recommendedGames, recommendedHighlight, items,
 					My cart
 				</Heading>
 
-				{items?.length ? (
-					<Style.Content>
-						<CartList items={items} total={total} />
+				<Style.Content>
+					<CartList />
+					<PaymentOptions cards={cards} handlePayment={handlePayment} />
+				</Style.Content>
 
-						<PaymentOptions cards={cards} handlePayment={handlePayment} />
-					</Style.Content>
-				) : (
-					<Empty
-						img="/img/empty.svg"
-						title="Your cart is empty"
-						description="Go back to the store and explore great games and offers"
-						hasLink
-					/>
-				)}
 				<Divider />
 			</Container>
 			<Showcase title={recommendedTitle} games={recommendedGames} highlight={recommendedHighlight} />

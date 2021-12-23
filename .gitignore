@@ -36,3 +36,4 @@ public/sw.js
 public/workbox-*.js
 .env.production
 .env.development
+tsconfig.tsbuildinfo
