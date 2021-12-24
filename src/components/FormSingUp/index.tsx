@@ -110,7 +110,7 @@ const FormSingUp = () => {
 				</Button>
 
 				<FormLink>
-					Already have an account?{' '}
+					Already have an account?
 					<Link href="/sign-in">
 						<a>Sign in</a>
 					</Link>

@@ -41,6 +41,7 @@ export const FormLink = styled.div`
 		a {
 			color: ${theme.colors.secondary};
 			text-decoration: none;
+			margin-left: ${theme.spacings.xxsmall};
 			border-bottom: 0.1rem solid ${theme.colors.secondary};
 			transition: color, border, ${theme.transition.fast};
 			&:hover {

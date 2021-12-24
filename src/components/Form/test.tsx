@@ -23,6 +23,7 @@ describe('<Form />', () => {
 		  color: #3CD3C1;
 		  -webkit-text-decoration: none;
 		  text-decoration: none;
+		  margin-left: 0.8rem;
 		  border-bottom: 0.1rem solid #3CD3C1;
 		  -webkit-transition: color,border,0.1s ease-in-out;
 		  transition: color,border,0.1s ease-in-out;
