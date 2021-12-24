@@ -78,14 +78,16 @@ const FormSingIn = () => {
 					onInputChange={(value) => handleInput('password', value)}
 					icon={<Lock />}
 				/>
-				<Style.ForgotPassword href="#">Forgot your password?</Style.ForgotPassword>
+				<Link href="/forgot-password" passHref>
+					<Style.ForgotPassword>Forgot your password?</Style.ForgotPassword>
+				</Link>
 
 				<Button type="submit" size="large" fullWidth disabled={loading}>
 					{loading ? <FormLoading /> : <span>Sign in now</span>}
 				</Button>
 
 				<FormLink>
-					Don’t have an account?{' '}
+					Don’t have an account?
 					<Link href="/sign-up">
 						<a>Sign up</a>
 					</Link>
