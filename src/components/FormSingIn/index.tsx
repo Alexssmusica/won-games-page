@@ -15,7 +15,8 @@ const FormSingIn = () => {
 	const [fieldError, setFieldError] = useState<FieldErrors>({});
 	const [values, setValues] = useState({ email: '', password: '' });
 	const [loading, setLoading] = useState(false);
-	const { push } = useRouter();
+	const routes = useRouter();
+	const { push, query } = routes;
 
 	const handleInput = (field: string, value: string) => {
 		setValues((state) => ({
@@ -40,7 +41,7 @@ const FormSingIn = () => {
 		const result = await signIn('credentials', {
 			...values,
 			redirect: false,
-			callbackUrl: '/'
+			callbackUrl: `${window.location.origin}${query?.callbackUrl || ''}`
 		});
 
 		setLoading(false);
