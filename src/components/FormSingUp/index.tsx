@@ -2,15 +2,18 @@ import { signIn } from 'next-auth/client';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { Email, Lock, AccountCircle } from '@styled-icons/material-outlined';
+import { Email, Lock, AccountCircle, ErrorOutline } from '@styled-icons/material-outlined';
 
 import { MUTATION_REGISTER } from 'graphql/mutation/register';
 import { UsersPermissionsRegisterInput } from 'graphql/generated/globalTypes';
-import { FormWrapper, FormLink, FormLoading } from 'components/Form';
+import { FieldErrors, signUpValidate } from 'utils/validations';
+import { FormWrapper, FormLink, FormLoading, FormError } from 'components/Form';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 
 const FormSingUp = () => {
+	const [formError, setFormError] = useState('');
+	const [fieldError, setFieldError] = useState<FieldErrors>({});
 	const [values, setValues] = useState<UsersPermissionsRegisterInput>({
 		email: '',
 		username: '',
@@ -18,7 +21,8 @@ const FormSingUp = () => {
 	});
 
 	const [createUser, { error, loading }] = useMutation(MUTATION_REGISTER, {
-		onError: (error) => console.error(error),
+		onError: (err) =>
+			setFormError(err?.graphQLErrors[0]?.extensions?.exception.data.message[0].messages[0].message),
 		onCompleted: () => {
 			!error &&
 				signIn('credentials', {
@@ -38,6 +42,17 @@ const FormSingUp = () => {
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
+
+		setFormError('');
+
+		const errors = signUpValidate(values);
+
+		if (Object.keys(errors).length) {
+			setFieldError(errors);
+			return;
+		}
+
+		setFieldError({});
 		await createUser({
 			variables: {
 				input: {
@@ -51,11 +66,17 @@ const FormSingUp = () => {
 
 	return (
 		<FormWrapper>
+			{!!formError && (
+				<FormError>
+					<ErrorOutline /> {formError}
+				</FormError>
+			)}
 			<form onSubmit={handleSubmit}>
 				<TextField
 					name="username"
 					placeholder="Username"
 					type="text"
+					error={fieldError?.username}
 					onInputChange={(value) => handleInput('username', value)}
 					icon={<AccountCircle />}
 				/>
@@ -63,6 +84,7 @@ const FormSingUp = () => {
 					name="email"
 					placeholder="Email"
 					type="email"
+					error={fieldError?.email}
 					onInputChange={(value) => handleInput('email', value)}
 					icon={<Email />}
 				/>
@@ -70,13 +92,15 @@ const FormSingUp = () => {
 					name="password"
 					placeholder="Password"
 					type="password"
+					error={fieldError?.password}
 					onInputChange={(value) => handleInput('password', value)}
 					icon={<Lock />}
 				/>
 				<TextField
-					name="confirm-password"
+					name="confirm_password"
 					placeholder="Confirm password"
-					onInputChange={(value) => handleInput('confirm-password', value)}
+					error={fieldError?.confirm_password}
+					onInputChange={(value) => handleInput('confirm_password', value)}
 					type="password"
 					icon={<Lock />}
 				/>

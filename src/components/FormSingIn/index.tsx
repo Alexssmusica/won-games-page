@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/client';
-import { Email, Lock } from '@styled-icons/material-outlined';
+import { Email, Lock, ErrorOutline } from '@styled-icons/material-outlined';
 import Link from 'next/link';
 
-import { FormWrapper, FormLink, FormLoading } from 'components/Form';
+import { FormWrapper, FormLink, FormLoading, FormError } from 'components/Form';
+import { FieldErrors, signInValidate } from 'utils/validations';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 import * as Style from './styles';
 
 const FormSingIn = () => {
-	const [values, setValues] = useState({});
+	const [formError, setFormError] = useState('');
+	const [fieldError, setFieldError] = useState<FieldErrors>({});
+	const [values, setValues] = useState({ email: '', password: '' });
 	const [loading, setLoading] = useState(false);
 	const { push } = useRouter();
 
@@ -25,6 +28,15 @@ const FormSingIn = () => {
 		event.preventDefault();
 		setLoading(true);
 
+		const errors = signInValidate(values);
+
+		if (Object.keys(errors).length) {
+			setFieldError(errors);
+			setLoading(false);
+			setFormError('');
+			return;
+		}
+		setFieldError({});
 		const result = await signIn('credentials', {
 			...values,
 			redirect: false,
@@ -37,16 +49,23 @@ const FormSingIn = () => {
 			return push(result.url);
 		}
 
-		console.error(result, 'email ou senha incorretos');
+		setFormError('username or password is incorrect');
 	};
 
 	return (
 		<FormWrapper>
+			{!!formError && (
+				<FormError>
+					<ErrorOutline />
+					{formError}
+				</FormError>
+			)}
 			<form onSubmit={handleSubmit}>
 				<TextField
 					name="email"
 					placeholder="Email"
 					type="email"
+					error={fieldError?.email}
 					onInputChange={(value) => handleInput('email', value)}
 					icon={<Email />}
 				/>
@@ -54,6 +73,7 @@ const FormSingIn = () => {
 					name="password"
 					placeholder="Password"
 					type="password"
+					error={fieldError?.password}
 					onInputChange={(value) => handleInput('password', value)}
 					icon={<Lock />}
 				/>
