@@ -14,9 +14,10 @@ import * as Style from './styles';
 
 export type MenuProps = {
 	username?: string;
+	loading?: boolean;
 };
 
-const Menu = ({ username }: MenuProps) => {
+const Menu = ({ username, loading }: MenuProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -45,69 +46,72 @@ const Menu = ({ username }: MenuProps) => {
 					</Link>
 				</Style.MenuNav>
 			</MediaMatch>
+			{!loading && (
+				<>
+					<Style.MenuGroup>
+						<Style.IconWrapper>
+							<SearchIcon aria-label="Search" />
+						</Style.IconWrapper>
+						<Style.IconWrapper>
+							<MediaMatch greaterThan="medium">
+								<CartDropdown />
+							</MediaMatch>
+							<MediaMatch lessThan="medium">
+								<Link href="/cart" passHref>
+									<a>
+										<CartIcon />
+									</a>
+								</Link>
+							</MediaMatch>
+						</Style.IconWrapper>
+						<MediaMatch greaterThan="medium">
+							{!username ? (
+								<Link href="/sign-in" passHref>
+									<Button as="a">Sign in</Button>
+								</Link>
+							) : (
+								<UserDropdown username={username} />
+							)}
+						</MediaMatch>
+					</Style.MenuGroup>
 
-			<Style.MenuGroup>
-				<Style.IconWrapper>
-					<SearchIcon aria-label="Search" />
-				</Style.IconWrapper>
-				<Style.IconWrapper>
-					<MediaMatch greaterThan="medium">
-						<CartDropdown />
-					</MediaMatch>
-					<MediaMatch lessThan="medium">
-						<Link href="/cart" passHref>
-							<a>
-								<CartIcon />
-							</a>
-						</Link>
-					</MediaMatch>
-				</Style.IconWrapper>
-				<MediaMatch greaterThan="medium">
-					{!username ? (
-						<Link href="/sign-in" passHref>
-							<Button as="a">Sign in</Button>
-						</Link>
-					) : (
-						<UserDropdown username={username} />
-					)}
-				</MediaMatch>
-			</Style.MenuGroup>
-
-			<Style.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
-				<CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
-				<Style.MenuNav>
-					<Link href="/" passHref>
-						<Style.MenuLink>Home</Style.MenuLink>
-					</Link>
-					<Link href="/games" passHref>
-						<Style.MenuLink>Explore</Style.MenuLink>
-					</Link>
-					{!!username && (
-						<>
-							<Link href="/profile/me" passHref>
-								<Style.MenuLink>My profile</Style.MenuLink>
+					<Style.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
+						<CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
+						<Style.MenuNav>
+							<Link href="/" passHref>
+								<Style.MenuLink>Home</Style.MenuLink>
 							</Link>
-							<Link href="/profile/wishlist" passHref>
-								<Style.MenuLink>Wishlist</Style.MenuLink>
+							<Link href="/games" passHref>
+								<Style.MenuLink>Explore</Style.MenuLink>
 							</Link>
-						</>
-					)}
-				</Style.MenuNav>
+							{!!username && (
+								<>
+									<Link href="/profile/me" passHref>
+										<Style.MenuLink>My profile</Style.MenuLink>
+									</Link>
+									<Link href="/profile/wishlist" passHref>
+										<Style.MenuLink>Wishlist</Style.MenuLink>
+									</Link>
+								</>
+							)}
+						</Style.MenuNav>
 
-				{!username && (
-					<Style.RegisterBox>
-						<Link href="/sign-in" passHref>
-							<Button fullWidth size="large" as="a">
-								Sign in
-							</Button>
-						</Link>
-						<span>or</span>
-						<Link href="/sign-up" passHref>
-							<Style.CreateAccount title="Sign Up">Sign Up</Style.CreateAccount>
-						</Link>
-					</Style.RegisterBox>
-				)}
-			</Style.MenuFull>
+						{!username && (
+							<Style.RegisterBox>
+								<Link href="/sign-in" passHref>
+									<Button fullWidth size="large" as="a">
+										Sign in
+									</Button>
+								</Link>
+								<span>or</span>
+								<Link href="/sign-up" passHref>
+									<Style.CreateAccount title="Sign Up">Sign Up</Style.CreateAccount>
+								</Link>
+							</Style.RegisterBox>
+						)}
+					</Style.MenuFull>
+				</>
+			)}
 		</Style.Wrapper>
 	);
 };
