@@ -3,10 +3,9 @@ import Link from 'next/link';
 import Logo from 'components/Logo';
 import Heading from 'components/Heading';
 import * as Style from './styles';
+import { toYear } from 'utils/formatDate';
 
 const Footer = () => {
-	const CurrentYear = new Date().getFullYear();
-
 	return (
 		<Style.Wrapper>
 			<Logo color="black" />
@@ -66,7 +65,7 @@ const Footer = () => {
 					<span>Lorem, ipsum dolor.</span>
 				</Style.Column>
 			</Style.Content>
-			<Style.Copyright>Won Games {CurrentYear} © All rights reserved.</Style.Copyright>
+			<Style.Copyright>Won Games {toYear()} © All rights reserved.</Style.Copyright>
 		</Style.Wrapper>
 	);
 };

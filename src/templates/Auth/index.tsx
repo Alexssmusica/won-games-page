@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Heading from 'components/Heading';
 import Logo from 'components/Logo';
 import * as Style from './styles';
+import { toYear } from 'utils/formatDate';
 
 type AuthProps = {
 	title: string;
@@ -25,7 +26,7 @@ const Auth = ({ title, children }: AuthProps) => (
 					</Style.Subtitle>
 				</div>
 
-				<Style.Footer>Won Games 2020 © Todos os Direitos Reservados</Style.Footer>
+				<Style.Footer>Won Games {toYear()} © Todos os Direitos Reservados</Style.Footer>
 			</Style.BannerComponent>
 		</Style.BannerBlock>
 
