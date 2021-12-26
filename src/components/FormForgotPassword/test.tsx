@@ -1,4 +1,3 @@
-import React from 'react';
 import userEvent from '@testing-library/user-event';
 import 'server.mock';
 import { render, screen } from 'utils/test-utils';
@@ -24,7 +23,7 @@ describe('<FormForgotPassword />', () => {
 	it('should validate the email', async () => {
 		render(<FormForgotPassword />);
 
-		await userEvent.type(screen.getByPlaceholderText(/email/i), 'valid@email.com');
+		userEvent.type(screen.getByPlaceholderText(/email/i), 'valid@email.com');
 
 		userEvent.click(screen.getByRole('button', { name: /send e-mail/i }));
 
@@ -34,7 +33,7 @@ describe('<FormForgotPassword />', () => {
 	it('should show an invalid email', async () => {
 		render(<FormForgotPassword />);
 
-		await userEvent.type(screen.getByPlaceholderText(/email/i), 'invalid');
+		userEvent.type(screen.getByPlaceholderText(/email/i), 'invalid');
 
 		userEvent.click(screen.getByRole('button', { name: /send e-mail/i }));
 
@@ -44,7 +43,7 @@ describe('<FormForgotPassword />', () => {
 	it('should show an inexistent email error', async () => {
 		render(<FormForgotPassword />);
 
-		await userEvent.type(screen.getByPlaceholderText(/email/i), 'false@email.com');
+		userEvent.type(screen.getByPlaceholderText(/email/i), 'false@email.com');
 
 		userEvent.click(screen.getByRole('button', { name: /send e-mail/i }));
 
