@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { signIn } from 'next-auth/client';
 import { useRouter } from 'next/router';
 
-import { Email, ErrorOutline } from '@styled-icons/material-outlined';
+import { ErrorOutline, Lock } from '@styled-icons/material-outlined';
 
 import { FormWrapper, FormLoading, FormError } from 'components/Form';
 import Button from 'components/Button';
@@ -10,10 +10,10 @@ import TextField from 'components/TextField';
 
 import { FieldErrors } from 'utils/validations';
 
-const FormForgotPassword = () => {
+const FormResetPassword = () => {
 	const [formError, setFormError] = useState('');
 	const [fieldError, setFieldError] = useState<FieldErrors>({});
-	const [values, setValues] = useState({ email: '' });
+	const [values, setValues] = useState({ password: '', confirmPassword: '' });
 	const [loading, setLoading] = useState(false);
 	const routes = useRouter();
 	const { push, query } = routes;
@@ -62,20 +62,29 @@ const FormForgotPassword = () => {
 			)}
 			<form onSubmit={handleSubmit}>
 				<TextField
-					name="email"
-					placeholder="Email"
-					type="email"
-					error={fieldError?.email}
-					onInputChange={(value) => handleInput('email', value)}
-					icon={<Email />}
+					name="password"
+					placeholder="Password"
+					type="password"
+					error={fieldError?.password}
+					onInputChange={(value) => handleInput('password', value)}
+					icon={<Lock />}
+				/>
+
+				<TextField
+					name="confirm_password"
+					placeholder="Confirm password"
+					error={fieldError?.confirm_password}
+					onInputChange={(value) => handleInput('confirm_password', value)}
+					type="password"
+					icon={<Lock />}
 				/>
 
 				<Button type="submit" size="large" fullWidth disabled={loading}>
-					{loading ? <FormLoading /> : <span>Send E-mail</span>}
+					{loading ? <FormLoading /> : <span>Reset Password</span>}
 				</Button>
 			</form>
 		</FormWrapper>
 	);
 };
 
-export default FormForgotPassword;
+export default FormResetPassword;
