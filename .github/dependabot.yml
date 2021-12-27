@@ -7,8 +7,5 @@ updates:
   open-pull-requests-limit: 10
   ignore:
   - dependency-name: "next-auth"
-    versions: ["4.x", "5.x"]
   - dependency-name: "node-fetch"
-    versions: ["3.x", "4.x"]
   - dependency-name: "@types/next-auth"
-    versions: ["3.x", "4.x"]
