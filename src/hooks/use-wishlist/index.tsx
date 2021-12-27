@@ -35,7 +35,6 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
 	const [wishlistId, setWishlistId] = useState<string | null>();
 	const [wishlistItems, setWishlistItems] = useState<GetWishlist_wishlists_games[]>([]);
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [createList, { loading: loadingCreate }] = useMutation(MUTATION_CREATE_WISHLIST, {
 		context: { session },
 		onCompleted: (data) => {
@@ -44,7 +43,6 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
 		}
 	});
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [updateList, { loading: loadingUpdate }] = useMutation(MUTATION_UPDATE_WISHLIST, {
 		context: { session },
 		onCompleted: (data) => {
