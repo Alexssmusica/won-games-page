@@ -6,9 +6,9 @@ updates:
     interval: daily
   open-pull-requests-limit: 10
   ignore:
-  - dependency-name: "@types/node"
-    versions:
-    - 15.0.0
-  - dependency-name: "@storybook/react"
-    versions:
-    - 6.2.4
+  - dependency-name: "next-auth"
+    versions: ["4.x", "5.x"]
+  - dependency-name: "node-fetch"
+    versions: ["3.x", "4.x"]
+  - dependency-name: "@types/next-auth"
+    versions: ["3.x", "4.x"]
