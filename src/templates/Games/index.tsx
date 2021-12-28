@@ -1,3 +1,4 @@
+import 'session.mock';
 import { useRouter } from 'next/router';
 import { ParsedUrlQueryInput } from 'querystring';
 import { KeyboardArrowDown as ArrowDown } from '@styled-icons/material-outlined/KeyboardArrowDown';
