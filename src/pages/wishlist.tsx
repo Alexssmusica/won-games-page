@@ -1,12 +1,12 @@
 import Wishlist, { WishlistTemplateProps } from 'templates/Wishlist';
-
-import gamesMock from 'components/GameCardSlider/mock';
 import { initializeApollo } from 'utils/apollo';
 import { GetRecommended } from 'graphql/generated/GetRecommended';
 import { gamesMapper, highlightMapper } from 'utils/mappers';
 import { GET_RECOMMENDED } from 'graphql/queries/recommended';
 import protectedRoutes from 'utils/protected-routes';
 import { GetServerSidePropsContext } from 'next';
+import { GetWishlist, GetWishlistVariables } from 'graphql/generated/GetWishlist';
+import { GET_WISHLIST } from 'graphql/queries/wishlist';
 
 export default function WishlistPage(props: WishlistTemplateProps) {
 	return <Wishlist {...props} />;
@@ -14,14 +14,23 @@ export default function WishlistPage(props: WishlistTemplateProps) {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const session = await protectedRoutes(context);
-	const apolloClient = initializeApollo();
+	const apolloClient = initializeApollo(null, session);
+
+	if (!session) return {};
+
+	await apolloClient.query<GetWishlist, GetWishlistVariables>({
+		query: GET_WISHLIST,
+		variables: {
+			identifier: session.user.email as string
+		}
+	});
 
 	const { data } = await apolloClient.query<GetRecommended>({ query: GET_RECOMMENDED });
 
 	return {
 		props: {
 			session,
-			games: gamesMock,
+			initialApolloState: apolloClient.cache.extract(),
 			recommendedGames: gamesMapper(data.recommended?.section?.games),
 			recommendedHighlight: highlightMapper(data.recommended?.section?.highlight),
 			recommendedTitle: data.recommended?.section?.title
