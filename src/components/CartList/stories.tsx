@@ -19,7 +19,7 @@ export default {
 			default: 'won-dark'
 		}
 	}
-} as unknown as Meta;
+} as Meta<CartListProps>;
 
 export const Default: Story = (args) => (
 	<div style={{ maxWidth: 800 }}>

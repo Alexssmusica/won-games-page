@@ -2,17 +2,16 @@
 import { useQueryGames } from 'hooks/use-query-games';
 import { useContext, createContext, useState, useEffect } from 'react';
 import formatPrice from 'utils/formatPrice';
-
 import { getStorageItem, setStorageItem } from 'utils/localStorage';
 import { cartMapper } from 'utils/mappers';
 
 const CART_KEY = 'cartItems';
 
-type CartItem = {
+export type CartItem = {
 	id: string;
 	img: string;
-	price: string | any;
 	title: string;
+	price: string | any;
 };
 
 export type CartContextData = {
@@ -91,7 +90,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
 		<CartContext.Provider
 			value={{
 				items: cartMapper(data?.games),
-				quantity: cartItems?.length,
+				quantity: cartItems.length,
 				total: formatPrice(total || 0),
 				isInCart,
 				addToCart,

@@ -13,7 +13,7 @@ import UserDropdown from 'components/UserDropdown';
 import * as Style from './styles';
 
 export type MenuProps = {
-	username?: string;
+	username?: string | null;
 	loading?: boolean;
 };
 
