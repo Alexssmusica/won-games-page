@@ -13,7 +13,7 @@ export default {
 		activeLink: {
 			control: {
 				type: 'select',
-				options: ['/profile/me', '/profile/cards', '/profile/orders']
+				options: ['/profile/me', '/profile/orders']
 			}
 		}
 	}

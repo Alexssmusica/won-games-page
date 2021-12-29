@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { signOut } from 'next-auth/client';
-import { AccountCircle, CreditCard, ExitToApp, FormatListBulleted } from '@styled-icons/material-outlined';
+import { AccountCircle, ExitToApp, FormatListBulleted } from '@styled-icons/material-outlined';
 import * as Style from './styles';
 
 export type ProfileMenuProps = {
@@ -15,14 +15,6 @@ const ProfileMenu = ({ activeLink }: ProfileMenuProps) => (
 				<span>My profile</span>
 			</Style.Link>
 		</Link>
-
-		<Link href="/profile/cards" passHref>
-			<Style.Link isActive={activeLink === '/profile/cards'} title="My cards">
-				<CreditCard size={24} />
-				<span>My cards</span>
-			</Style.Link>
-		</Link>
-
 		<Link href="/profile/orders" passHref>
 			<Style.Link isActive={activeLink === '/profile/orders'} title="My orders">
 				<FormatListBulleted size={24} />

@@ -1,26 +1,24 @@
 import React from 'react';
 
 import CartList, { CartListProps } from 'components/CartList';
-import PaymentOptions, { PaymentOptionsProps } from 'components/PaymentOptions';
 import { Container } from 'components/Container';
 import { Divider } from 'components/Divider';
 import { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
+import PaymentForm from 'components/PaymentForm';
 import Heading from 'components/Heading';
 import Showcase from 'components/Showcase';
 import Base from 'templates/Base';
+
 import * as Style from './styles';
 
 export type CartProps = {
 	recommendedTitle: string;
 	recommendedGames: GameCardProps[];
 	recommendedHighlight: HighlightProps;
-} & CartListProps &
-	Pick<PaymentOptionsProps, 'cards'>;
+} & CartListProps;
 
-const Cart = ({ recommendedTitle, recommendedGames, recommendedHighlight, cards }: CartProps) => {
-	const handlePayment = () => ({});
-
+const Cart = ({ recommendedTitle, recommendedGames, recommendedHighlight }: CartProps) => {
 	return (
 		<Base>
 			<Container>
@@ -30,7 +28,7 @@ const Cart = ({ recommendedTitle, recommendedGames, recommendedHighlight, cards 
 
 				<Style.Content>
 					<CartList />
-					<PaymentOptions cards={cards} handlePayment={handlePayment} />
+					<PaymentForm />
 				</Style.Content>
 
 				<Divider />
