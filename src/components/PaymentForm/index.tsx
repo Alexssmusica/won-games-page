@@ -6,6 +6,7 @@ import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined';
 
 import { createPaymentIntent } from 'utils/stripe/methods';
 import { useCart } from 'hooks/use-cart';
+import { FormLoading } from 'components/Form';
 import Button from 'components/Button';
 import Heading from 'components/Heading';
 
@@ -18,14 +19,10 @@ type PaymentFormProps = {
 const PaymentForm = ({ session }: PaymentFormProps) => {
 	const { items } = useCart();
 	const [error, setError] = useState<string | null>(null);
+	const [loading, setLoading] = useState(false);
 	const [disabled, setDisabled] = useState(true);
 	const [clientSecret, setClientSecret] = useState('');
 	const [freeGames, setFreeGames] = useState(false);
-
-	const handleChange = async (event: StripeCardElementChangeEvent) => {
-		setDisabled(!event.complete);
-		setError(event.error ? event.error.message : '');
-	};
 
 	useEffect(() => {
 		async function setPaymentMode() {
@@ -58,43 +55,59 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 		setPaymentMode();
 	}, [items, session]);
 
+	const handleChange = async (event: StripeCardElementChangeEvent) => {
+		setDisabled(!event.complete);
+		setError(event.error ? event.error.message : '');
+	};
+
+	const handleSubmit = async (event: React.FormEvent) => {
+		event.preventDefault();
+		setLoading(true);
+	};
+
 	return (
 		<Style.Wrapper>
-			<Style.Body>
-				<Heading color="black" size="small" lineBottom>
-					Payment
-				</Heading>
-				{freeGames ? (
-					<Style.FreeGames>Only free games, click buy and enjoy!</Style.FreeGames>
-				) : (
-					<CardElement
-						options={{
-							hidePostalCode: true,
-							style: {
-								base: {
-									fontSize: '16.8px'
+			<form onSubmit={handleSubmit}>
+				<Style.Body>
+					<Heading color="black" size="small" lineBottom>
+						Payment
+					</Heading>
+					{freeGames ? (
+						<Style.FreeGames>Only free games, click buy and enjoy!</Style.FreeGames>
+					) : (
+						<CardElement
+							options={{
+								hidePostalCode: true,
+								style: {
+									base: {
+										fontSize: '16.8px'
+									}
 								}
-							}
-						}}
-						onChange={handleChange}
-					/>
-				)}
+							}}
+							onChange={handleChange}
+						/>
+					)}
 
-				{error && (
-					<Style.Error>
-						<ErrorOutline size={16.8} />
-						{error}
-					</Style.Error>
-				)}
-			</Style.Body>
-			<Style.Footer>
-				<Button as="a" fullWidth minimal>
-					Continue shopping
-				</Button>
-				<Button fullWidth icon={<ShoppingCart />} disabled={!freeGames && (disabled || !!error)}>
-					Buy now
-				</Button>
-			</Style.Footer>
+					{error && (
+						<Style.Error>
+							<ErrorOutline size={16.8} />
+							{error}
+						</Style.Error>
+					)}
+				</Style.Body>
+				<Style.Footer>
+					<Button as="a" fullWidth minimal>
+						Continue shopping
+					</Button>
+					<Button
+						fullWidth
+						icon={loading ? <FormLoading /> : <ShoppingCart />}
+						disabled={!freeGames && (disabled || !!error)}
+					>
+						{!loading && <span>Buy now</span>}
+					</Button>
+				</Style.Footer>
+			</form>
 		</Style.Wrapper>
 	);
 };
