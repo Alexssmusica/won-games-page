@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { session, Session, useSession } from 'next-auth/client';
+import { Session } from 'next-auth/client';
 import { CardElement } from '@stripe/react-stripe-js';
 import { StripeCardElementChangeEvent } from '@stripe/stripe-js';
 import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined';
@@ -50,6 +50,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 				} else {
 					// senão o paymentIntent foi válido
 					// setClientSecret
+					setFreeGames(false);
 					setClientSecret(data.client_secret);
 				}
 			}
