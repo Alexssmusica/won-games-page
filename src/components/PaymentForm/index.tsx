@@ -9,7 +9,7 @@ import Heading from 'components/Heading';
 
 import * as Style from './styles';
 import { createPaymentIntent } from 'utils/stripe/methods';
-import { Session } from 'next-auth/client';
+import { Session } from 'next-auth';
 import { FormLoading } from 'components/Form';
 
 type PaymentFormProps = {
@@ -33,7 +33,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 				// bater na API /orders/create-payment-intent
 				const data = await createPaymentIntent({
 					items,
-					token: session.jwt
+					token: session.jwt as string
 				});
 
 				// se eu receber freeGames: true => setFreeGames
@@ -60,7 +60,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 	}, [items, session]);
 
 	const handleChange = async (event: StripeCardElementChangeEvent) => {
-		setDisabled(event.empty);
+		setDisabled(!event.complete);
 		setError(event.error ? event.error.message : '');
 	};
 

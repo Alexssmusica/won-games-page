@@ -1,12 +1,14 @@
 import { ApolloClient, HttpLink, NormalizedCacheObject } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { Session } from 'next-auth/client';
+import { Session } from 'next-auth';
 import apolloCache from './apolloCache';
 
 let apolloClient: ApolloClient<NormalizedCacheObject | null>;
 
 function createApolloClient(session?: Session | null) {
-	const httpLink = new HttpLink({ uri: `${process.env.NEXT_PUBLIC_API}/graphql` });
+	const httpLink = new HttpLink({
+		uri: `${process.env.NEXT_PUBLIC_API}/graphql`
+	});
 
 	const authLink = setContext((_, { headers, session: clientSession }) => {
 		const jwt = session?.jwt || clientSession?.jwt || '';
