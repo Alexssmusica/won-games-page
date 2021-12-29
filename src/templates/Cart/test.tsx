@@ -1,13 +1,21 @@
 import 'match-media-mock';
 import { render, screen } from 'utils/test-utils';
+
 import gamesMock from 'components/GameCardSlider/mock';
 import highlightMock from 'components/Highlight/mock';
 
 import Cart from '.';
 
 const props = {
-	recommendedHighlight: highlightMock,
+	session: {
+		jwt: 'token',
+		user: {
+			email: 'won@games.com'
+		},
+		expires: '13234'
+	},
 	recommendedTitle: 'You may like these games',
+	recommendedHighlight: highlightMock,
 	recommendedGames: gamesMock
 };
 

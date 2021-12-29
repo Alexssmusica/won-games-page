@@ -28,7 +28,7 @@ export type CartContextData = {
 export const CartContextDefaultValues = {
 	items: [],
 	quantity: 0,
-	total: 'R$ 0,00',
+	total: '$0.00',
 	isInCart: () => false,
 	addToCart: () => null,
 	removeFromCart: () => null,

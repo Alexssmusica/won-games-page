@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { Session } from 'next-auth/client';
-import { CardElement } from '@stripe/react-stripe-js';
+import { useState, useEffect } from 'react';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { StripeCardElementChangeEvent } from '@stripe/stripe-js';
 import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined';
 
-import { createPaymentIntent } from 'utils/stripe/methods';
 import { useCart } from 'hooks/use-cart';
-import { FormLoading } from 'components/Form';
 import Button from 'components/Button';
 import Heading from 'components/Heading';
 
 import * as Style from './styles';
+import { createPaymentIntent } from 'utils/stripe/methods';
+import { Session } from 'next-auth/client';
+import { FormLoading } from 'components/Form';
 
 type PaymentFormProps = {
 	session: Session;
@@ -18,6 +18,9 @@ type PaymentFormProps = {
 
 const PaymentForm = ({ session }: PaymentFormProps) => {
 	const { items } = useCart();
+	const stripe = useStripe();
+	const elements = useElements();
+
 	const [error, setError] = useState<string | null>(null);
 	const [loading, setLoading] = useState(false);
 	const [disabled, setDisabled] = useState(true);
@@ -48,21 +51,43 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 					// senão o paymentIntent foi válido
 					// setClientSecret
 					setFreeGames(false);
-					setClientSecret(await data.client_secret);
+					setClientSecret(data.client_secret);
 				}
 			}
 		}
+
 		setPaymentMode();
 	}, [items, session]);
 
 	const handleChange = async (event: StripeCardElementChangeEvent) => {
-		setDisabled(!event.complete);
+		setDisabled(event.empty);
 		setError(event.error ? event.error.message : '');
 	};
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
 		setLoading(true);
+
+		// se for freeGames
+		// salva no banco
+		// redireciona para success
+
+		const payload = await stripe!.confirmCardPayment(clientSecret, {
+			payment_method: {
+				card: elements!.getElement(CardElement)!
+			}
+		});
+
+		if (payload.error) {
+			setError(`Payment failed ${payload.error.message}`);
+			setLoading(false);
+		} else {
+			setError(null);
+			setLoading(false);
+
+			// salvar a compra no banco do Strapi
+			// redirectionar para a página de Sucesso
+		}
 	};
 
 	return (
@@ -111,4 +136,5 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 		</Style.Wrapper>
 	);
 };
+
 export default PaymentForm;
