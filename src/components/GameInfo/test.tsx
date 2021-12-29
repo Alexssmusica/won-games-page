@@ -15,7 +15,7 @@ describe('<GameInfo />', () => {
 		const { container } = render(<GameInfo {...props} />);
 
 		expect(screen.getByRole('heading', { name: /my game title/i })).toBeInTheDocument();
-		expect(screen.getByText(/R\$ 210,00/)).toBeInTheDocument();
+		expect(screen.getByText(/\$210.00/)).toBeInTheDocument();
 		expect(screen.getByText(/game description/i)).toBeInTheDocument();
 
 		expect(container.firstChild).toMatchSnapshot();
