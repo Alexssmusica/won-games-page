@@ -19,11 +19,21 @@ const PaymentForm = () => {
 				<Heading color="black" size="small" lineBottom>
 					Payment
 				</Heading>
-				<CardElement options={{ hidePostalCode: true }} onChange={handleChange} />
+				<CardElement
+					options={{
+						hidePostalCode: true,
+						style: {
+							base: {
+								fontSize: '16.8px'
+							}
+						}
+					}}
+					onChange={handleChange}
+				/>
 
 				{error && (
 					<Style.Error>
-						<ErrorOutline size={20} />
+						<ErrorOutline size={16.8} />
 						{error}
 					</Style.Error>
 				)}
