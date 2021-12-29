@@ -43,7 +43,7 @@ exports[`<GameCard /> should render correctly 1`] = `
 }
 
 .c7 svg {
-  width: 1.5rem;
+  width: 1.84rem;
 }
 
 .c7 svg + span {
@@ -88,7 +88,7 @@ exports[`<GameCard /> should render correctly 1`] = `
 }
 
 .c11 svg {
-  width: 1.5rem;
+  width: 1.84rem;
 }
 
 .c11 svg + span {

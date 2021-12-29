@@ -139,7 +139,7 @@ exports[`<GameInfo /> should render game information 1`] = `
 }
 
 .c6 svg {
-  width: 1.5rem;
+  width: 1.84rem;
 }
 
 .c6 svg + span {
@@ -183,7 +183,7 @@ exports[`<GameInfo /> should render game information 1`] = `
 }
 
 .c8 svg {
-  width: 1.5rem;
+  width: 1.84rem;
 }
 
 .c8 svg + span {
