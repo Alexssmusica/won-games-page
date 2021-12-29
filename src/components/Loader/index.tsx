@@ -1,7 +1,7 @@
 const Loader = () => (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" display="block">
 		<title>Loading...</title>
-		<g fill="#06092b">
+		<g fill="#3CD3C1">
 			<circle cx="60" cy="50" r="4">
 				<animate
 					attributeName="cx"
