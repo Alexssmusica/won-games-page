@@ -1,9 +1,11 @@
+import formatPrice from 'utils/formatPrice';
+
 export default [
 	{
 		id: '1',
 		img: 'https://source.unsplash.com/user/willianjusten/151x70',
 		title: 'Red Dead Redemption 2',
-		price: 215,
+		price: formatPrice(215),
 		downloadLink: 'https://wongames.com/game/download/yuYT56Tgh431LkjhNBgdf',
 		paymentInfo: {
 			flag: 'mastercard',
@@ -16,7 +18,7 @@ export default [
 		id: '2',
 		img: 'https://source.unsplash.com/user/willianjusten/151x70',
 		title: 'Red Dead Redemption 2',
-		price: 215,
+		price: formatPrice(215),
 		downloadLink: 'https://wongames.com/game/download/kjhejl867asd76DEh',
 		paymentInfo: {
 			flag: 'visa',

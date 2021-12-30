@@ -1,4 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
+import formatPrice from 'utils/formatPrice';
 import GameItem, { GameItemProps } from '.';
 
 export default {
@@ -7,7 +8,7 @@ export default {
 	args: {
 		img: 'https://source.unsplash.com/user/willianjusten/151x70',
 		title: 'Red Dead Redemption 2',
-		price: 215
+		price: formatPrice(215)
 	}
 } as Meta;
 
