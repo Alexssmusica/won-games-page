@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import { StripeCardElementChangeEvent } from '@stripe/stripe-js';
+import { PaymentIntent, StripeCardElementChangeEvent } from '@stripe/stripe-js';
 import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined';
 
 import { useCart } from 'hooks/use-cart';
@@ -9,7 +9,7 @@ import Button from 'components/Button';
 import Heading from 'components/Heading';
 
 import * as Style from './styles';
-import { createPaymentIntent } from 'utils/stripe/methods';
+import { createPayment, createPaymentIntent } from 'utils/stripe/methods';
 import { Session } from 'next-auth';
 import { FormLoading } from 'components/Form';
 
@@ -41,21 +41,21 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 				// se eu receber freeGames: true => setFreeGames
 				// faço o fluxo de jogo gratuito
 				// console.log(items);
-				if (await data.freeGames) {
+				if (data.freeGames) {
 					setFreeGames(true);
 					return;
 				}
 
 				// se eu receber um erro
 				// setError
-				if (await data.error) {
+				if (data.error) {
 					setError(data.error);
 				} else {
 					// senão o paymentIntent foi válido
 					// setClientSecret
 
-					setClientSecret(await data.client_secret);
 					setFreeGames(false);
+					setClientSecret(data.client_secret);
 				}
 			}
 		}
@@ -68,6 +68,16 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 		setError(event.error ? event.error.message : '');
 	};
 
+	const saveOrder = async (paymentIntent?: PaymentIntent) => {
+		const data = await createPayment({
+			items,
+			paymentIntent,
+			token: session.jwt as string
+		});
+
+		return data;
+	};
+
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
 		setLoading(true);
@@ -75,6 +85,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 		// se for freeGames
 		if (freeGames) {
 			// salva no banco
+			await saveOrder();
 			// redireciona para success
 			push('/success');
 			return;
@@ -94,6 +105,8 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 			setLoading(false);
 
 			// salvar a compra no banco do Strapi
+
+			await saveOrder(payload.paymentIntent);
 			// redirecionar para a página de Sucesso
 			push('/success');
 		}

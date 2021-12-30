@@ -22,6 +22,7 @@ const Success = ({ recommendedTitle, recommendedGames, recommendedHighlight }: S
 	const { clearCart } = useCart();
 	useEffect(() => {
 		clearCart();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
