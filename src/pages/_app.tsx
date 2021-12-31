@@ -1,4 +1,6 @@
 import NextNProgress from 'nextjs-progressbar';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../../next-seo.config';
 import Head from 'next/head';
 import { Provider as AuthProvider } from 'next-auth/client';
 import { ApolloProvider } from '@apollo/client';
@@ -26,6 +28,7 @@ function App({ Component, pageProps }: AppProps) {
 								<link rel="manifest" href="/manifest.json" />
 								<meta name="description" content="The best Game Stores in the world!" />
 							</Head>
+							<DefaultSeo {...SEO} />
 							<GlobalStyles />
 							<NextNProgress color="#F231A5" startPosition={0.3} stopDelayMs={200} height={5} />
 							<Component {...pageProps} />

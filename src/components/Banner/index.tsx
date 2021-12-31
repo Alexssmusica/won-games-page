@@ -32,7 +32,7 @@ const Banner = ({
 		)}
 
 		<Style.ImageWrapper>
-			<Image src={img} alt={title} layout="fill" objectFit="cover" />
+			<Image src={img} alt={title} layout="fill" objectFit="cover" priority />
 		</Style.ImageWrapper>
 
 		<Style.Caption>
