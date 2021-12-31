@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { Email, Lock, AccountCircle, ErrorOutline } from '@styled-icons/material-outlined';
 
-import { MUTATION_REGISTER } from 'graphql/mutation/register';
+import { MUTATION_REGISTER } from 'graphql/mutations/register';
 import { UsersPermissionsRegisterInput } from 'graphql/generated/globalTypes';
 import { FieldErrors, signUpValidate } from 'utils/validations';
 import { FormWrapper, FormLink, FormLoading, FormError } from 'components/Form';
