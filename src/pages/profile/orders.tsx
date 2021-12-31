@@ -3,7 +3,10 @@ import protectedRoutes from 'utils/protected-routes';
 import OrdersList, { OrdersListProps } from 'components/OrdersList';
 import Profile from 'templates/Profile';
 
-import ordersMock from 'components/OrdersList/mock';
+import { initializeApollo } from 'utils/apollo';
+import { GetOrders, GetOrdersVariables } from 'graphql/generated/GetOrders';
+import { GET_ORDERS } from 'graphql/queries/orders';
+import { ordersMapper } from 'utils/mappers';
 
 export default function Orders({ items }: OrdersListProps) {
 	return (
@@ -15,10 +18,18 @@ export default function Orders({ items }: OrdersListProps) {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const session = await protectedRoutes(context);
+	const apolloClient = initializeApollo(null, session);
+
+	const { data } = await apolloClient.query<GetOrders, GetOrdersVariables>({
+		query: GET_ORDERS,
+		variables: {
+			identifier: session?.id as string
+		}
+	});
 
 	return {
 		props: {
-			items: ordersMock,
+			items: ordersMapper(data.orders),
 			session
 		}
 	};
