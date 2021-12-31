@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import formatPrice from 'utils/formatPrice';
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon';
@@ -44,7 +45,7 @@ const GameCard = ({
 		)}
 		<Link href={`game/${slug}`} passHref>
 			<Style.ImageBox>
-				<img src={img} alt={title} />
+				<Image src={img} alt={title} layout="fill" objectFit="cover" />
 			</Style.ImageBox>
 		</Link>
 		<Style.Content>
