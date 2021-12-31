@@ -1,4 +1,4 @@
-import { MUTATION_CREATE_WISHLIST, MUTATION_UPDATE_WISHLIST } from 'graphql/mutation/wishlist';
+import { MUTATION_CREATE_WISHLIST, MUTATION_UPDATE_WISHLIST } from 'graphql/mutations/wishlist';
 import { GET_WISHLIST } from 'graphql/queries/wishlist';
 
 const gameMock = (id: string) => ({

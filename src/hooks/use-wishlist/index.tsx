@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useSession } from 'next-auth/client';
 import { useMutation } from '@apollo/client';
 
-import { MUTATION_CREATE_WISHLIST, MUTATION_UPDATE_WISHLIST } from 'graphql/mutation/wishlist';
+import { MUTATION_CREATE_WISHLIST, MUTATION_UPDATE_WISHLIST } from 'graphql/mutations/wishlist';
 import { GameCardProps } from 'components/GameCard';
 import { useQueryWishlist } from 'hooks/use-query-wishlist';
 import { GetWishlist_wishlists_games } from 'graphql/generated/GetWishlist';
