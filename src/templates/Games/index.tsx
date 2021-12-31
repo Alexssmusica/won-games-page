@@ -3,6 +3,7 @@ import { ParsedUrlQueryInput } from 'querystring';
 import { KeyboardArrowDown as ArrowDown } from '@styled-icons/material-outlined/KeyboardArrowDown';
 
 import { parseQueryStringToFilter, parseQueryStringToWhere } from 'utils/filter';
+import { getImageUrl } from 'utils/getImageUrl';
 import ExploreSidebar, { ItemProps } from 'components/ExploreSidebar';
 import { useQueryGames } from 'hooks/use-query-games';
 import { Grid } from 'components/Grid';
@@ -66,7 +67,7 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
 										title={game.name}
 										slug={game.slug}
 										developer={game.developers[0].name}
-										img={`http://localhost:1337${game.cover!.url}`}
+										img={`${getImageUrl(game.cover!.url)}`}
 										price={game.price}
 									/>
 								))}

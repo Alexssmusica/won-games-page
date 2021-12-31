@@ -1,12 +1,15 @@
 import { GetHome_banners, GetHome_sections_upcomingGames_highlight } from 'graphql/generated/GetHome';
 import { GetGames_games } from 'graphql/generated/GetGames';
+
+import { getImageUrl } from 'utils/getImageUrl';
 import formatPrice from 'utils/formatPrice';
+
 import { GetWishlist_wishlists_games } from 'graphql/generated/GetWishlist';
 import { GetOrders_orders } from 'graphql/generated/GetOrders';
 
 export const bannerMapper = (banners: GetHome_banners[]) => {
 	return banners.map((banner) => ({
-		img: `http://localhost:1337${banner.image?.url}`,
+		img: `${getImageUrl(banner.image?.url)}`,
 		title: banner.title,
 		subtitle: banner.subtitle,
 		buttonLabel: banner.button?.label,
@@ -26,7 +29,7 @@ export const gamesMapper = (games: GetGames_games[] | GetWishlist_wishlists_game
 				title: game.name,
 				slug: game.slug,
 				developer: game.developers[0].name,
-				img: `http://localhost:1337${game.cover?.url}`,
+				img: `${getImageUrl(game.cover?.url)}`,
 				price: game.price
 		  }))
 		: [];
@@ -37,8 +40,8 @@ export const highlightMapper = (highlight: GetHome_sections_upcomingGames_highli
 		? {
 				title: highlight.title,
 				subtitle: highlight.subtitle,
-				backgroundImage: `http://localhost:1337${highlight.background?.url}`,
-				floatImage: `http://localhost:1337${highlight.floatImage?.url}`,
+				backgroundImage: `${getImageUrl(highlight.background?.url)}`,
+				floatImage: `${getImageUrl(highlight.floatImage?.url)}`,
 				buttonLabel: highlight.buttonLabel,
 				buttonLink: highlight.buttonLink,
 				alignment: highlight.alignment
@@ -50,7 +53,7 @@ export const cartMapper = (games: GetGames_games[] | undefined) => {
 	return games
 		? games.map((game) => ({
 				id: game.id,
-				img: `http://localhost:1337${game.cover?.url}`,
+				img: `${getImageUrl(game.cover?.url)}`,
 				title: game.name,
 				price: formatPrice(game.price)
 		  }))
@@ -76,7 +79,7 @@ export const ordersMapper = (orders: GetOrders_orders[]) => {
 						id: game.id,
 						title: game.name,
 						downloadLink: 'https://wongames.com/game/download/yuYT56Tgh431LkjhNBgdf',
-						img: `http://localhost:1337${game.cover?.url}`,
+						img: `${getImageUrl(game.cover?.url)}`,
 						price: formatPrice(game.price)
 					}))
 				};
