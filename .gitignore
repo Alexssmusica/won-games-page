@@ -36,3 +36,7 @@ public/sw.js
 public/workbox-*.js
 .env.production
 tsconfig.tsbuildinfo
+
+# cypress
+cypress/screenshots
+cypress/videos
