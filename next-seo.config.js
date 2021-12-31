@@ -1,7 +1,7 @@
 export default {
 	openGraph: {
 	  type: 'website',
-	  locale: 'pt_BR',
+	  locale: 'en_US',
 	  url: 'https://www.wongames.willianjusten.com.br',
 	  site_name: 'Won Games',
 	  title: 'Won Games'
