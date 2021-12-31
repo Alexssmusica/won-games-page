@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Highlight /> should render headings and button 1`] = `
-.c6 {
+.c5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -27,19 +27,16 @@ exports[`<Highlight /> should render headings and button 1`] = `
   padding: 0.8rem 3.2rem;
 }
 
-.c6:focus {
+.c5:focus {
   outline: 1px dashed;
 }
 
-.c6:hover {
+.c5:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
 .c0 {
   position: relative;
-  background-image: url(/img/red-dead-img.jpg);
-  background-position: center center;
-  background-size: cover;
   height: 23rem;
   display: grid;
   grid-template-areas: 'floatimage content';
@@ -54,33 +51,28 @@ exports[`<Highlight /> should render headings and button 1`] = `
   background-color: rgba(0,0,0,0.6);
 }
 
-.c0 .c2 {
+.c0 img {
+  position: absolute;
+  object-fit: cover;
+}
+
+.c0 .c1 {
   text-align: right;
 }
 
-.c1 {
-  grid-area: floatimage;
-  z-index: 10;
-  max-height: 23rem;
-  max-width: 100%;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-}
-
-.c3 {
+.c2 {
   grid-area: content;
   z-index: 10;
   padding: 1.6rem;
 }
 
-.c4 {
+.c3 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #FAFAFA;
 }
 
-.c5 {
+.c4 {
   font-size: 1.4rem;
   font-weight: 300;
   color: #FAFAFA;
@@ -94,13 +86,7 @@ exports[`<Highlight /> should render headings and button 1`] = `
 }
 
 @media (min-width:768px) {
-  .c1 {
-    max-height: 32rem;
-  }
-}
-
-@media (min-width:768px) {
-  .c3 {
+  .c2 {
     -webkit-align-self: end;
     -ms-flex-item-align: end;
     align-self: end;
@@ -109,13 +95,13 @@ exports[`<Highlight /> should render headings and button 1`] = `
 }
 
 @media (min-width:768px) {
-  .c4 {
+  .c3 {
     font-size: 2.8rem;
   }
 }
 
 @media (min-width:768px) {
-  .c5 {
+  .c4 {
     font-size: 1.8rem;
   }
 }
@@ -124,25 +110,25 @@ exports[`<Highlight /> should render headings and button 1`] = `
   class="c0"
 >
   <img
-    alt="Heading 1"
-    class="c1"
-    src="/img/red-dead-float.png"
+    alt="Heading 1 background"
+    layout="fill"
+    src="/img/red-dead-img.jpg"
   />
   <div
-    class="c2 c3"
+    class="c1 c2"
   >
     <h2
-      class="c4"
+      class="c3"
     >
       Heading 1
     </h2>
     <h3
-      class="c5"
+      class="c4"
     >
       Heading 2
     </h3>
     <a
-      class="c6"
+      class="c5"
       href="/rdr2"
     >
       <span>

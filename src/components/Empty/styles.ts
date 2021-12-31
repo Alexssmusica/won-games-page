@@ -5,13 +5,10 @@ export const Wrapper = styled.main`
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-`;
 
-export const Image = styled.img`
-	${({ theme }) => css`
-		max-width: 100%;
-		margin-bottom: ${theme.spacings.small};
-	`}
+	img {
+		object-fit: cover;
+	}
 `;
 
 export const Title = styled.h2`

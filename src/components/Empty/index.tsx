@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import * as Style from './styles';
+import Image from 'next/image';
 
 import Button from 'components/Button';
+
+import * as Style from './styles';
 
 export type EmptyProps = {
 	title: string;
@@ -12,7 +14,7 @@ export type EmptyProps = {
 
 const Empty = ({ title, description, hasLink, img }: EmptyProps) => (
 	<Style.Wrapper>
-		<Style.Image src={img} alt="A gamer in a couch playing videogame" role="image" />
+		<Image src={img} alt="A gamer in a couch playing videogame" role="image" width={380} height={285} />
 
 		<Style.Title>{title}</Style.Title>
 		<Style.Description>{description}</Style.Description>

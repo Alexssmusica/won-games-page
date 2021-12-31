@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import GameDetails, { GameDetailsProps } from 'components/GameDetails';
 import Gallery, { GalleryImageProps } from 'components/Gallery';
@@ -37,7 +38,9 @@ const Game = ({
 	recommendedGames
 }: GameTemplateProps) => (
 	<Base>
-		<Style.Cover src={cover} role="image" aria-label="cover" />
+		<Style.Cover>
+			<Image src={cover} alt={gameInfo.title} layout="fill" />
+		</Style.Cover>
 
 		<Style.Main>
 			<Style.SectionGameInfo>

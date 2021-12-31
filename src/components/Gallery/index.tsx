@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos';
 import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/ArrowForwardIos';
 import { Close } from '@styled-icons/material-outlined/Close';
@@ -77,7 +78,9 @@ const Gallery = ({ items }: GalleryProps) => {
 		<Style.Wrapper>
 			<Slider ref={slider} settings={settings}>
 				{items.map((item, index) => (
-					<img
+					<Image
+						width={295}
+						height={165}
 						role="button"
 						key={`thumb-${index}`}
 						src={item.src}
@@ -98,7 +101,7 @@ const Gallery = ({ items }: GalleryProps) => {
 				<Style.Content>
 					<Slider ref={slider} settings={modalSettings}>
 						{items.map((item, index) => (
-							<img key={`gallery-${index}`} src={item.src} alt={item.label} />
+							<Image width={1200} height={675} key={`gallery-${index}`} src={item.src} alt={item.label} />
 						))}
 					</Slider>
 				</Style.Content>

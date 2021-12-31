@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Download } from '@styled-icons/boxicons-solid/Download';
 import { useCart } from 'hooks/use-cart';
 
@@ -26,7 +27,7 @@ const GameItem = ({ id, img, title, price, downloadLink, paymentInfo }: GameItem
 		<Style.Wrapper>
 			<Style.GameContent>
 				<Style.ImageBox>
-					<img src={img} alt={title} />
+					<Image src={img} alt={title} layout="fill" object-fit="cover" />
 				</Style.ImageBox>
 
 				<Style.Content>
