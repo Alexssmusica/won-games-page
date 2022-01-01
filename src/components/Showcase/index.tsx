@@ -12,7 +12,7 @@ export type ShowcaseProps = {
 };
 
 const Showcase = ({ title, highlight, games, color = 'white' }: ShowcaseProps) => (
-	<Style.Wrapper>
+	<Style.Wrapper data-cy={title || 'showcase'}>
 		{!!title && (
 			<Heading lineLeft lineColor="secondary">
 				{title}
