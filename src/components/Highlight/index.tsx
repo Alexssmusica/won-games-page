@@ -21,7 +21,7 @@ const Highlight = ({
 	buttonLink,
 	alignment = 'right'
 }: HighlightProps) => (
-	<Style.Wrapper alignment={alignment}>
+	<Style.Wrapper alignment={alignment} data-cy="highlight">
 		<Image src={backgroundImage} alt={`${title} background`} layout="fill" />
 		{!!floatImage && (
 			<Style.FloatImageWrapper>
