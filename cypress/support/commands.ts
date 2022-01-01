@@ -26,3 +26,22 @@
 import '@testing-library/cypress/add-commands';
 
 Cypress.Commands.add('google', () => cy.visit('https://google.com'));
+
+Cypress.Commands.add('shouldRenderBanner', () => {
+	cy.get('.slick-slider').within(() => {
+		cy.findByRole('heading', { name: /New Vegas Ultimate Edition/i })
+		cy.findByRole('link', { name: /buy now/i })
+
+		cy.get('.slick-dots > :nth-child(2) > button').click()
+		cy.wait(500)
+
+		cy.findByRole('heading', { name: 'Cyberpunk 2077' })
+		cy.findByRole('link', { name: /buy now/i })
+
+		cy.get('.slick-dots > :nth-child(3) > button').click()
+		cy.wait(500)
+
+		cy.findByRole('heading', { name: /horizon zero dawn/i })
+		cy.findByRole('link', { name: /buy now/i })
+	})
+  })
