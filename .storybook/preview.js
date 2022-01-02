@@ -1,16 +1,14 @@
-
 import '../.jest/next-image.mock'
-import { ThemeProvider } from 'styled-components';
-import { CartContext, CartContextDefaultValues } from 'hooks/use-cart';
-import GlobalStyles from 'styles/global';
-import theme from 'styles/theme';
-// import * as nextImage from "next/image"
+import { ThemeProvider } from 'styled-components'
+import { CartContext, CartContextDefaultValues } from 'hooks/use-cart'
+import { RouterContext } from "next/dist/shared/lib/router-context";
+import GlobalStyles from 'styles/global'
+import theme from 'styles/theme'
 
-// Object.defineProperty(nextImage, "default", {
-//   configurable: true,
-//   value: props => <img {...props} />
-// })
 export const parameters = {
+	nextRouter: {
+		Provider: RouterContext.Provider
+	},
 	backgrounds: {
 		default: 'won-light',
 		values: [
@@ -29,11 +27,13 @@ export const parameters = {
 export const decorators = [
 	(Story, context) => (
 		<ThemeProvider theme={theme}>
-			<CartContext.Provider value={{
-				...CartContextDefaultValues,
-				...(context?.args?.cartContextValue || {}),
-				...context.args
-			}}>
+			<CartContext.Provider
+				value={{
+					...CartContextDefaultValues,
+					...(context?.args?.cartContextValue || {}),
+					...context.args
+				}}
+			>
 				<GlobalStyles removeBg />
 				<Story />
 			</CartContext.Provider>

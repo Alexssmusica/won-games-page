@@ -40,3 +40,4 @@ tsconfig.tsbuildinfo
 # cypress
 cypress/screenshots
 cypress/videos
+storybook-static
