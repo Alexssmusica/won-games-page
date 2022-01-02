@@ -59,6 +59,7 @@
 		"styled-media-query": "^2.1.2"
 	},
 	"devDependencies": {
+		"@jackfranklin/test-data-bot": "^1.4.0",
 		"@next/eslint-plugin-next": "^12.0.7",
 		"@storybook/addon-essentials": "^6.4.9",
 		"@storybook/builder-webpack5": "^6.4.9",
@@ -79,6 +80,7 @@
 		"@typescript-eslint/parser": "^5.8.1",
 		"apollo": "^2.33.9",
 		"cypress": "^9.2.0",
+		"cypress-plugin-stripe-elements": "^1.0.2",
 		"dotenv": "^10.0.0",
 		"eslint": "^8.0.0",
 		"eslint-config-next": "^12.0.7",

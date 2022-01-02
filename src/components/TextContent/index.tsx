@@ -7,7 +7,7 @@ export type TextContentProps = {
 };
 
 const TextContent = ({ title, content }: TextContentProps) => (
-	<Style.Wrapper>
+	<Style.Wrapper data-cy="content">
 		{!!title && (
 			<Heading lineLeft lineColor="secondary">
 				{title}

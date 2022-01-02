@@ -24,7 +24,7 @@ const GameItem = ({ id, img, title, price, downloadLink, paymentInfo }: GameItem
 	const { isInCart, removeFromCart } = useCart();
 
 	return (
-		<Style.Wrapper>
+		<Style.Wrapper data-cy="game-item">
 			<Style.GameContent>
 				<Style.ImageBox>
 					<Image src={img} alt={title} layout="fill" object-fit="cover" />

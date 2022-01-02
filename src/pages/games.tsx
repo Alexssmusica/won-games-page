@@ -18,11 +18,11 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
 		type: 'radio',
 		fields: [
 			{ label: 'Free', name: 0 },
-			{ label: 'Under R$ 50,00', name: 50 },
-			{ label: 'Under R$ 100,00', name: 100 },
-			{ label: 'Under R$ 150,00', name: 150 },
-			{ label: 'Under R$ 250,00', name: 250 },
-			{ label: 'Under R$ 500,00', name: 500 }
+			{ label: 'Under $50', name: 50 },
+			{ label: 'Under $100', name: 100 },
+			{ label: 'Under $150', name: 150 },
+			{ label: 'Under $250', name: 250 },
+			{ label: 'Under $500', name: 500 }
 		]
 	};
 

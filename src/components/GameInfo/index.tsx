@@ -14,7 +14,7 @@ export type GameInfoProps = {
 };
 
 const GameInfo = ({ id, title, description, price }: GameInfoProps) => (
-	<Style.Wrapper>
+	<Style.Wrapper data-cy="game-info">
 		<Heading color="black" lineBottom>
 			{title}
 		</Heading>

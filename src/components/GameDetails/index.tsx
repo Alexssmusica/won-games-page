@@ -25,7 +25,7 @@ const GameDetails = ({ developer, publisher, releaseDate, platforms, rating, gen
 	};
 
 	return (
-		<Style.Wrapper>
+		<Style.Wrapper data-cy="game-details">
 			<MediaMatch greaterThan="small">
 				<Heading lineLeft lineColor="secondary">
 					Game Details
