@@ -17,6 +17,6 @@ export default {
 			}
 		}
 	}
-} as Meta;
+} as Meta<ProfileMenuProps>;
 
 export const Default: Story<ProfileMenuProps> = (args) => <ProfileMenu {...args} />;

@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
-import Button from '.';
+import Button, { ButtonProps } from '.';
 
 export default {
 	title: 'Button',
@@ -19,7 +19,7 @@ export default {
 			}
 		}
 	}
-} as unknown as Meta;
+} as unknown as Meta<ButtonProps>;
 
 export const Default: Story = (args) => <Button {...args} />;
 export const withIcon: Story = (args) => <Button {...args} />;

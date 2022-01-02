@@ -16,7 +16,7 @@ export default {
 		onInput: { action: 'changed' },
 		icon: { type: '' }
 	}
-} as unknown as Meta;
+} as unknown as Meta<TextFieldProps>;
 
 export const Default: Story<TextFieldProps> = (args) => (
 	<div style={{ maxWidth: 300, padding: 15 }}>

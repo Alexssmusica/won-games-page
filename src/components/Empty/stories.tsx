@@ -14,7 +14,7 @@ export default {
 			type: ''
 		}
 	}
-} as unknown as Meta;
+} as unknown as Meta<EmptyProps>;
 
 export const Empty1: Story<EmptyProps> = (args) => <Empty {...args} />;
 

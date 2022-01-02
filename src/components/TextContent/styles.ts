@@ -30,7 +30,8 @@ export const Wrapper = styled.div`
 		a {
 			color: ${theme.colors.primary};
 		}
-		img {
+		img,
+		video {
 			max-width: min(70rem, 100%);
 			margin-bottom: ${theme.spacings.xsmall};
 		}

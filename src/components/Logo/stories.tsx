@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
-import Logo from '.';
+import Logo, { LogoProps } from '.';
 
 export default {
 	title: 'Logo',
@@ -9,6 +9,6 @@ export default {
 			default: 'won-dark'
 		}
 	}
-} as Meta;
+} as Meta<LogoProps>;
 
 export const Default: Story = (args) => <Logo {...args} />;

@@ -19,7 +19,7 @@ export default {
 			</div>
 		)
 	]
-} as Meta;
+} as Meta<ShowcaseProps>;
 
 export const Default: Story<ShowcaseProps> = (args) => <Showcase {...args} />;
 

@@ -18,7 +18,7 @@ jest.mock('next-auth/client', () => ({
 	signIn: jest.fn()
 }));
 
-describe('<FormResetPassword>', () => {
+describe('<FormResetPassword />', () => {
 	it('should render the form', () => {
 		render(<FormResetPassword />);
 

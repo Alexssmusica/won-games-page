@@ -10,7 +10,7 @@ export default {
 		title: 'Red Dead Redemption 2',
 		price: formatPrice(215)
 	}
-} as Meta;
+} as unknown as Meta<GameItemProps>;
 
 export const Default: Story<GameItemProps> = (args) => <GameItem {...args} />;
 

@@ -8,7 +8,7 @@ export default {
 		layout: 'fullscreen',
 		backgrounds: { default: 'won-dark' }
 	}
-} as Meta;
+} as Meta<MenuProps>;
 
 export const Default: Story<MenuProps> = (args) => <Menu {...args} />;
 

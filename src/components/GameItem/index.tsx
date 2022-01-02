@@ -27,7 +27,7 @@ const GameItem = ({ id, img, title, price, downloadLink, paymentInfo }: GameItem
 		<Style.Wrapper data-cy="game-item">
 			<Style.GameContent>
 				<Style.ImageBox>
-					<Image src={img} alt={title} layout="fill" object-fit="cover" />
+					<Image src={img} alt={title} width={150} height={70} />
 				</Style.ImageBox>
 
 				<Style.Content>
@@ -52,7 +52,7 @@ const GameItem = ({ id, img, title, price, downloadLink, paymentInfo }: GameItem
 					<Style.CardInfo>
 						<span>{paymentInfo.number}</span>
 						{!!paymentInfo.img && !!paymentInfo.flag && (
-							<img src={paymentInfo.img} alt={paymentInfo.flag} />
+							<Image src={paymentInfo.img} alt={paymentInfo.flag} width={38} height={24} />
 						)}
 					</Style.CardInfo>
 				</Style.PaymentContent>

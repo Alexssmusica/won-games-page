@@ -21,7 +21,7 @@ const Menu = ({ username, loading }: MenuProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<Style.Wrapper>
+		<Style.Wrapper isOpen={isOpen}>
 			<MediaMatch lessThan="medium">
 				<Style.IconWrapper onClick={() => setIsOpen(true)}>
 					<MenuIcon aria-label="Open Menu" />

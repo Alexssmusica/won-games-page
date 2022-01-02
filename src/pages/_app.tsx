@@ -12,6 +12,7 @@ import { WishlistProvider } from 'hooks/use-wishlist';
 import { useApollo } from 'hooks/use-apollo';
 import GlobalStyles from 'styles/global';
 import theme from 'styles/theme';
+import { StickyNote } from 'components/StickyNote';
 
 function App({ Component, pageProps }: AppProps) {
 	const client = useApollo(pageProps.initialApolloState);
@@ -31,6 +32,9 @@ function App({ Component, pageProps }: AppProps) {
 							<DefaultSeo {...SEO} />
 							<GlobalStyles />
 							<NextNProgress color="#F231A5" startPosition={0.3} stopDelayMs={200} height={5} />
+							<StickyNote>
+								<p>Esse é um site de estudos!</p>
+							</StickyNote>
 							<Component {...pageProps} />
 						</WishlistProvider>
 					</CartProvider>
