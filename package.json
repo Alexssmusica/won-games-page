@@ -94,7 +94,7 @@
 		"jest": "^27.4.7",
 		"jest-styled-components": "^7.0.8",
 		"lint-staged": "^12.1.7",
-		"msw": "^0.36.3",
+		"msw": "^0.36.4",
 		"node-fetch": "2.6.6",
 		"plop": "^3.0.5",
 		"prettier": "2.5.1",
