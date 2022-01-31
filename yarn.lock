@@ -2595,6 +2595,17 @@
     global "^4.4.0"
     telejson "^5.3.2"
 
+"@storybook/channel-websocket@6.4.16":
+  version "6.4.16"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-websocket/-/channel-websocket-6.4.16.tgz#e2c45198572b6cd2492685c309e2441be0f34922"
+  integrity sha512-+mo32d1em+jtEGWK93OaCn2sMnCK0HDP4FRidTlmJR1UG5riaXNlZhKE5fEp0T9EHmMhgoVWikaG82QECk+alQ==
+  dependencies:
+    "@storybook/channels" "6.4.16"
+    "@storybook/client-logger" "6.4.16"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    telejson "^5.3.2"
+
 "@storybook/channels@6.4.14":
   version "6.4.14"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-6.4.14.tgz#f7a5416c971febd26ed7b03a75d99fd819790e48"
@@ -2756,6 +2767,32 @@
     "@storybook/preview-web" "6.4.14"
     "@storybook/store" "6.4.14"
     "@storybook/ui" "6.4.14"
+    airbnb-js-shims "^2.2.1"
+    ansi-to-html "^0.6.11"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    lodash "^4.17.21"
+    qs "^6.10.0"
+    regenerator-runtime "^0.13.7"
+    ts-dedent "^2.0.0"
+    unfetch "^4.2.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/core-client@6.4.16":
+  version "6.4.16"
+  resolved "https://registry.yarnpkg.com/@storybook/core-client/-/core-client-6.4.16.tgz#4fb0eac55e513964b44d5a12567c3d28054c980f"
+  integrity sha512-hqPyKLN+5bDE7nqUotE1TkNiXyGx2FgOYY83Sv0fSX/VXNOAhdPKvfVSuZN3XDSObIqumY8qyk8gGmJ161/mOw==
+  dependencies:
+    "@storybook/addons" "6.4.16"
+    "@storybook/channel-postmessage" "6.4.16"
+    "@storybook/channel-websocket" "6.4.16"
+    "@storybook/client-api" "6.4.16"
+    "@storybook/client-logger" "6.4.16"
+    "@storybook/core-events" "6.4.16"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/preview-web" "6.4.16"
+    "@storybook/store" "6.4.16"
+    "@storybook/ui" "6.4.16"
     airbnb-js-shims "^2.2.1"
     ansi-to-html "^0.6.11"
     core-js "^3.8.2"
@@ -3026,20 +3063,20 @@
     webpack-dev-middleware "^3.7.3"
     webpack-virtual-modules "^0.2.2"
 
-"@storybook/manager-webpack5@^6.4.14":
-  version "6.4.14"
-  resolved "https://registry.yarnpkg.com/@storybook/manager-webpack5/-/manager-webpack5-6.4.14.tgz#ee84e01cb54eb0216f543d269b70a9850a6a1449"
-  integrity sha512-9a2iUUKldGmWH455GmGF/Bvjwk0kb8bGcsCfMIsk7fPbBv16ebMZcOth+ApHrwINTgy9a58j+zL1vie7oNlxhA==
+"@storybook/manager-webpack5@^6.4.16":
+  version "6.4.16"
+  resolved "https://registry.yarnpkg.com/@storybook/manager-webpack5/-/manager-webpack5-6.4.16.tgz#7070fde55a4abffa317d881cdbf363c5008fa1bb"
+  integrity sha512-6rzHE/Zf5I0WshSl38FTO3lrseSzg1UUei3QVk/JqAdCU20LVEh2PIP+UnQfkQor3lu/zH2eY2xNnR1BTB8eVg==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-template-literals" "^7.12.1"
     "@babel/preset-react" "^7.12.10"
-    "@storybook/addons" "6.4.14"
-    "@storybook/core-client" "6.4.14"
-    "@storybook/core-common" "6.4.14"
-    "@storybook/node-logger" "6.4.14"
-    "@storybook/theming" "6.4.14"
-    "@storybook/ui" "6.4.14"
+    "@storybook/addons" "6.4.16"
+    "@storybook/core-client" "6.4.16"
+    "@storybook/core-common" "6.4.16"
+    "@storybook/node-logger" "6.4.16"
+    "@storybook/theming" "6.4.16"
+    "@storybook/ui" "6.4.16"
     "@types/node" "^14.0.10"
     babel-loader "^8.0.0"
     case-sensitive-paths-webpack-plugin "^2.3.0"
@@ -3332,6 +3369,40 @@
     "@storybook/router" "6.4.14"
     "@storybook/semver" "^7.3.2"
     "@storybook/theming" "6.4.14"
+    copy-to-clipboard "^3.3.1"
+    core-js "^3.8.2"
+    core-js-pure "^3.8.2"
+    downshift "^6.0.15"
+    emotion-theming "^10.0.27"
+    fuse.js "^3.6.1"
+    global "^4.4.0"
+    lodash "^4.17.21"
+    markdown-to-jsx "^7.1.3"
+    memoizerific "^1.11.3"
+    polished "^4.0.5"
+    qs "^6.10.0"
+    react-draggable "^4.4.3"
+    react-helmet-async "^1.0.7"
+    react-sizeme "^3.0.1"
+    regenerator-runtime "^0.13.7"
+    resolve-from "^5.0.0"
+    store2 "^2.12.0"
+
+"@storybook/ui@6.4.16":
+  version "6.4.16"
+  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-6.4.16.tgz#04a44991786c3725d2938da938f2ffe77f177c9c"
+  integrity sha512-/+qR//RoKQ7ieK99fYJxQteixNu8KdcFEgq1VDNMOAKsp17LSU+3bxKwm3M+dSKDT6t3oOETa3aGEB1B0dcnFg==
+  dependencies:
+    "@emotion/core" "^10.1.1"
+    "@storybook/addons" "6.4.16"
+    "@storybook/api" "6.4.16"
+    "@storybook/channels" "6.4.16"
+    "@storybook/client-logger" "6.4.16"
+    "@storybook/components" "6.4.16"
+    "@storybook/core-events" "6.4.16"
+    "@storybook/router" "6.4.16"
+    "@storybook/semver" "^7.3.2"
+    "@storybook/theming" "6.4.16"
     copy-to-clipboard "^3.3.1"
     core-js "^3.8.2"
     core-js-pure "^3.8.2"
