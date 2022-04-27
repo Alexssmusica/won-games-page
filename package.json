@@ -36,7 +36,7 @@
 	"dependencies": {
 		"@apollo/client": "^3.5.10",
 		"@stripe/react-stripe-js": "^1.7.2",
-		"@stripe/stripe-js": "^1.27.0",
+		"@stripe/stripe-js": "^1.29.0",
 		"@styled-icons/boxicons-regular": "^10.38.0",
 		"@styled-icons/boxicons-solid": "^10.38.0",
 		"@styled-icons/fa-brands": "^10.38.0",
@@ -96,7 +96,7 @@
 		"lint-staged": "^12.4.0",
 		"msw": "^0.39.2",
 		"node-fetch": "2.6.6",
-		"plop": "^3.0.5",
+		"plop": "^3.1.0",
 		"prettier": "2.6.2",
 		"start-server-and-test": "^1.14.0",
 		"storybook-addon-next-router": "^3.1.1",
