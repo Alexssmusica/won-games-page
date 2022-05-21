@@ -9561,27 +9561,7 @@ inline-style-parser@0.1.1:
   resolved "https://registry.yarnpkg.com/inline-style-parser/-/inline-style-parser-0.1.1.tgz#ec8a3b429274e9c0a1f1c4ffa9453a7fef72cea1"
   integrity sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==
 
-inquirer@^8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.2.0.tgz#f44f008dd344bbfc4b30031f45d984e034a3ac3a"
-  integrity sha512-0crLweprevJ02tTuA6ThpoAERAGyVILC4sS74uib58Xf/zSr1/ZWtmm7D5CI+bSQEaA04f0K7idaHpQbSWgiVQ==
-  dependencies:
-    ansi-escapes "^4.2.1"
-    chalk "^4.1.1"
-    cli-cursor "^3.1.0"
-    cli-width "^3.0.0"
-    external-editor "^3.0.3"
-    figures "^3.0.0"
-    lodash "^4.17.21"
-    mute-stream "0.0.8"
-    ora "^5.4.1"
-    run-async "^2.4.0"
-    rxjs "^7.2.0"
-    string-width "^4.1.0"
-    strip-ansi "^6.0.0"
-    through "^2.3.6"
-
-inquirer@^8.2.2:
+inquirer@^8.2.0, inquirer@^8.2.2:
   version "8.2.3"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-8.2.3.tgz#9c0b8a3fda91fdb00590557ec8530160e908c6e7"
   integrity sha512-jmoBlmWUChXgVi1wGDZsD7pWCaibJKmL+8+E2jaiWiRj8OlJLwQdQQS2CIjgvdg8UUHX+oyagQKicVVcqwxi9Q==
@@ -11803,10 +11783,10 @@ ms@2.1.3, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-msw@^0.39.2:
-  version "0.39.2"
-  resolved "https://registry.yarnpkg.com/msw/-/msw-0.39.2.tgz#832e9274db62c43cb79854d5a69dce031c700de8"
-  integrity sha512-ju/HpqQpE4/qCxZ23t5Gaau0KREn4QuFzdG28nP1EpidMrymMJuIvNd32+2uGTGG031PMwrC41YW7vCxHOwyHA==
+msw@^0.40.2:
+  version "0.40.2"
+  resolved "https://registry.yarnpkg.com/msw/-/msw-0.40.2.tgz#3f60008ea0d1f5a3fbc9f55cbd1c1172efd3278d"
+  integrity sha512-8MymevYPIniUhk3W/xxWmhaMAeZHD9uhI37fik31i4JSToDhPWFg9hO6v/8IfTEPCD2Y1r4npDUxHmNbIeaOsg==
   dependencies:
     "@mswjs/cookies" "^0.2.0"
     "@mswjs/interceptors" "^0.15.1"
