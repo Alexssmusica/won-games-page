@@ -42,7 +42,7 @@
 		"@styled-icons/fa-brands": "^10.38.0",
 		"@styled-icons/material-outlined": "^10.34.0",
 		"@styled-icons/remix-fill": "^10.18.0",
-		"date-fns": "^2.27.0",
+		"date-fns": "^2.29.1",
 		"graphql": "^16.5.0",
 		"joi": "^17.6.0",
 		"lodash.xor": "^4.5.0",
