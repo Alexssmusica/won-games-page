@@ -81,7 +81,7 @@
 		"apollo": "^2.34.0",
 		"cypress": "^10.9.0",
 		"cypress-plugin-stripe-elements": "^1.0.2",
-		"dotenv": "^16.0.2",
+		"dotenv": "^16.0.3",
 		"eslint": "^8.24.0",
 		"eslint-config-next": "^12.3.1",
 		"eslint-config-prettier": "^8.5.0",
