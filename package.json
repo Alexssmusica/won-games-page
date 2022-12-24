@@ -39,7 +39,7 @@
 		"@stripe/stripe-js": "^1.46.0",
 		"@styled-icons/boxicons-regular": "^10.47.0",
 		"@styled-icons/boxicons-solid": "^10.46.0",
-		"@styled-icons/fa-brands": "^10.46.0",
+		"@styled-icons/fa-brands": "^10.47.0",
 		"@styled-icons/material-outlined": "^10.46.0",
 		"@styled-icons/remix-fill": "^10.46.0",
 		"date-fns": "^2.29.3",
