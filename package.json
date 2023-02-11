@@ -97,7 +97,7 @@
 		"msw": "^1.0.0",
 		"node-fetch": "2.6.6",
 		"plop": "^3.1.2",
-		"prettier": "2.8.3",
+		"prettier": "2.8.4",
 		"start-server-and-test": "^1.15.3",
 		"storybook-addon-next-router": "^4.0.2",
 		"typescript": "^4.9.5",
