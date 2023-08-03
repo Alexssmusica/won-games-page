@@ -55,7 +55,7 @@
 		"react": "17.0.2",
 		"react-dom": "18.2.0",
 		"react-slick": "^0.29.0",
-		"styled-components": "^6.0.5",
+		"styled-components": "^6.0.6",
 		"styled-media-query": "^2.1.2"
 	},
 	"devDependencies": {
