@@ -83,7 +83,7 @@
 		"cypress-plugin-stripe-elements": "^1.0.2",
 		"dotenv": "^16.3.1",
 		"eslint": "^8.46.0",
-		"eslint-config-next": "^13.4.13",
+		"eslint-config-next": "^13.4.15",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-cypress": "^2.14.0",
 		"eslint-plugin-prettier": "^5.0.0",
