@@ -73,7 +73,7 @@
 		"@types/jest": "^29.5.7",
 		"@types/lodash.xor": "^4.5.8",
 		"@types/node": "^20.8.10",
-		"@types/react": "^18.2.34",
+		"@types/react": "^18.2.35",
 		"@types/react-slick": "^0.23.11",
 		"@types/styled-components": "^5.1.29",
 		"@typescript-eslint/eslint-plugin": "^6.9.1",
