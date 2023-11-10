@@ -64,7 +64,7 @@
 		"@storybook/addon-essentials": "^7.5.3",
 		"@storybook/builder-webpack5": "^7.5.3",
 		"@storybook/manager-webpack5": "^6.5.16",
-		"@storybook/react": "^7.5.2",
+		"@storybook/react": "^7.5.3",
 		"@testing-library/cypress": "^10.0.1",
 		"@testing-library/jest-dom": "^6.1.4",
 		"@testing-library/react": "^14.0.0",
