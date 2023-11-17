@@ -4404,10 +4404,10 @@
     "@types/fined" "*"
     "@types/node" "*"
 
-"@types/lodash.xor@^4.5.8":
-  version "4.5.8"
-  resolved "https://registry.yarnpkg.com/@types/lodash.xor/-/lodash.xor-4.5.8.tgz#765597f9de076f95ca61108e1f2b49039a526ea8"
-  integrity sha512-T2JJRhNZSZKrrcN1L/bljddZeHTXwTAwkfZEhKnH5K369o6G6M74gT/bbqjl0tZFi1l1roLP7fXyV4DI5467Hw==
+"@types/lodash.xor@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@types/lodash.xor/-/lodash.xor-4.5.9.tgz#8e533b21f7530f134cfffe8e2470127c797d9fa6"
+  integrity sha512-XCuHoMz2zVC8IBTRetsL9XRyy0zpnTtpqioG4nHWwtnt0RLbKjtdpCwU0/BfRszP+sMQkIEy1cDFydMhKOeDlg==
   dependencies:
     "@types/lodash" "*"
 
