@@ -72,7 +72,7 @@
 		"@testing-library/user-event": "^14.5.1",
 		"@types/jest": "^29.5.8",
 		"@types/lodash.xor": "^4.5.9",
-		"@types/node": "^20.8.10",
+		"@types/node": "^20.9.4",
 		"@types/react": "^18.2.37",
 		"@types/react-slick": "^0.23.12",
 		"@types/styled-components": "^5.1.29",
