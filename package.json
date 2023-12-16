@@ -60,7 +60,7 @@
 	},
 	"devDependencies": {
 		"@jackfranklin/test-data-bot": "^2.1.0",
-		"@next/eslint-plugin-next": "^14.0.1",
+		"@next/eslint-plugin-next": "^14.0.4",
 		"@storybook/addon-essentials": "^7.6.4",
 		"@storybook/builder-webpack5": "^7.6.3",
 		"@storybook/manager-webpack5": "^6.5.16",
