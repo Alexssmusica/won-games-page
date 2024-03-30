@@ -3019,19 +3019,19 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/builder-webpack5@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-8.0.4.tgz#94c864d63443edeb4349d67b2c553a76a6c681f4"
-  integrity sha512-FKXIGfDjZJ7KCq6w8e3NEp2+KATsh4U24UV/K8cFjCrRIU++jDpO274D9ozdpzEmhvHOfxK/QlgalqS4G599Aw==
+"@storybook/builder-webpack5@^8.0.5":
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-8.0.5.tgz#64343ba374bb3e73ad84de642aca87e5c0970d19"
+  integrity sha512-tt7ZrRscsg+AJayOLXYCsDleNzNy0UHjfs7FnDzh331Ulyt2WeGkcELTZmHnBg5WwVBgjGTYmxYKSgGXF0hKXQ==
   dependencies:
-    "@storybook/channels" "8.0.4"
-    "@storybook/client-logger" "8.0.4"
-    "@storybook/core-common" "8.0.4"
-    "@storybook/core-events" "8.0.4"
-    "@storybook/core-webpack" "8.0.4"
-    "@storybook/node-logger" "8.0.4"
-    "@storybook/preview" "8.0.4"
-    "@storybook/preview-api" "8.0.4"
+    "@storybook/channels" "8.0.5"
+    "@storybook/client-logger" "8.0.5"
+    "@storybook/core-common" "8.0.5"
+    "@storybook/core-events" "8.0.5"
+    "@storybook/core-webpack" "8.0.5"
+    "@storybook/node-logger" "8.0.5"
+    "@storybook/preview" "8.0.5"
+    "@storybook/preview-api" "8.0.5"
     "@types/node" "^18.0.0"
     "@types/semver" "^7.3.4"
     browser-assert "^1.2.1"
@@ -3362,14 +3362,14 @@
   dependencies:
     ts-dedent "^2.0.0"
 
-"@storybook/core-webpack@8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/core-webpack/-/core-webpack-8.0.4.tgz#6b1f861ac173a43b626ff2e98d9090ad31672278"
-  integrity sha512-sECeoJtT6iFWzgZaQbS1TEZvBrXIT4qb9fa0x2/I5YhCTPnprCNL1yyN90hFQTpdLco5vfQ86YnpzMRntODn7A==
+"@storybook/core-webpack@8.0.5":
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/@storybook/core-webpack/-/core-webpack-8.0.5.tgz#f01969cbd256cf7921db516de643825bdeed23e3"
+  integrity sha512-xGjOgMFPEiQeofXyUM1rlnpqSJ3FVcuPkrbh8rDLC8mTzGeEqqhNH5hluywk1H8UqYlaNrVhPi6/iGWhRUvlgw==
   dependencies:
-    "@storybook/core-common" "8.0.4"
-    "@storybook/node-logger" "8.0.4"
-    "@storybook/types" "8.0.4"
+    "@storybook/core-common" "8.0.5"
+    "@storybook/node-logger" "8.0.5"
+    "@storybook/types" "8.0.5"
     "@types/node" "^18.0.0"
     ts-dedent "^2.0.0"
 
@@ -3610,10 +3610,10 @@
     unfetch "^4.2.0"
     util-deprecate "^1.0.2"
 
-"@storybook/preview@8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@storybook/preview/-/preview-8.0.4.tgz#d1ffc175390bd400c5e41b1d0576c9d58c11a81d"
-  integrity sha512-dJa13bIxQBfa5ZsXAeL6X/oXI6b87Fy31pvpKPkW1o+7M6MC4OvwGQBqgAd7m8yn6NuIHxrdwjEupa7l7PGb6w==
+"@storybook/preview@8.0.5":
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/@storybook/preview/-/preview-8.0.5.tgz#b7ab29774a9e7636086d63243c5f3cdc75e40438"
+  integrity sha512-D2uY0LTjkGbpNwJJeqtv1NieBTtvt0IEEKH+srMNXOOM+KascTYGbBlEPkYSf5bZdMft5c1GXglVIhJIqTZntg==
 
 "@storybook/react-dom-shim@8.0.4":
   version "8.0.4"
