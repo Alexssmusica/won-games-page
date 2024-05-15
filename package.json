@@ -62,7 +62,7 @@
 		"@jackfranklin/test-data-bot": "^2.1.0",
 		"@next/eslint-plugin-next": "^14.2.2",
 		"@storybook/addon-essentials": "^8.0.10",
-		"@storybook/builder-webpack5": "^8.0.10",
+		"@storybook/builder-webpack5": "^8.1.0",
 		"@storybook/manager-webpack5": "^6.5.16",
 		"@storybook/react": "^8.0.10",
 		"@testing-library/cypress": "^10.0.1",
