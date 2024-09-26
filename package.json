@@ -79,7 +79,7 @@
 		"@typescript-eslint/eslint-plugin": "^7.17.0",
 		"@typescript-eslint/parser": "^7.18.0",
 		"apollo": "^2.34.0",
-		"cypress": "^13.14.2",
+		"cypress": "^13.15.0",
 		"cypress-plugin-stripe-elements": "^1.0.2",
 		"dotenv": "^16.4.5",
 		"eslint": "^9.11.1",
