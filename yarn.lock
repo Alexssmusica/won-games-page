@@ -4071,10 +4071,10 @@
     regenerator-runtime "^0.13.7"
     resolve-from "^5.0.0"
 
-"@stripe/react-stripe-js@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-3.3.0.tgz#eea7c3db2fb4dd403a64c29fd03c9c470438f34d"
-  integrity sha512-Qg4rUxhHNm8OPFuUPnzsU5eLYWhpKKMMs378f67BD7vG0RKttmeeaUDjObs83imRlSxv5L6WdDKiv3RXi/RfSw==
+"@stripe/react-stripe-js@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-3.4.0.tgz#4d931975bba1f792aec451a75d31bcbfbe83f921"
+  integrity sha512-5m0vProlV2qyB7qXHSn25Ao79BjgJW/oiv2ynJ645dpdjeR7fyeb+KSrA4Esk7jqy+aKmdyn70TAIN0BVgh0MA==
   dependencies:
     prop-types "^15.7.2"
 
