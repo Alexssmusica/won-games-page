@@ -13189,10 +13189,10 @@ next-pwa@^5.6.0:
     workbox-webpack-plugin "^6.5.4"
     workbox-window "^6.5.4"
 
-next-seo@^6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-6.6.0.tgz#10c6278cc3be51f9db1ede6780812e5664742974"
-  integrity sha512-0VSted/W6XNtgAtH3D+BZrMLLudqfm0D5DYNJRXHcDgan/1ZF1tDFIsWrmvQlYngALyphPfZ3ZdOqlKpKdvG6w==
+next-seo@^6.7.1:
+  version "6.7.1"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-6.7.1.tgz#2dab385fe2a8b7e8ca76316e6d0e093fbae530cf"
+  integrity sha512-eEpTwyO4XYplOfawipRLx4Fcm02OvFDN8by6Yo/zYAYafNZYYbndgbGIZHu//gdYU9o0/78jAm3FHIoNAVpJNQ==
 
 next@15.3.2:
   version "15.3.2"
