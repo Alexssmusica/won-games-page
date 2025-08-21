@@ -44,7 +44,7 @@
 		"@styled-icons/remix-fill": "^10.46.0",
 		"date-fns": "^4.1.0",
 		"graphql": "^16.11.0",
-		"joi": "^18.0.0",
+		"joi": "^18.0.1",
 		"lodash.xor": "^4.5.0",
 		"next": "15.5.0",
 		"next-auth": "3.29.0",
