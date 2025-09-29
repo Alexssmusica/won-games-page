@@ -96,7 +96,7 @@
 		"lint-staged": "^16.2.3",
 		"msw": "^2.11.3",
 		"node-fetch": "2.6.6",
-		"plop": "^4.0.3",
+		"plop": "^4.0.4",
 		"prettier": "3.6.2",
 		"start-server-and-test": "^2.1.2",
 		"storybook-addon-next-router": "^4.0.2",
