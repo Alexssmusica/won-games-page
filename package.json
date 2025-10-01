@@ -100,7 +100,7 @@
 		"prettier": "3.6.2",
 		"start-server-and-test": "^2.1.2",
 		"storybook-addon-next-router": "^4.0.2",
-		"typescript": "^5.9.2",
+		"typescript": "^5.9.3",
 		"webpack": "5"
 	}
 }
