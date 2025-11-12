@@ -3484,12 +3484,12 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/builder-webpack5@^10.0.6":
-  version "10.0.6"
-  resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-10.0.6.tgz#c29ed014b40d85844a48c727a2e4791afb473989"
-  integrity sha512-n4d18LKE+B9+A88geqCPo2k+KnroiiZIZMiYYCet4/+90NK3yJC6cpu/iXJ2gnts1Z16wfqVUeN0EK+EuQMKiw==
+"@storybook/builder-webpack5@^10.0.7":
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-10.0.7.tgz#780d1041a828f94487e8988bf72263ed408ae0d7"
+  integrity sha512-zGLVCllY6taKpLRTILsb7SVf71qe8KISsGxR9XEiKf1CV4P4ikFj94Gj9UEafXxfDa+pGGrB+45911KSnJ3rWg==
   dependencies:
-    "@storybook/core-webpack" "10.0.6"
+    "@storybook/core-webpack" "10.0.7"
     case-sensitive-paths-webpack-plugin "^2.4.0"
     cjs-module-lexer "^1.2.3"
     css-loader "^7.1.2"
@@ -3752,10 +3752,10 @@
     "@storybook/csf" "^0.1.7"
     ts-dedent "^2.0.0"
 
-"@storybook/core-webpack@10.0.6":
-  version "10.0.6"
-  resolved "https://registry.yarnpkg.com/@storybook/core-webpack/-/core-webpack-10.0.6.tgz#5965aa10f1ba7879d884f29fccab9e92ea7e3c43"
-  integrity sha512-zoLG/gQFvCrQ39E84fj4qGBxfovAKDD0yGPtwJwrnTnLEAFISdN4YANrWS7hquxk3tPujgGJwbFpQkghekz4bA==
+"@storybook/core-webpack@10.0.7":
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/@storybook/core-webpack/-/core-webpack-10.0.7.tgz#9b49be15505d44c158bd4b6d2448638134a98f35"
+  integrity sha512-C1Q7TvMtqIInGHECObh153kWUzJzV8fmtsGhOpnW8h2fP727G2XJ4IRZdCh9Ogwq2KO2Dac6/jo8tW6N2mrFUA==
   dependencies:
     ts-dedent "^2.0.0"
 
