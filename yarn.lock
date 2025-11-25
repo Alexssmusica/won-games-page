@@ -4074,10 +4074,10 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@stripe/stripe-js@^8.5.2":
-  version "8.5.2"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-8.5.2.tgz#15c147de18f1b9c954b91ab77c37004372ee8386"
-  integrity sha512-Y4FZjOCYS5kf9dhSEQNUXo4oYc8sgwq2LK9hValXaykl/VfTkiwFb2WbyqnI3EFjNwoxm0KSmyMhz3Wji4My3Q==
+"@stripe/stripe-js@^8.5.3":
+  version "8.5.3"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-8.5.3.tgz#17b967d207dcbd25ea50cfebdab8a38b4abecf22"
+  integrity sha512-UM0GHAxlTN7v0lCK2P6t0VOlvBIdApIQxhnM3yZ2kupQ4PpSrLsK/n/NyYKtw2NJGMaNRRD1IicWS7fSL2sFtA==
 
 "@styled-icons/boxicons-regular@^10.47.0":
   version "10.47.0"
