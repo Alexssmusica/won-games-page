@@ -2696,10 +2696,15 @@
   resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.11.tgz#771a1d8d744eeb71b6adb35808e1a6c7b9b8c8ec"
   integrity sha512-Fg32GrJo61m+VqYSdRSjRXMjQ06j8YIYfcTqndLYVAaHmroZHLJZCydsWBOTDqXS2v+mjxohBWEMfg97GXmYQg==
 
-"@jridgewell/sourcemap-codec@^1.4.14", "@jridgewell/sourcemap-codec@^1.4.15":
+"@jridgewell/sourcemap-codec@^1.4.14":
   version "1.4.15"
   resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz#d7c6e6755c78567a951e04ab52ef0fd26de59f32"
   integrity sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==
+
+"@jridgewell/sourcemap-codec@^1.5.5":
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz#6912b00d2c631c0d15ce1a7ab57cd657f2a8f8ba"
+  integrity sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==
 
 "@jridgewell/trace-mapping@^0.3.12":
   version "0.3.14"
@@ -3484,12 +3489,13 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/builder-webpack5@^10.0.8":
-  version "10.0.8"
-  resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-10.0.8.tgz#3e8463128e2747ec46b38693279c98daf6974cda"
-  integrity sha512-uufIrphiv0BoaZ0kE/jk7q3tRs7+hjxnesRceeE3TAUI38EFs3Ppv3UBkwjl1NxL2h7skJhQ45rogtBFLwkyew==
+"@storybook/builder-webpack5@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-10.1.0.tgz#d76eb73de5d4226bc8a63777c0f37edef0e64baf"
+  integrity sha512-WTiuuo9EmQ6y9+/2L4oSAsw5m9ecDnR/+ndEyViZQvhnYcJSimIXX5194IB8g0DxmhvPu/DDAIhF4FIcwRTmvQ==
   dependencies:
-    "@storybook/core-webpack" "10.0.8"
+    "@storybook/core-webpack" "10.1.0"
+    "@vitest/mocker" "3.2.4"
     case-sensitive-paths-webpack-plugin "^2.4.0"
     cjs-module-lexer "^1.2.3"
     css-loader "^7.1.2"
@@ -3752,10 +3758,10 @@
     "@storybook/csf" "^0.1.7"
     ts-dedent "^2.0.0"
 
-"@storybook/core-webpack@10.0.8":
-  version "10.0.8"
-  resolved "https://registry.yarnpkg.com/@storybook/core-webpack/-/core-webpack-10.0.8.tgz#095ad14969e074c1bb10b7cc1aa14ffcd4f580d3"
-  integrity sha512-WFpbzUY9lfXMvNo9YTDG9CeGlWhn79V/pVqj6nOYwCO4wrF+yeizm61zXvZdDofFOtrw4vzzmzgbjkBQJefa5Q==
+"@storybook/core-webpack@10.1.0":
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@storybook/core-webpack/-/core-webpack-10.1.0.tgz#226b8ae68226cf3a6b9b2e4e81f20dad77e8e0ef"
+  integrity sha512-NppWAITiziTICsF5S0a4nMwHv3xv63xpWuA4Qj7lqNJEikC27v40bTxr42zLqieqnNmPf1PH3TzJGM+jgBcvUw==
   dependencies:
     ts-dedent "^2.0.0"
 
@@ -4288,7 +4294,7 @@
     "@types/estree" "*"
     "@types/json-schema" "*"
 
-"@types/estree@*", "@types/estree@^1.0.6", "@types/estree@^1.0.8":
+"@types/estree@*", "@types/estree@^1.0.0", "@types/estree@^1.0.6", "@types/estree@^1.0.8":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.8.tgz#958b91c991b1867ced318bedea0e215ee050726e"
   integrity sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==
@@ -4947,6 +4953,22 @@
   version "1.7.13"
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.7.13.tgz#6d2643f810c30c9561bbd8348a2fb4aa0edde4f9"
   integrity sha512-tI0+FTntE3BD0UxhTP12F/iTtkeMK+qh72/2aSxPZnTlOcMR9CTJid8CdppbSjj9wenq7PNcqScLtpPENH3Lvg==
+
+"@vitest/mocker@3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@vitest/mocker/-/mocker-3.2.4.tgz#4471c4efbd62db0d4fa203e65cc6b058a85cabd3"
+  integrity sha512-46ryTE9RZO/rfDd7pEqFl7etuyzekzEhUbTW3BvmeO/BcCMEgq59BKhek3dXDWgAj4oMK6OZi+vRr1wPW6qjEQ==
+  dependencies:
+    "@vitest/spy" "3.2.4"
+    estree-walker "^3.0.3"
+    magic-string "^0.30.17"
+
+"@vitest/spy@3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@vitest/spy/-/spy-3.2.4.tgz#cc18f26f40f3f028da6620046881f4e4518c2599"
+  integrity sha512-vAfasCOe6AIK70iP5UD11Ac4siNUNJ9i/9PZ3NKx07sG6sUxeag1LWdNrMWeKKYBLlzuK+Gn65Yd5nyL6ds+nw==
+  dependencies:
+    tinyspy "^4.0.3"
 
 "@webassemblyjs/ast@1.14.1", "@webassemblyjs/ast@^1.14.1":
   version "1.14.1"
@@ -9054,6 +9076,13 @@ estree-walker@^1.0.1:
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-1.0.1.tgz#31bc5d612c96b704106b477e6dd5d8aa138cb700"
   integrity sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==
 
+estree-walker@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-3.0.3.tgz#67c3e549ec402a487b4fc193d1953a524752340d"
+  integrity sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==
+  dependencies:
+    "@types/estree" "^1.0.0"
+
 esutils@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
@@ -12850,12 +12879,12 @@ magic-string@^0.25.0, magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.4"
 
-magic-string@^0.30.5:
-  version "0.30.5"
-  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.5.tgz#1994d980bd1c8835dc6e78db7cbd4ae4f24746f9"
-  integrity sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==
+magic-string@^0.30.17, magic-string@^0.30.5:
+  version "0.30.21"
+  resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.21.tgz#56763ec09a0fa8091df27879fd94d19078c00d91"
+  integrity sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==
   dependencies:
-    "@jridgewell/sourcemap-codec" "^1.4.15"
+    "@jridgewell/sourcemap-codec" "^1.5.5"
 
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"
@@ -16857,6 +16886,11 @@ tinyglobby@^0.2.15:
   dependencies:
     fdir "^6.5.0"
     picomatch "^4.0.3"
+
+tinyspy@^4.0.3:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/tinyspy/-/tinyspy-4.0.4.tgz#d77a002fb53a88aa1429b419c1c92492e0c81f78"
+  integrity sha512-azl+t0z7pw/z958Gy9svOTuzqIk6xq+NSheJzn5MMWtWTFywIacg2wUlzKFGtt3cthx0r2SxMK0yzJOR0IES7Q==
 
 title-case@^4.3.2:
   version "4.3.2"
