@@ -14360,15 +14360,14 @@ pkg-dir@^5.0.0:
   dependencies:
     find-up "^5.0.0"
 
-plop@^4.0.4:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/plop/-/plop-4.0.4.tgz#832d701350aae9cffead32cab538c34b31bd02c4"
-  integrity sha512-YdxtHWcPV8hDsszVPr4VQBVGNdn5ZQmEW+cZakZkuVeQHtENmrtY4AhuyoZW6s7ZjpmrS+llLQrfDgRKNQNsmg==
+plop@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/plop/-/plop-4.0.5.tgz#aefcac6145bacb4c074e51db1687f1f1ef520aa1"
+  integrity sha512-pJz6oWC9LyBp5mBrRp8AUV2RNiuGW+t/HOs4zwN+b/3YxoObZOOFvjn1mJMpAeKi2pbXADMFOOVQVTVXEdDHDw==
   dependencies:
     "@types/liftoff" "^4.0.3"
     interpret "^3.1.1"
     liftoff "^5.0.1"
-    minimist "^1.2.8"
     nanospinner "^1.2.2"
     node-plop "^0.32.3"
     picocolors "^1.1.1"
